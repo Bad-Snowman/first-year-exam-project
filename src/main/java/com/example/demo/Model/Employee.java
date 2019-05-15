@@ -1,7 +1,11 @@
 package com.example.demo.Model;
 
-public class Employee {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Employee {
+    @Id
     private int employeeID;
     private String employeeFirstName;
     private String employeeLaseName;
