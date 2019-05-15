@@ -13,8 +13,8 @@ public class Project {
     private Time projectExpectedTime;
     private Time projectUsedTime;
 
-
-    public Project(){};
+    //123
+    public Project(){}
 
     public Project(int projectID, String projectName, String projectDesc, Time projectExpectedTime, Time projectUsedTime){
         this.projectID = projectID;
