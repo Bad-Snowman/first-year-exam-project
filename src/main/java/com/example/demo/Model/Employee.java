@@ -12,6 +12,10 @@ public class Employee {
     private int employeePhone;
     private String employeeEmail;
 
+    public Employee(){
+
+    }
+
     public Employee(int employeeID, String employeeFirstName, String employeeLaseName, int employeePhone, String employeeEmail) {
         this.employeeID = employeeID;
         this.employeeFirstName = employeeFirstName;
