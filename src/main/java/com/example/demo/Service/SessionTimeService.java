@@ -14,10 +14,18 @@ public class SessionTimeService {
 
     public List<SessionTime> fetchAll(){return SessionTimeRepo.fetchAll();}
 
-
     public boolean deleteSessionTime(String sessionTimeID){
         return SessionTimeRepo.deleteSessionTime(sessionTimeID);
     }
+
+    public SessionTime getSessionTimeID(int sessionTimeID){
+        return SessionTimeRepo.getSessionTimeID(sessionTimeID);
+    }
+
+    public SessionTime updateSessionTime (int sessionTimeID, SessionTime sessionTime)
+    {return SessionTimeRepo.updateSessionTime(sessionTimeID,sessionTime);}
+
+
 }
 
 
