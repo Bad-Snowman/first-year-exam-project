@@ -22,7 +22,7 @@
 
     </thead>
     <tbody>
-    <tr th:each="projectList:${project}" >
+    <tr th:each="project:${projects}" >
         <td th:text="${project.projectID}"  />
         <td th:text="${project.projectName}"  />
         <td th:text="${project.projectDesc}"  />
@@ -32,7 +32,7 @@
             <a th:href="@{'/delete/'+${project.projectID}}">
                 <button class="btn-delete btn" id="btn-delete">Delete</button>
             </a>
-            <a th:href="@{'/update/'+${project.id}}">
+            <a th:href="@{'/update/'+${project.projectID}}">
                 <button class="btn-update btn" id="btn-update">Update</button>
             </a>
         </td>

@@ -13,8 +13,7 @@ public class Employee {
     private String employeeEmail;
 
     public Employee(){
-
-    }
+    };
 
     public Employee(int employeeID, String employeeFirstName, String employeeLaseName, int employeePhone, String employeeEmail) {
         this.employeeID = employeeID;
