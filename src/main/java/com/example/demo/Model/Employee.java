@@ -8,7 +8,7 @@ public class Employee {
     @Id
     private int employeeID;
     private String employeeFirstName;
-    private String employeeLaseName;
+    private String employeeLastName;
     private int employeePhone;
     private String employeeEmail;
 
@@ -18,7 +18,7 @@ public class Employee {
     public Employee(int employeeID, String employeeFirstName, String employeeLaseName, int employeePhone, String employeeEmail) {
         this.employeeID = employeeID;
         this.employeeFirstName = employeeFirstName;
-        this.employeeLaseName = employeeLaseName;
+        this.employeeLastName = employeeLastName;
         this.employeePhone = employeePhone;
         this.employeeEmail = employeeEmail;
     }
@@ -40,12 +40,12 @@ public class Employee {
         this.employeeFirstName = employeeFirstName;
     }
 
-    public String getEmployeeLaseName() {
-        return employeeLaseName;
+    public String getEmployeeLastName() {
+        return employeeLastName;
     }
 
-    public void setEmployeeLaseName(String employeeLaseName) {
-        this.employeeLaseName = employeeLaseName;
+    public void setEmployeeLastName(String employeeLastName) {
+        this.employeeLastName = employeeLastName;
     }
 
     public int getEmployeePhone() {
