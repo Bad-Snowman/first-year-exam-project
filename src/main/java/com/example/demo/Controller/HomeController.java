@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Model.Project;
 import com.example.demo.Service.EmployeeService;
 import com.example.demo.Service.ProjectManagerService;
 import com.example.demo.Service.ProjectService;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -22,20 +25,26 @@ public class HomeController {
     SessionService sessionService;
 
     @GetMapping("/")
-    public String index(){return "home/MainMenu";}
+    public String index() {
+        return "home/MainMenu";
+    }
 
     @GetMapping("/sessionList")
-    public String toSessionList(){
+    public String toSessionList() {
         return "home/SessionList";
     }
 
     @GetMapping("/projectList")
-    public String toProjectList(){
-        return "home/ProjectList";
+    public String toProjectList(Model model) {
+        List<Project> projectList = projectService.fetchAll();
+        model.addAttribute("project", projectList);
+        return "home/projectList";
     }
 
     @GetMapping("employeeList")
-    public String toEmployeeList(){
+    public String toEmployeeList() {
         return "home/EmployeeList";
     }
 }
+
+

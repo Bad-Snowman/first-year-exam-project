@@ -16,7 +16,7 @@ public class ProjectService {
         return projectRepo.fetchAll();
     }
 
-    public Project addProject(Project p){
+    /*public Project addProject(Project p){
         return projectRepo.addProject(p);
     }
 
@@ -30,5 +30,5 @@ public class ProjectService {
 
     public Project updateProject(int projectID, Project p){
         return projectRepo.updateProject(projectID, p);
-    }
+    }*/
 }

@@ -14,13 +14,13 @@ public class ProjectRepo {
     @Autowired
     JdbcTemplate template;
     public List<Project> fetchAll(){
-        //her laver jeg sql koden
-        String sql = "SELECT * FROM person";
+        //her laver jeg sql statements
+        String sql = "SELECT * FROM project";
         RowMapper<Project> rowMapper = new BeanPropertyRowMapper<>(Project.class);
         return template.query(sql, rowMapper);
     }
 
-    public Project addProject(Project p){
+   /* public Project addProject(Project p){
         String sql = "INSERT INTO project (projectName, projectDesc, projectManager, projectExpectedTime) VALUES(?, ?)";
         template.update(sql, p.getProjectName(),p.getProjectDesc(),p.getProjectExpectedTime());
         return null;
@@ -42,5 +42,5 @@ public class ProjectRepo {
                      "projectExpectedTime = ?, projectUsedTime = ?  WHERE projectID = ?";
         template.update(sql, p.getProjectName(), p.getProjectDesc(), p.getProjectExpectedTime(), p.getProjectUsedTime());
         return null;
-    }
+    }*/
 }
