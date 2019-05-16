@@ -29,4 +29,13 @@ public class HomeController {
         return "home/SessionList";
     }
 
+    @GetMapping("/projectList")
+    public String toProjectList(){
+        return "home/ProjectList";
+    }
+
+    @GetMapping("employeeList")
+    public String toEmployeeList(){
+        return "home/EmployeeList";
+    }
 }
