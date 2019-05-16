@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Model.Employee;
 import com.example.demo.Model.SessionTime;
 import com.example.demo.Service.EmployeeService;
 import com.example.demo.Service.ProjectManagerService;
@@ -45,7 +46,9 @@ public class HomeController {
     ////////// Employee //////////////
     // All GetMapping and PostMapping related to employee
     @GetMapping("employeeList")
-    public String toEmployeeList() {
+    public String toEmployeeList(Model model) {
+        List<Employee> employeeList = employeeService.fetchAll();
+        model.addAttribute("employees", employeeList);
         return "home/EmployeeList";
     }
 
