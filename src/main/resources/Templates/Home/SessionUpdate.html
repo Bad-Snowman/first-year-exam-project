@@ -7,66 +7,68 @@
 <body>
 <h1>Session</h1>
 
+<h1><a href="/"><img id="WizkidsLogo.png" src="WizkidsLogo.png" alt="WizkidsLogo"></a></h1>
 
-<a href="/"><img id="logo1" src="WizkidsLogo.png" alt="WizkidsLogo"></a>
+<form action="/sessionUpdate" method="post" th:each="sessionTime:${sessionsTime}">
 
-<table>
+    <table>
+        <tr>
+            <td>
+                <p>Session ID: </p>
+            </td>
+            <td>
+                <input type="text" name="sessionTimeID" th:value="${sessionTime.sessionTimeID}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Dato for start: </p>
+            </td>
+            <td>
+                <input type="text" name="sessionTimeDate" th:value="${sessionTime.sessionTimeDate}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Tid start: </p>
+            </td>
+            <td>
+                <input type="text" name="sessionTimeStart" th:value="${sessionTime.sessionTimeStart}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Tid slut: </p>
+            </td>
+            <td>
+                <input type="text" name="sessionTimeEnd" th:value="${sessionTime.sessionTimeEnd}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Employee ID: </p>
+            </td>
+            <td>
+                <input type="text" name="sessionTimeEmpID" th:value="${sessionTime.sessionTimeEmpID}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Project ID: </p>
+            </td>
+            <td>
+                <input type="text" name="sessionTimeProID" th:value="${sessionTime.sessionTimeProID}"/>
+            </td>
+        </tr>
+
+        </tr>
+    </table>
+
     <tr>
-        <td>
-            <p>Session ID: </p>
-        </td>
-        <td>
-            <input type="text" name="car_vin" th:value="${car.car_vin}"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p>Dato for start:  </p>
-        </td>
-        <td>
-            <input type="text" name="car_brand" th:value="${car.car_brand}"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p>Tid start: </p>
-        </td>
-        <td>
-            <input type="text" name="car_model" th:value="${car.car_model}"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p>Tid slut: </p>
-        </td>
-        <td>
-            <input type="text" name="car_fuel_type" th:value="${car.car_fuel_type}"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p>Employee ID: </p>
-        </td>
-        <td>
-            <input type="text" name="car_registration_number" th:value="${car.car_registration_number}"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p>Project ID: </p>
-        </td>
-        <td>
-            <input type="text" name="car_registration_date" th:value="${car.car_registration_date}"/>
-        </td>
+        <input class="submit" type="submit" value="Save changes"/>
     </tr>
 
-    </tr>
-</table>
-
-<tr>
-    <input class="submit" type="submit" value="Save changes"/>
-</tr>
-
+</form>
 
 </body>
 </html>

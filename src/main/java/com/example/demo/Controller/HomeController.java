@@ -37,7 +37,6 @@ public class HomeController {
         return "home/MainMenu";
     }
 
-
     /////////////// Project ////////////
 // All GetMapping and PostMapping related to project
     @GetMapping("/projectList")
@@ -80,7 +79,7 @@ public class HomeController {
     @GetMapping ("/update/{sessionTimeID}")
     public String update(@PathVariable("sessionTimeID") int sessionTimeID, Model model){
         model.addAttribute("sessions", sessionTimeService.getSessionTimeID(sessionTimeID));
-        return "home/update";
+        return "Home/SessionUpdate";
     }
 
     @PostMapping("/updateSession")
