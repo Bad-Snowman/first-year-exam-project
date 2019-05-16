@@ -15,7 +15,6 @@ public class SessionTimeRepo {
     JdbcTemplate template;
 
     public List<SessionTime> fetchAll(){
-
         String sql;
 
         sql = "SELECT * FROM sessionTime";
@@ -23,11 +22,12 @@ public class SessionTimeRepo {
         RowMapper<SessionTime> rowMapper = new BeanPropertyRowMapper<>(SessionTime.class);
 
         return template.query(sql, rowMapper);
-
     }
 
     public boolean deleteSessionTime(String sessionTimeID) {
         String sql = "DELETE FROM sessionTime WHERE sessionTimeID=?";
         return template.update(sql, sessionTimeID) > 0;
     }
+//
+
 }
