@@ -6,7 +6,8 @@
 </head>
 <body>
 
-<h1><a href="/"><img id="WizkidsLogo.png" src="WizkidsLogo.png" alt="WizkidsLogo"></a></h1>
+<a href="/"><img id="logo1" src="WizkidsLogo.png" alt="WizkidsLogo"></a>
+
 <h2>Project List</h2>
 
 <table>
@@ -15,6 +16,7 @@
         <th>projectID</th>
         <th>projectName</th>
         <th>projectDesc</th>
+        <th>projectManagerName</th>
         <th>projectExpectedTime</th>
         <th>projectUsedTime</th>
         <th></th>
@@ -26,14 +28,15 @@
         <td th:text="${project.projectID}"  />
         <td th:text="${project.projectName}"  />
         <td th:text="${project.projectDesc}"  />
+        <td th:text="${project.projectManagerName}"  />
         <td th:text="${project.projectExpectedTime}"  />
         <td th:text="${project.projectUsedTime}"  />
         <td>
             <a th:href="@{'/delete/'+${project.projectID}}">
                 <button class="btn-delete btn" id="btn-delete">Delete</button>
             </a>
-            <a th:href="@{'/update/'+${project.projectID}}">
-                <button class="btn-update btn" id="btn-update">Update</button>
+            <a th:href="@{'/updateProject/'+${project.projectID}}">
+                <button class="btn-updateProject btn" id="btn-updateProject">Update</button>
             </a>
         </td>
     </tr>

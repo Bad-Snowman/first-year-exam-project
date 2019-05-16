@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" type="text/css" href="MyCss.css"/>
+</head>
+<body>
+<h1>Update Project</h1>
+<form action="/updateProject" method="post">
+    <input type="text" name="projectID" th:value="${project.projectID}" />
+    <input type="text" name="projectName" th:value="${project.projectName}" />
+    <input type="text" name="projectDesc" th:value="${project.projectDesc}" />
+    <input type="text" name="projectManagerName" th:value="${project.projectManagerName}" />
+    <input type="text" name="projectExpectedTime" th:value="${project.projectExpectedTime}" />
+    <input type="text" name="projectUsedTime" th:value="${project.projectUsedTime}" />
+    <input type="submit" value="Save changes"/>
+</form>
+
+</body>
+</html>

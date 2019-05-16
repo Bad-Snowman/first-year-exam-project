@@ -12,6 +12,7 @@ public class Project {
     private int projectID;
     private String projectName;
     private String projectDesc;
+    private String projectManagerName;
     private double projectExpectedTime;
     private double projectUsedTime;
 
@@ -19,10 +20,11 @@ public class Project {
     public Project(){}
 
     public Project(int projectID, String projectName, String projectDesc,
-                   double projectExpectedTime, double projectUsedTime){
+                   String projectManagerName, double projectExpectedTime, double projectUsedTime){
         this.projectID = projectID;
         this.projectName = projectName;
         this.projectDesc = projectDesc;
+        this.projectManagerName = projectManagerName;
         this.projectExpectedTime = projectExpectedTime;
         this.projectUsedTime = projectUsedTime;
     }
@@ -52,6 +54,14 @@ public class Project {
 
     public void setProjectDesc(String projectDesc) {
         this.projectDesc = projectDesc;
+    }
+
+    public String getProjectManagerName(){
+        return projectManagerName;
+    }
+
+    public void setProjectManagerName(String projectManagerName){
+        this.projectManagerName = projectManagerName;
     }
 
     public double getProjectExpectedTime(){

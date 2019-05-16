@@ -7,7 +7,6 @@ import com.example.demo.Service.EmployeeService;
 import com.example.demo.Service.ProjectManagerService;
 import com.example.demo.Service.ProjectService;
 import com.example.demo.Service.SessionTimeService;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,6 +36,7 @@ public class HomeController {
     public String index() {
         return "home/MainMenu";
     }
+
 
     /////////////// Project ////////////
 // All GetMapping and PostMapping related to project
@@ -68,26 +68,22 @@ public class HomeController {
     }
 
     @GetMapping ("/delete/{sessionTimeID}")
-    public String delete (@PathVariable("sessionTimeID") String sessionTimeID){
-    boolean deleted = sessionTimeService.deleteSessionTime(sessionTimeID);
-    if (deleted){
-        return "redirect:/";
-    }else{
-        return "redirect:/";
+    public String delete (@PathVariable("sessionTimeID") String sessionTimeID) {
+        boolean deleted = sessionTimeService.deleteSessionTime(sessionTimeID);
+        if (deleted) {
+            return "redirect:/";
+        } else {
+            return "redirect:/";
+        }
     }
+    @GetMapping("/updateProject/{projectID}")
+        public String updateProject(@PathVariable("projectID") int projectID, Model model) {
+            model.addAttribute("project", projectService.findProjectById(projectID));
+            return "home/updateProject";
+        }
+        @PostMapping("/updateProject")
+        public String updateProject(@ModelAttribute Project project){
+            projectService.updateProject(project.getProjectID(), project);
+            return "redirect:/";
+        }
     }
-
-    @GetMapping ("/update/{sessionTimeID}")
-    public String update(@PathVariable("sessionTimeID") int sessionTimeID, Model model){
-        model.addAttribute("sessions", sessionTimeService.getSessionTimeID(sessionTimeID));
-        return "Home/SessionUpdate";
-    }
-
-    @PostMapping("/updateSession")
-    public String update (@ModelAttribute SessionTime sessionTime) {
-        sessionTimeService.updateSessionTime(sessionTime.getSessionTimeID(), sessionTime);
-        return "redirect:/";
-    }
-
-
-}
