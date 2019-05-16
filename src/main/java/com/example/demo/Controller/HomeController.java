@@ -24,5 +24,9 @@ public class HomeController {
     @GetMapping("/")
     public String index(){return "home/MainMenu";}
 
+    @GetMapping("/sessionList")
+    public String toSessionList(){
+        return "home/SessionList";
+    }
 
 }
