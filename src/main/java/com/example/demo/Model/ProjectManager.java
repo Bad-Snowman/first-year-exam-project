@@ -5,12 +5,11 @@ import javax.persistence.Id;
 
 @Entity
 public class ProjectManager{
-
     @Id
-private int projectManagerId;
-private boolean projectManagerAccess;
-private String projectManagerWorksOn;
-private int projectManagerEmpId;
+    private int projectManagerId;
+    private boolean projectManagerAccess;
+    private String projectManagerWorksOn;
+    private int projectManagerEmpId;
 
 
     public ProjectManager() {
