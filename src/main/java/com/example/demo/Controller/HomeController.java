@@ -39,7 +39,7 @@ public class HomeController {
 
 
     /////////////// Project ////////////
-// All GetMapping and PostMapping related to project
+    // All GetMapping and PostMapping related to project
     @GetMapping("/projectList")
     public String projectList(Model model) {
         List<Project> projectList = projectService.fetchAll();
@@ -47,6 +47,17 @@ public class HomeController {
         return "Home/ProjectList";
     }
 
+    @GetMapping("/updateProject/{projectID}")
+    public String updateProject(@PathVariable("projectID") int projectID, Model model) {
+        model.addAttribute("project", projectService.findProjectById(projectID));
+        return "home/updateProject";
+    }
+
+    @PostMapping("/updateProject")
+    public String updateProject(@ModelAttribute Project project) {
+        projectService.updateProject(project.getProjectID(), project);
+        return "redirect:/";
+    }
 
     ////////// Employee //////////////
     // All GetMapping and PostMapping related to employee
@@ -57,7 +68,6 @@ public class HomeController {
         return "home/EmployeeList";
     }
 
-
     /////////// SessionTime ////////////
     // All GetMapping and PostMapping related to session
     @GetMapping("/sessionList")
@@ -67,8 +77,8 @@ public class HomeController {
         return "Home/SessionList";
     }
 
-    @GetMapping ("/delete/{sessionTimeID}")
-    public String delete (@PathVariable("sessionTimeID") String sessionTimeID) {
+    @GetMapping("/delete/{sessionTimeID}")
+    public String delete(@PathVariable("sessionTimeID") String sessionTimeID) {
         boolean deleted = sessionTimeService.deleteSessionTime(sessionTimeID);
         if (deleted) {
             return "redirect:/";
@@ -76,14 +86,19 @@ public class HomeController {
             return "redirect:/";
         }
     }
-    @GetMapping("/updateProject/{projectID}")
-        public String updateProject(@PathVariable("projectID") int projectID, Model model) {
-            model.addAttribute("project", projectService.findProjectById(projectID));
-            return "home/updateProject";
-        }
-        @PostMapping("/updateProject")
-        public String updateProject(@ModelAttribute Project project){
-            projectService.updateProject(project.getProjectID(), project);
-            return "redirect:/";
-        }
+
+    @GetMapping ("/update/{sessionTimeID}")
+    public String update(@PathVariable("sessionTimeID") int sessionTimeID, Model model){
+        model.addAttribute("sessions", sessionTimeService.getSessionTimeID(sessionTimeID));
+        return "home/update";
     }
+
+    @PostMapping("/updateSession")
+    public String update (@ModelAttribute SessionTime sessionTime) {
+        sessionTimeService.updateSessionTime(sessionTime.getSessionTimeID(), sessionTime);
+        return "redirect:/";
+    }
+
+
+}
+
