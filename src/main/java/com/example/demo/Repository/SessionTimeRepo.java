@@ -28,6 +28,5 @@ public class SessionTimeRepo {
         String sql = "DELETE FROM sessionTime WHERE sessionTimeID=?";
         return template.update(sql, sessionTimeID) > 0;
     }
-//
 
 }
