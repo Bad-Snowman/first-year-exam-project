@@ -24,12 +24,12 @@ public class ProjectRepo {
         String sql = "INSERT INTO project (projectName, projectDesc, projectManager, projectExpectedTime) VALUES(?, ?)";
         template.update(sql, p.getProjectName(),p.getProjectDesc(),p.getProjectExpectedTime());
         return null;
-    }
+    }*/
 
-    public Project findProjectById(int id){
+    public Project findProjectById(int projectID){
         String sql = "SELECT * FROM project WHERE projectID = ?";
         RowMapper<Project> rowMapper = new BeanPropertyRowMapper<>(Project.class);
-        Project p = template.queryForObject(sql,rowMapper, id);
+        Project p = template.queryForObject(sql,rowMapper, projectID);
         return p;
     }
     public Boolean deleteProject(int projectID){
@@ -38,9 +38,9 @@ public class ProjectRepo {
     }
 
     public Project updateProject(int projectID, Project p){
-        String sql = "UPDATE project SET projectName = ?, projectDesc = ?, projectManager = ?, " +
+        String sql = "UPDATE project SET projectName = ?, projectDesc = ?, projectManagerName = ?, " +
                      "projectExpectedTime = ?, projectUsedTime = ?  WHERE projectID = ?";
-        template.update(sql, p.getProjectName(), p.getProjectDesc(), p.getProjectExpectedTime(), p.getProjectUsedTime());
+        template.update(sql, p.getProjectName(), p.getProjectDesc(),p.getProjectManagerName(), p.getProjectExpectedTime(), p.getProjectUsedTime());
         return null;
-    }*/
+    }
 }
