@@ -24,6 +24,9 @@ public class Project {
         this.projectUsedTime = projectUsedTime;
     }
 
+
+    //////////// Getters and setters ////////////
+
     public int getProjectID(){
         return projectID;
     }

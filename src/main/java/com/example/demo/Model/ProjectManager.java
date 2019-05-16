@@ -9,8 +9,6 @@ private int projectManagerEmpId;
 
 
     public ProjectManager(){
-
-
     };
 
     public ProjectManager(int projectManagerID, boolean projectManagerAccess, String projectManagerWorksOn, int projectManagerEmpId) {
