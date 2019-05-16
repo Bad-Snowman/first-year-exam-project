@@ -1,5 +1,7 @@
 package com.example.demo.Model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Time;
@@ -10,7 +12,9 @@ public class Project {
     private int projectID;
     private String projectName;
     private String projectDesc;
+    @DateTimeFormat(pattern = "hh:mm:ss")
     private Time projectExpectedTime;
+    @DateTimeFormat(pattern = "hh:mm:ss")
     private Time projectUsedTime;
 
     //123

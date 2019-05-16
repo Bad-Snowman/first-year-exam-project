@@ -1,26 +1,31 @@
 package com.example.demo.Model;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Time;
 import java.util.Date;
 
 @Entity
-public class Session {
+public class SessionTime {
 
     @Id
     private int sessionTimeID;
+    @DateTimeFormat(pattern = "hh:mm:ss")
     private Time sessionTimeStart;
+    @DateTimeFormat(pattern = "hh:mm:ss")
     private Time sessionTimeEnd;
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date SessionTimeDate;
     private int SessionTimeEmpID;
     private int sessionTimeProID;
 
-    public Session(){};
+    public SessionTime(){};
 
-    public Session(int sessionTimeID, Time sessionTimeStart, Time sessionTimeEnd,
-                   Date sessionTimeDate, int sessionTimeEmpID, int sessionTimeProID) {
+    public SessionTime(int sessionTimeID, Time sessionTimeStart, Time sessionTimeEnd,
+                       Date sessionTimeDate, int sessionTimeEmpID, int sessionTimeProID) {
         this.sessionTimeID = sessionTimeID;
         this.sessionTimeStart = sessionTimeStart;
         this.sessionTimeEnd = sessionTimeEnd;
