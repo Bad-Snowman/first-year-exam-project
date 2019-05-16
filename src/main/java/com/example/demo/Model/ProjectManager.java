@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class ProjectManager extends Employee {
+public class ProjectManager{
 
     @Id
 private int projectManagerId;
@@ -13,11 +13,7 @@ private String projectManagerWorksOn;
 private int projectManagerEmpId;
 
 
-    public ProjectManager(int projectManagerId, Boolean projectManagerAccess, String projectManagerWorksOn, int projectManagerEmpId) {
-        this.projectManagerId = projectManagerId;
-        this.projectManagerAccess = projectManagerAccess;
-        this.projectManagerWorksOn = projectManagerWorksOn;
-        this.projectManagerEmpId = projectManagerEmpId;
+    public ProjectManager() {
 
     }
 
