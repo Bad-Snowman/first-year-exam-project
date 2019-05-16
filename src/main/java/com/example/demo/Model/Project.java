@@ -12,15 +12,14 @@ public class Project {
     private int projectID;
     private String projectName;
     private String projectDesc;
-    @DateTimeFormat(pattern = "hh:mm:ss")
-    private Time projectExpectedTime;
-    @DateTimeFormat(pattern = "hh:mm:ss")
-    private Time projectUsedTime;
+    private double projectExpectedTime;
+    private double projectUsedTime;
 
     //123
     public Project(){}
 
-    public Project(int projectID, String projectName, String projectDesc, Time projectExpectedTime, Time projectUsedTime){
+    public Project(int projectID, String projectName, String projectDesc,
+                   double projectExpectedTime, double projectUsedTime){
         this.projectID = projectID;
         this.projectName = projectName;
         this.projectDesc = projectDesc;
@@ -55,19 +54,19 @@ public class Project {
         this.projectDesc = projectDesc;
     }
 
-    public Time getProjectExpectedTime(){
+    public double getProjectExpectedTime(){
         return projectExpectedTime;
     }
 
-    public void setProjectExpectedTime(Time projectExpectedTime){
+    public void setProjectExpectedTime(double projectExpectedTime){
         this.projectExpectedTime = projectExpectedTime;
     }
 
-    public Time getProjectUsedTime(){
+    public double getProjectUsedTime(){
         return projectUsedTime;
     }
 
-    public void setProjectUsedTime(Time projectUsedTime){
+    public void setProjectUsedTime(double projectUsedTime){
         this.projectUsedTime = projectUsedTime;
     }
 
