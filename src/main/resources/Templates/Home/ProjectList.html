@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Project List</title>
@@ -8,7 +8,36 @@
 
 <h1>Project List</h1>
 
-<a href="/"><img id="logo1" src="WizkidsLogo.png" alt="WizkidsLogo"></a>
+<table>
+    <thead>
+    <tr>
+        <th>projectID</th>
+        <th>projectName</th>
+        <th>projectDesc</th>
+        <th>projectExpectedTime</th>
+        <th>projectUsedTime</th>
+        <th></th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr th:each="projectList:${project}" >
+        <td th:text="${project.projectID}"  />
+        <td th:text="${project.projectName}"  />
+        <td th:text="${project.projectDesc}"  />
+        <td th:text="${project.projectExpectedTime}"  />
+        <td th:text="${project.projectUsedTime}"  />
+        <td>
+            <a th:href="@{'/delete/'+${project.projectID}}">
+                <button class="btn-delete btn" id="btn-delete">Delete</button>
+            </a>
+            <a th:href="@{'/update/'+${project.id}}">
+                <button class="btn-update btn" id="btn-update">Update</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>
