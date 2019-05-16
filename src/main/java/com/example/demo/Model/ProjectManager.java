@@ -7,17 +7,22 @@ import javax.persistence.Id;
 public class ProjectManager extends Employee {
 
     @Id
-private int projectManagerID;
+private int projectManagerId;
 private boolean projectManagerAccess;
 private String projectManagerWorksOn;
 private int projectManagerEmpId;
 
 
-    public ProjectManager(){
-    };
+    public ProjectManager(int projectManagerId, Boolean projectManagerAccess, String projectManagerWorksOn, int projectManagerEmpId) {
+        this.projectManagerId = projectManagerId;
+        this.projectManagerAccess = projectManagerAccess;
+        this.projectManagerWorksOn = projectManagerWorksOn;
+        this.projectManagerEmpId = projectManagerEmpId;
+
+    }
 
     public ProjectManager(int projectManagerID, boolean projectManagerAccess, String projectManagerWorksOn, int projectManagerEmpId) {
-        this.projectManagerID = projectManagerID;
+        this.projectManagerId = projectManagerID;
         this.projectManagerAccess = projectManagerAccess;
         this.projectManagerWorksOn = projectManagerWorksOn;
         this.projectManagerEmpId = projectManagerEmpId;
@@ -28,11 +33,11 @@ private int projectManagerEmpId;
 
 
     public int getProjectManagerID() {
-        return projectManagerID;
+        return projectManagerId;
     }
 
     public void setProjectManagerID(int projectManagerID) {
-        this.projectManagerID = projectManagerID;
+        this.projectManagerId = projectManagerID;
     }
 
     public boolean isProjectManagerAccess() {
