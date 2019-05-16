@@ -90,7 +90,7 @@ public class HomeController {
     @GetMapping ("/update/{sessionTimeID}")
     public String update(@PathVariable("sessionTimeID") int sessionTimeID, Model model){
         model.addAttribute("sessions", sessionTimeService.getSessionTimeID(sessionTimeID));
-        return "home/update";
+        return "home/SessionUpdate";
     }
 
     @PostMapping("/updateSession")
