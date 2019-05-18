@@ -16,17 +16,18 @@ public class ProjectService {
         return projectRepo.fetchAll();
     }
 
-    /*public Project addProject(Project p){
-        return projectRepo.addProject(p);
+    public boolean deleteProject(String projectID){
+        return projectRepo.deleteProject(projectID);
+    }
+
+    /*public Project addProject(Project project){
+        return projectRepo.addProject(project);
     }*/
 
     public Project findProjectById(int projectID){
         return projectRepo.findProjectById(projectID);
     }
 
-    /*public Boolean deleteProject(int projectID){
-        return projectRepo.deleteProject(projectID);
-    }*/
 
     public Project updateProject(int projectID, Project p){
         return projectRepo.updateProject(projectID, p);

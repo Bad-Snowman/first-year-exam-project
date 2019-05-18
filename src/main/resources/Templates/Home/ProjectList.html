@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Project List</title>
+    <link rel="stylesheet" type="text/css" href="MyCss.css">
 </head>
 <body>
 
@@ -32,11 +33,13 @@
         <td th:text="${project.projectExpectedTime}"  />
         <td th:text="${project.projectUsedTime}"  />
         <td>
-            <a th:href="@{'/delete/'+${project.projectID}}">
-                <button class="btn-delete btn" id="btn-delete">Delete</button>
-            </a>
+
             <a th:href="@{'/updateProject/'+${project.projectID}}">
-                <button class="btn-updateProject btn" id="btn-updateProject">Update</button>
+                <button class="blue" id="btn-updateProject">Update</button>
+            </a>
+
+            <a th:href="@{'/deleteProject/'+${project.projectID}}">
+                <button class="red" id="btn-delete">Slet</button>
             </a>
         </td>
     </tr>

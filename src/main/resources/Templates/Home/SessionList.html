@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="/sessionList.css">
+    <link rel="stylesheet" type="text/css" href="MyCss.css">
 </head>
 <body>
 <h1><a href="/"><img id="WizkidsLogo.png" src="WizkidsLogo.png" alt="WizkidsLogo"></a></h1>
@@ -13,8 +13,9 @@
     <thead>
     <tr>
         <th>Session ID</th>
-        <th>Tid dato</th>
+        <th>Dato for session</th>
         <th>Tid start</th>
+        <th>Tid slut</th>
         <th>Medarbejder navn</th>
         <th>Projekt navn</th>
     </tr>
@@ -30,11 +31,11 @@
         <td th:text="${sessionTime.sessionTimeProID}"/>
         <td>
             <a th:href="@{'/update/'+${sessionTime.sessionTimeID}}">
-                <button class="btn-update btn" id="btn-update">Opdater</button>
+                <button class="blue" id="btn-update">Opdater</button>
             </a>
 
-            <a th:href="@{'/delete/'+${sessionTime.sessionTimeID}}">
-                <button class="btn-delete btn" id="btn-delete">Slet</button>
+            <a th:href="@{'/deleteSessionTime/'+${sessionTime.sessionTimeID}}">
+                <button class="red" id="btn-delete">Slet</button>
             </a>
         </td>
     </tr>

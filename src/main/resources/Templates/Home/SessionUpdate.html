@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="MyCss.css">
 </head>
 <body>
 <h1>Session</h1>
 
 <h1><a href="/"><img id="WizkidsLogo.png" src="WizkidsLogo.png" alt="WizkidsLogo"></a></h1>
 
-<form action="/sessionUpdate" method="post" th:each="sessionTime:${sessionsTime}">
+<form action="/updateSession" method="post">
 
     <table>
         <tr>

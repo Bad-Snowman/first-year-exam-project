@@ -17,8 +17,10 @@ public class SessionTime {
     private Time sessionTimeStart;
     @DateTimeFormat(pattern = "hh:mm:ss")
     private Time sessionTimeEnd;
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date SessionTimeDate;
+
     private int SessionTimeEmpID;
     private int sessionTimeProID;
 

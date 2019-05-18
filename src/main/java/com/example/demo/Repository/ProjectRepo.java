@@ -13,8 +13,10 @@ import java.util.List;
 public class ProjectRepo {
     @Autowired
     JdbcTemplate template;
+
+
+    // Handles the sql statements
     public List<Project> fetchAll(){
-        //her laver jeg sql statements
         String sql = "SELECT * FROM project";
         RowMapper<Project> rowMapper = new BeanPropertyRowMapper<>(Project.class);
         return template.query(sql, rowMapper);
@@ -29,10 +31,10 @@ public class ProjectRepo {
     public Project findProjectById(int projectID){
         String sql = "SELECT * FROM project WHERE projectID = ?";
         RowMapper<Project> rowMapper = new BeanPropertyRowMapper<>(Project.class);
-        Project p = template.queryForObject(sql,rowMapper, projectID);
-        return p;
+        Project project = template.queryForObject(sql,rowMapper, projectID);
+        return project;
     }
-    public Boolean deleteProject(int projectID){
+    public Boolean deleteProject(String projectID){
         String sql = "DELETE FROM project WHERE projectID = ?";
         return template.update(sql, projectID) > 0;
     }

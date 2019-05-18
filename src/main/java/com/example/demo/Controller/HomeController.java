@@ -59,6 +59,16 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @GetMapping("/deleteProject/{projectID}")
+    public String deleteProject(@PathVariable("projectID") String projectID) {
+        boolean deleted = projectService.deleteProject(projectID);
+        if (deleted) {
+            return "redirect:/";
+        } else {
+            return "redirect:/";
+        }
+    }
+
     ////////// Employee //////////////
     // All GetMapping and PostMapping related to employee
     @GetMapping("employeeList")
@@ -70,6 +80,8 @@ public class HomeController {
 
     /////////// SessionTime ////////////
     // All GetMapping and PostMapping related to session
+
+
     @GetMapping("/sessionList")
     public String sessionList(Model model) {
         List<SessionTime> sessionList = sessionTimeService.fetchAll();
@@ -77,8 +89,8 @@ public class HomeController {
         return "Home/SessionList";
     }
 
-    @GetMapping("/delete/{sessionTimeID}")
-    public String delete(@PathVariable("sessionTimeID") String sessionTimeID) {
+    @GetMapping("/deleteSessionTime/{sessionTimeID}")
+    public String deleteSessionTime(@PathVariable("sessionTimeID") String sessionTimeID) {
         boolean deleted = sessionTimeService.deleteSessionTime(sessionTimeID);
         if (deleted) {
             return "redirect:/";
@@ -90,7 +102,7 @@ public class HomeController {
     @GetMapping ("/update/{sessionTimeID}")
     public String update(@PathVariable("sessionTimeID") int sessionTimeID, Model model){
         model.addAttribute("sessions", sessionTimeService.getSessionTimeID(sessionTimeID));
-        return "home/update";
+        return "Home/SessionUpdate";
     }
 
     @PostMapping("/updateSession")
