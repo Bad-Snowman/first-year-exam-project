@@ -19,11 +19,11 @@ public class ProjectService {
     public boolean deleteProject(String projectID){
         return projectRepo.deleteProject(projectID);
     }
-
-    /*public Project addProject(Project project){
+/*
+    public Project addProject(Project project){
         return projectRepo.addProject(project);
-    }*/
-
+    }
+*/
     public Project findProjectById(int projectID){
         return projectRepo.findProjectById(projectID);
     }

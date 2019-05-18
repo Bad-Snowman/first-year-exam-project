@@ -29,10 +29,18 @@
         <td th:text="${employee.employeeLastName}"/>
         <td th:text="${employee.employeeEmail}"/>
         <td th:text="${employee.employeePhone}"/>
+        <td>
+            <a td th:href="@{'/deleteEmployee/'+${employee.employeeID}}">
+                <button class="red" id="btn-delete">Slet</button>
+            </a>
+        </td>
     </tr>
     </tbody>
 </table>
 
+<a href="/addEmployee">
+    <button class="blue" id="btn-addEmployee">Opret ny Medarbejder</button>
+</a>
 
 </body>
 </html>

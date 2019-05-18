@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Opret ny medarbejder</h1>
+
+    <form action="/addEmployee" method="post">
+
+        <table>
+            <tr>
+                <td>
+                    <label>Fornavn:</label>
+                </td>
+                <td>
+                    <input type ="text" name="employeeFirstName"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Efternavn:</label>
+                </td>
+                <td>
+                    <input type ="text" name="employeeLastName"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Email:</label>
+                </td>
+                <td>
+                    <input type ="text" name="employeeEmail"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Telefon nr:</label>
+                </td>
+                <td>
+                    <input type ="text" name="employeePhone"/>
+                </td>
+            </tr>
+
+        </table>
+        <input type="submit" value="Opret"/>
+    </form>
+</body>
+</html>

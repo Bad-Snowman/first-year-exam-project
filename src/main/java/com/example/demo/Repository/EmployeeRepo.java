@@ -19,4 +19,15 @@ public class EmployeeRepo {
         RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
         return template.query(sql, rowMapper);
     }
+
+    public Employee addEmployee(Employee employee) {
+        String sql = "INSERT INTO employee (employeeFirstName, employeeLastName, employeeEmail, employeePhone) VALUES(?, ?, ?, ?)";
+        template.update(sql, employee.getEmployeeFirstName(), employee.getEmployeeLastName(), employee.getEmployeeEmail(), employee.getEmployeePhone());
+        return null;
+    }
+
+    public boolean deleteEmployee(int employeeID) {
+        String sql = "DELETE FROM employee WHERE employeeID=?";
+        return template.update(sql, employeeID) > 0;
+    }
 }

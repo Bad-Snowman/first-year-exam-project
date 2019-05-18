@@ -21,8 +21,8 @@ public class ProjectRepo {
         RowMapper<Project> rowMapper = new BeanPropertyRowMapper<>(Project.class);
         return template.query(sql, rowMapper);
     }
-
-   /* public Project addProject(Project p){
+/*
+    public Project addProject(Project p){
         String sql = "INSERT INTO project (projectName, projectDesc, projectManager, projectExpectedTime) VALUES(?, ?)";
         template.update(sql, p.getProjectName(),p.getProjectDesc(),p.getProjectExpectedTime());
         return null;

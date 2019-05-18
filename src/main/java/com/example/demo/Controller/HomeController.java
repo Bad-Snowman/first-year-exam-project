@@ -79,7 +79,28 @@ public class HomeController {
     public String toEmployeeList(Model model) {
         List<Employee> employeeList = employeeService.fetchAll();
         model.addAttribute("employees", employeeList);
-        return "home/EmployeeList";
+        return "Home/EmployeeList";
+    }
+
+    @GetMapping("/addEmployee")
+    public String addEmployee() {
+        return "Home/addEmployee";
+    }
+
+    @PostMapping("/addEmployee")
+    public String addEmployee(@ModelAttribute Employee employee){
+        employeeService.addEmployee(employee);
+        return "redirect:/employeeList";
+    }
+
+    @GetMapping("/deleteEmployee/{employeeID}")
+    public String deleteEmployee(@PathVariable("employeeID") int employeeID) {
+        boolean deleted = employeeService.deleteEmployee(employeeID);
+        if (deleted) {
+            return "redirect:/employeeList";
+        } else {
+            return "redirect:/";
+        }
     }
 
     /////////// SessionTime ////////////

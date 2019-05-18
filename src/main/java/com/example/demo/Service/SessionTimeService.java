@@ -23,7 +23,7 @@ public class SessionTimeService {
     }
 
     public SessionTime updateSessionTime (int sessionTimeID, SessionTime sessionTime)
-    {return SessionTimeRepo.updateSessionTime(sessionTimeID,sessionTime);}
+    {return SessionTimeRepo.updateSessionTime(sessionTimeID, sessionTime);}
 
 
 }
