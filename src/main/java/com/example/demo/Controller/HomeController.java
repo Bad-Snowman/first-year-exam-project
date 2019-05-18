@@ -73,6 +73,17 @@ public class HomeController {
         }
     }
 
+    @GetMapping("/addProject")
+    public String addProject() {
+        return "Home/addProject";
+    }
+
+    @PostMapping("/addProject")
+    public String addProject(@ModelAttribute Project project){
+        projectService.addProject(project);
+        return "redirect:/projectList";
+    }
+
     ////////// Employee //////////////
     // All GetMapping and PostMapping related to employee
     @GetMapping("employeeList")

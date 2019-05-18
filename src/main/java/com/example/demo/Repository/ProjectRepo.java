@@ -21,12 +21,12 @@ public class ProjectRepo {
         RowMapper<Project> rowMapper = new BeanPropertyRowMapper<>(Project.class);
         return template.query(sql, rowMapper);
     }
-/*
-    public Project addProject(Project p){
-        String sql = "INSERT INTO project (projectName, projectDesc, projectManager, projectExpectedTime) VALUES(?, ?)";
-        template.update(sql, p.getProjectName(),p.getProjectDesc(),p.getProjectExpectedTime());
+
+    public Project addProject(Project project){
+        String sql = "INSERT INTO project (projectName, projectDesc, projectManagerName, projectExpectedTime, projectUsedTime) VALUES(?, ?, ?, ?, ?)";
+        template.update(sql, project.getProjectName(),project.getProjectDesc(), project.getProjectManagerName(), project.getProjectExpectedTime(),project.getProjectUsedTime());
         return null;
-    }*/
+    }
 
     public Project findProjectById(int projectID){
         String sql = "SELECT * FROM project WHERE projectID = ?";

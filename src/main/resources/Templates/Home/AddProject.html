@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Opret ny medarbejder</h1>
+
+<form action="/addProject" method="post">
+
+    <table>
+        <tr>
+            <td>
+                <label>Projekt navn:</label>
+            </td>
+            <td>
+                <input type ="text" name="projectName"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Projekt Beskrivelse:</label>
+            </td>
+            <td>
+                <input type ="text" name="projectDesc"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Projekt manager:</label>
+            </td>
+            <td>
+                <input type ="text" name="projectManagerName"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Forventet tid(timer)</label>
+            </td>
+            <td>
+                <input type ="text" name="projectExpectedTime"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Brugt tid(timer)</label>
+            </td>
+            <td>
+                <input type ="text" name="projectUsedTime"/>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Opret"/>
+</form>
+
+</body>
+</html>
