@@ -88,11 +88,14 @@ button.red:active {
 
 /* used from following site; https://codepen.io/timwagner/pen/pAecq */
 
-
-
-
-
-
+th{
+    background-color: green;
+}
+td, th{
+    border: 1px solid black;
+    text-align: center;
+    padding: 2px;
+}
 
 
 
