@@ -20,8 +20,6 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-
-
     @Autowired
     EmployeeService employeeService;
     @Autowired
@@ -39,7 +37,6 @@ public class HomeController {
         return "home/MainMenu";
     }
 
-
     /////////////// Project ////////////
     // All GetMapping and PostMapping related to project
     @GetMapping("/projectList")
@@ -52,7 +49,7 @@ public class HomeController {
     @GetMapping("/updateProject/{projectID}")
     public String updateProject(@PathVariable("projectID") int projectID, Model model) {
         model.addAttribute("project", projectService.findProjectById(projectID));
-        return "home/updateProject";
+        return "Home/ProjectUpdate";
     }
 
     @PostMapping("/updateProject")
@@ -60,6 +57,7 @@ public class HomeController {
         projectService.updateProject(project.getProjectID(), project);
         return "redirect:/";
     }
+
 
     @GetMapping("/deleteProject/{projectID}")
     public String deleteProject(@PathVariable("projectID") String projectID) {
@@ -84,6 +82,7 @@ public class HomeController {
 
     ////////// Employee //////////////
     // All GetMapping and PostMapping related to employee
+
     @GetMapping("employeeList")
     public String toEmployeeList(Model model) {
         List<Employee> employeeList = employeeService.fetchAll();
@@ -115,7 +114,6 @@ public class HomeController {
     /////////// SessionTime ////////////
     // All GetMapping and PostMapping related to session
 
-
     @GetMapping("/sessionList")
     public String sessionList(Model model) {
         List<SessionTime> sessionList = sessionTimeService.fetchAll();
@@ -133,17 +131,18 @@ public class HomeController {
         }
     }
 
-    @GetMapping ("/update/{sessionTimeID}")
-    public String update(@PathVariable("sessionTimeID") int sessionTimeID, Model model){
-        model.addAttribute("sessions", sessionTimeService.getSessionTimeID(sessionTimeID));
+    @GetMapping ("/updateSession/{sessionTimeID}")
+    public String updateSession(@PathVariable("sessionTimeID") int sessionTimeID, Model model){
+        model.addAttribute("sessions", sessionTimeService.findSessionByID(sessionTimeID));
         return "Home/SessionUpdate";
     }
 
     @PostMapping("/updateSession")
-    public String update (@ModelAttribute SessionTime sessionTime) {
+    public String updateSession (@ModelAttribute SessionTime sessionTime) {
         sessionTimeService.updateSessionTime(sessionTime.getSessionTimeID(), sessionTime);
         return "redirect:/";
     }
+
 
 
 }

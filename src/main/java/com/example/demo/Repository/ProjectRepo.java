@@ -39,10 +39,11 @@ public class ProjectRepo {
         return template.update(sql, projectID) > 0;
     }
 
-    public Project updateProject(int projectID, Project p){
+    public Project updateProject(int projectID, Project project){
         String sql = "UPDATE project SET projectName = ?, projectDesc = ?, projectManagerName = ?, " +
-                     "projectExpectedTime = ?, projectUsedTime = ?  WHERE projectID = ?";
-        template.update(sql, p.getProjectName(), p.getProjectDesc(),p.getProjectManagerName(), p.getProjectExpectedTime(), p.getProjectUsedTime());
+                "projectExpectedTime = ?, projectUsedTime = ? WHERE projectID=?";
+        template.update(sql, project.getProjectName(), project.getProjectDesc(), project.getProjectManagerName(),
+                project.getProjectExpectedTime(), project.getProjectUsedTime(), project.getProjectID());
         return null;
     }
 }

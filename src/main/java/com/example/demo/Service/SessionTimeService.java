@@ -10,21 +10,22 @@ import java.util.List;
 @Service
 public class SessionTimeService {
     @Autowired
-    SessionTimeRepo SessionTimeRepo;
+    SessionTimeRepo sessionTimeRepo;
 
-    public List<SessionTime> fetchAll(){return SessionTimeRepo.fetchAll();}
+    public List<SessionTime> fetchAll(){
+        return sessionTimeRepo.fetchAll();}
 
     public boolean deleteSessionTime(String sessionTimeID){
-        return SessionTimeRepo.deleteSessionTime(sessionTimeID);
+        return sessionTimeRepo.deleteSessionTime(sessionTimeID);
     }
 
-    public SessionTime getSessionTimeID(int sessionTimeID){
-        return SessionTimeRepo.getSessionTimeID(sessionTimeID);
+    public SessionTime findSessionByID(int sessionTimeID){
+        return sessionTimeRepo.findSessionByID(sessionTimeID);
     }
 
-    public SessionTime updateSessionTime (int sessionTimeID, SessionTime sessionTime)
-    {return SessionTimeRepo.updateSessionTime(sessionTimeID, sessionTime);}
-
+    public SessionTime updateSessionTime (int sessionTimeID, SessionTime sessionTime) {
+        return sessionTimeRepo.updateSessionTime(sessionTimeID, sessionTime);
+    }
 
 }
 

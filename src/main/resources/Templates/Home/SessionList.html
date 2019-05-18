@@ -8,6 +8,10 @@
 <body>
 <h1><a href="/"><img id="WizkidsLogo.png" src="WizkidsLogo.png" alt="WizkidsLogo"></a> - Alle sessioner</h1>
 
+<a href="/addSession">
+    <button class="green" id="btn-addProject">Opret session</button>
+</a>
+
 <table>
     <thead>
     <tr>
@@ -30,7 +34,7 @@
         <td th:text="${sessionTime.sessionTimeEmpID}"/>
         <td th:text="${sessionTime.sessionTimeProID}"/>
         <td>
-            <a th:href="@{'/update/'+${sessionTime.sessionTimeID}}">
+            <a th:href="@{'/updateSession/'+${sessionTime.sessionTimeID}}">
                 <button class="blue" id="btn-update">Opdater</button>
             </a>
 

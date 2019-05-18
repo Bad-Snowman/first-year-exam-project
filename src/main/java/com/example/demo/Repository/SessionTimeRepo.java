@@ -24,7 +24,7 @@ public class SessionTimeRepo {
         return template.query(sql, rowMapper);
     }
 
-    public SessionTime getSessionTimeID(int sessionTimeID){
+    public SessionTime findSessionByID(int sessionTimeID){
         String sql = "SELECT * FROM sessionTime WHERE sessionTimeID = ?";
         RowMapper<SessionTime> rowMapper = new BeanPropertyRowMapper<>(SessionTime.class);
         SessionTime sessionTime = template.queryForObject(sql, rowMapper, sessionTimeID);
@@ -32,18 +32,18 @@ public class SessionTimeRepo {
     }
 
     public SessionTime updateSessionTime(int sessionTimeID, SessionTime sessionTime){
-        String sql = "UPDATE sessionTime SET sessionTime (sessionTimeID,sessionTimeDate, sessionTimeStart, sessionTimeEnd, sessionTimeEmpID, sessionTimeProID)" +
-                "VALUES(?,?,?,?,?,?) WHERE sessionTimeID=?";
-        template.update(sql, sessionTime.getSessionTimeID(), sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(),
-                sessionTime.getSessionTimeEnd(), sessionTime.getSessionTimeEmpID(), sessionTime.getSessionTimeProID());
+        String sql = "UPDATE sessionTime SET sessionTimeDate = ?, sessionTimeStart = ?, " +
+                "sessionTimeEnd = ?, sessionTimeEmpID = ?, sessionTimeProID = ? WHERE sessionTimeID=?";
+        template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(),
+                sessionTime.getSessionTimeEnd(), sessionTime.getSessionTimeEmpID(),
+                sessionTime.getSessionTimeProID(), sessionTime.getSessionTimeID());
         return null;
     }
+
 
     public boolean deleteSessionTime(String sessionTimeID) {
         String sql = "DELETE FROM sessionTime WHERE sessionTimeID=?";
         return template.update(sql, sessionTimeID) > 0;
     }
-
-
 
 }
