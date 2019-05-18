@@ -1,6 +1,3 @@
-
-
-
 /* /////////////////////////////////// Buttons ////////////////////// */
 /* Normal button */
 button {
@@ -88,16 +85,44 @@ button.red:active {
 
 /* used from following site; https://codepen.io/timwagner/pen/pAecq */
 
+
+/* ///////////////// TABLES ///////////// */
+table{
+    border-collapse: collapse;
+    font-family: arial, sans-serif;
+    width: auto;
+    height: auto;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 th{
-    background-color: green;
+    background-color: lightblue;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    padding-right: 30px;
 }
-td, th{
-    border: 1px solid black;
-    text-align: center;
-    padding: 2px;
+
+tr{
+    background-color: white;
+    border-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+tr:nth-child(even){
+    background-color: lightgray;
 }
 
 
+/* ///////////// TEXT /////////////// */
+h1{
+    font-family:"Times New Roman";
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
+}
 
 
 
