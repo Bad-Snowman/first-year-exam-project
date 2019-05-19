@@ -1,3 +1,8 @@
+
+/* ////////////////////////////BODY//////////////////////// */
+
+
+
 /* /////////////////////////////////// Buttons ////////////////////// */
 /* Normal button */
 button {
@@ -126,11 +131,6 @@ h1{
 }
 
 
-
-
-
-
-
 /* //////////////////////////// DROP DOWN////////////////// */
 /* Dropdown Button */
 .dropbtn {
@@ -172,4 +172,5 @@ h1{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
 

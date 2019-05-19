@@ -14,6 +14,8 @@ public class SessionTimeRepo {
     @Autowired
     JdbcTemplate template;
 
+
+    //Handles sql statements
     public List<SessionTime> fetchAll(){
         String sql;
 
@@ -33,7 +35,7 @@ public class SessionTimeRepo {
 
     public SessionTime updateSessionTime(int sessionTimeID, SessionTime sessionTime){
         String sql = "UPDATE sessionTime SET sessionTimeDate = ?, sessionTimeStart = ?, " +
-                "sessionTimeEnd = ?, sessionTimeEmpID = ?, sessionTimeProID = ? WHERE sessionTimeID=?";
+                "sessionTimeEnd = ?, sessionTimeEmpID = ?, sessionTimeProID = ? WHERE sessionTimeID = ?";
         template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(),
                 sessionTime.getSessionTimeEnd(), sessionTime.getSessionTimeEmpID(),
                 sessionTime.getSessionTimeProID(), sessionTime.getSessionTimeID());
