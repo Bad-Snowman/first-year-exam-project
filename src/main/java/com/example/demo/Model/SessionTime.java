@@ -14,21 +14,16 @@ public class SessionTime {
     //Attributes, we use the DateTimeFormat to select the way we want the dates and times to be shown
     @Id
     private int sessionTimeID;
-    @DateTimeFormat(pattern = "hh:mm:ss")
-    private Time sessionTimeStart;
-    @DateTimeFormat(pattern = "hh:mm:ss")
-    private Time sessionTimeEnd;
-
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date SessionTimeDate;
-
+    private String sessionTimeStart;
+    private String sessionTimeEnd;
+    private String SessionTimeDate;
     private int SessionTimeEmpID;
     private int sessionTimeProID;
 
     public SessionTime(){};
 
-    public SessionTime(int sessionTimeID, Time sessionTimeStart, Time sessionTimeEnd,
-                       Date sessionTimeDate, int sessionTimeEmpID, int sessionTimeProID) {
+    public SessionTime(int sessionTimeID, String sessionTimeStart, String sessionTimeEnd,
+                       String sessionTimeDate, int sessionTimeEmpID, int sessionTimeProID) {
         this.sessionTimeID = sessionTimeID;
         this.sessionTimeStart = sessionTimeStart;
         this.sessionTimeEnd = sessionTimeEnd;
@@ -47,27 +42,23 @@ public class SessionTime {
         this.sessionTimeID = sessionTimeID;
     }
 
-    public Time getSessionTimeStart() {
-        return sessionTimeStart;
-    }
+    public String getSessionTimeStart() { return sessionTimeStart; }
 
-    public void setSessionTimeStart(Time sessionTimeStart) {
+    public void setSessionTimeStart(String sessionTimeStart) {
         this.sessionTimeStart = sessionTimeStart;
     }
 
-    public Time getSessionTimeEnd() {
+    public String getSessionTimeEnd() {
         return sessionTimeEnd;
     }
 
-    public void setSessionTimeEnd(Time sessionTimeEnd) {
-        this.sessionTimeEnd = sessionTimeEnd;
-    }
+    public void setSessionTimeEnd(String sessionTimeEnd) { this.sessionTimeEnd = sessionTimeEnd; }
 
-    public Date getSessionTimeDate() {
+    public String getSessionTimeDate() {
         return SessionTimeDate;
     }
 
-    public void setSessionTimeDate(Date sessionTimeDate) {
+    public void setSessionTimeDate(String sessionTimeDate) {
         SessionTimeDate = sessionTimeDate;
     }
 
