@@ -11,7 +11,6 @@ import java.util.Date;
 @Entity
 public class SessionTime {
 
-    //Attributes, we use the DateTimeFormat to select the way we want the dates and times to be shown
     @Id
     private int sessionTimeID;
     private String sessionTimeStart;

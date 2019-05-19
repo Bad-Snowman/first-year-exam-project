@@ -111,6 +111,18 @@ public class HomeController {
         }
     }
 
+    @GetMapping ("/updateEmployee/{employeeID}")
+    public String updateEmployee(@PathVariable("employeeID") int employeeID, Model model){
+        model.addAttribute("employees", employeeService.findEmployeeByID(employeeID));
+        return "Home/EmployeeUpdate";
+    }
+
+    @PostMapping("/updateEmployee")
+    public String updateEmployee (@ModelAttribute Employee employee) {
+        employeeService.updateEmployee(employee.getEmployeeID(), employee);
+        return "redirect:/";
+    }
+
     /////////// SessionTime ////////////
     // All GetMapping and PostMapping related to session
 

@@ -32,6 +32,10 @@
         <td th:text="${employee.employeeEmail}"/>
         <td th:text="${employee.employeePhone}"/>
         <td>
+            <a th:href="@{'/updateEmployee/'+${employee.employeeID}}">
+                <button class="blue" id="btn-update">Opdater</button>
+            </a>
+
             <a td th:href="@{'/deleteEmployee/'+${employee.employeeID}}">
                 <button class="red" id="btn-delete">Slet</button>
             </a>

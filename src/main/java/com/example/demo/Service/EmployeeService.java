@@ -24,5 +24,13 @@ public class EmployeeService {
         return employeeRepo.deleteEmployee(employeeID);
     }
 
+    public Employee findEmployeeByID(int employeeID){
+        return employeeRepo.findEmployeeByID(employeeID);
+    }
+
+    public Employee updateEmployee(int employeeID, Employee employee){
+        return employeeRepo.updateEmployee(employeeID, employee);
+    }
+
 
 }

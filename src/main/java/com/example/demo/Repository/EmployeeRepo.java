@@ -30,4 +30,19 @@ public class EmployeeRepo {
         String sql = "DELETE FROM employee WHERE employeeID=?";
         return template.update(sql, employeeID) > 0;
     }
+
+    public Employee findEmployeeByID(int employeeID){
+        String sql = "SELECT * FROM employee WHERE employeeID = ?";
+        RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
+        Employee employee = template.queryForObject(sql, rowMapper, employeeID);
+        return employee;
+    }
+
+    public Employee updateEmployee(int employeeID, Employee employee){
+        String sql = "UPDATE employee SET employeeFirstName = ?, employeeLastName = ?, " +
+                "employeeEmail = ?, employeePhone = ? WHERE employeeID = ?";
+        template.update(sql, employee.getEmployeeFirstName(), employee.getEmployeeLastName(),
+                employee.getEmployeeEmail(), employee.getEmployeePhone(), employee.getEmployeeID());
+        return null;
+    }
 }

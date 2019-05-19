@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" type="text/css" href="MyCss.css">
+</head>
+<body>
+<h1>
+    <a href="/"><img id="WizkidsLogo.png" src="WizkidsLogo.png" alt="WizkidsLogo"></a>
+    -Opdater medarbejder
+</h1>
+
+<form action="/updateEmployee" method="post">
+    <table>
+        <tr>
+            <td>
+                <p>Medarbejder-ID: </p>
+            </td>
+            <td>
+                <input type="text" name="employeeID" th:value="${employees.employeeID}" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Fornavn: </p>
+            </td>
+            <td>
+                <input type="text" name="employeeFirstName" th:value="${employees.employeeFirstName}" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Efternavn: </p>
+            </td>
+            <td>
+                <input type="text" name="employeeLastName" th:value="${employees.employeeLastName}" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>E-mail: </p>
+            </td>
+            <td>
+                <input type="text" name="employeeEmail" th:value="${employees.employeeEmail}" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Telefon nummer: </p>
+            </td>
+            <td>
+                <input type="text" name="employeePhone" th:value="${employees.employeePhone}" />
+            </td>
+        </tr>
+
+        <input type="submit" value="Save changes"/>
+
+    </table>
+
+</form>
+</body>
+</html>
