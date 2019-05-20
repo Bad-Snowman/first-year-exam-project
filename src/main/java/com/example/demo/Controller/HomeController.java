@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
-//
+
+
 @Controller
 public class HomeController {
 
@@ -55,15 +56,14 @@ public class HomeController {
     @PostMapping("/updateProject")
     public String updateProject(@ModelAttribute Project project) {
         projectService.updateProject(project.getProjectID(), project);
-        return "redirect:/";
+        return "redirect:/projectList";
     }
-
 
     @GetMapping("/deleteProject/{projectID}")
     public String deleteProject(@PathVariable("projectID") String projectID) {
         boolean deleted = projectService.deleteProject(projectID);
         if (deleted) {
-            return "redirect:/";
+            return "redirect:/projectList";
         } else {
             return "redirect:/";
         }
@@ -120,7 +120,7 @@ public class HomeController {
     @PostMapping("/updateEmployee")
     public String updateEmployee (@ModelAttribute Employee employee) {
         employeeService.updateEmployee(employee.getEmployeeID(), employee);
-        return "redirect:/";
+        return "redirect:/employeeList";
     }
 
     /////////// SessionTime ////////////
@@ -137,7 +137,7 @@ public class HomeController {
     public String deleteSessionTime(@PathVariable("sessionTimeID") String sessionTimeID) {
         boolean deleted = sessionTimeService.deleteSessionTime(sessionTimeID);
         if (deleted) {
-            return "redirect:/";
+            return "redirect:/sessionList";
         } else {
             return "redirect:/";
         }
@@ -152,7 +152,7 @@ public class HomeController {
     @PostMapping("/updateSession")
     public String updateSession (@ModelAttribute SessionTime sessionTime) {
         sessionTimeService.updateSessionTime(sessionTime.getSessionTimeID(), sessionTime);
-        return "redirect:/";
+        return "redirect:/sessionList";
     }
 
     @GetMapping("/addSession")
@@ -166,11 +166,8 @@ public class HomeController {
     @PostMapping("/addSession")
     public String addSession(@ModelAttribute SessionTime sessionTime){
         sessionTimeService.addSessionTime(sessionTime);
-        return "redirect:/";
+        return "redirect:/sessionList";
     }
-
-
-
 
 }
 
