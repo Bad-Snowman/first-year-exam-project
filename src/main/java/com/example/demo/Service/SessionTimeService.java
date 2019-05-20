@@ -38,7 +38,7 @@ public class SessionTimeService {
 
     public String getCurrentTimeUsingDate() {
         Date date = new Date();
-        String strDateFormat = "hh:mm";
+        String strDateFormat = "HH:mm";
         DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
         String localTime = dateFormat.format(date);
         return localTime;
@@ -46,7 +46,7 @@ public class SessionTimeService {
 
     public String getCurrentDate() {
         Date date = new Date();
-        String strDateFormat = "yyyy-MM-dd";
+        String strDateFormat = "dd-MM-yyyy";
         DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
         String localDate = dateFormat.format(date);
         return localDate;

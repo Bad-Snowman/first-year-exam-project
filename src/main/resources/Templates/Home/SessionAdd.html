@@ -8,19 +8,19 @@
 </head>
 <body>
 <div id="logo">
-<a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
+    <a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
 </div>
 
 <h1>TILFØJ MEDARBEJDER</h1>
-<form action="/addSession" method="post">
 
+<form action="/addSession" method="post">
     <table>
         <tr>
             <td>
                 <label>Dato (YYYY-MM-DD): </label>
             </td>
             <td>
-                <input type ="text" name="sessionTimeDate"/>
+                <input type="text" name="sessionTimeDate" th:value="${localDate}"/>
             </td>
         </tr>
 
@@ -29,7 +29,7 @@
                 <label>Tid start: </label>
             </td>
             <td>
-                <input type ="text" name="sessionTimeStart" th:value="${localTime}" />
+                <input type="text" name="sessionTimeStart" th:value="${localTime}"/>
             </td>
         </tr>
 
@@ -38,7 +38,7 @@
                 <label>Tid slut: </label>
             </td>
             <td>
-                <input type ="text" name="sessionTimeEnd"/>
+                <input type="text" name="sessionTimeEnd"/>
             </td>
         </tr>
         <tr>
@@ -46,7 +46,7 @@
                 <label>Medarbejder-ID: </label>
             </td>
             <td>
-                <input type ="text" name="sessionTimeEmpID"/>
+                <input type="text" name="sessionTimeEmpID"/>
             </td>
         </tr>
         <tr>
@@ -54,7 +54,7 @@
                 <label>Projekt-ID: </label>
             </td>
             <td>
-                <input type ="text" name="sessionTimeProID"/>
+                <input type="text" name="sessionTimeProID"/>
             </td>
         </tr>
 

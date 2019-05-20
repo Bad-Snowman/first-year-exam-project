@@ -93,6 +93,7 @@ button.red:active {
     background: -ms-linear-gradient(top, #D74736, #AD2719);
 }
 
+
 /* used from following site; https://codepen.io/timwagner/pen/pAecq */
 
 
@@ -100,38 +101,41 @@ button.red:active {
 table{
     border-collapse: collapse;
     font-family: arial, sans-serif;
-    width: 1200px;
-    height: 100px;
+    /*width: 1200px;
+    height: 300px;*/
     text-align: left;
-    padding-left: 20px;
     margin-left: auto;
     margin-right: auto;
 }
 
 th{
     background-color: #4472c4;
-    height: 40px;
+    /*height: 40px;*/
     font-size: 16px;
     color: white;
-    padding-right: 30px;
-
-}
-
-th, td{
-
-    border: 2px solid grey;
+    padding-left: 5px;
+    border: 1px solid white;
 
 }
 
 tr{
     background-color: white;
-    border-bottom: 10px;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 2px;
+    padding-left: 2px;
+    border: 1px solid white;
+
+}
+
+td{
+    border-right: 1px solid white;
 }
 
 tr:nth-child(even){
     background-color: #cdd4ea
+}
+
+tableScroll{
+    overflow-x: auto;
 }
 
 /* ///////////// TEXT /////////////// */

@@ -1,29 +1,17 @@
 <DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Opret medarbejder</title>
-    <link rel="stylesheet" type="text/css" href="/MyCss.css">
-    <style>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Opret medarbejder</title>
+        <link rel="stylesheet" type="text/css" href="/MyCss.css">
 
-        body{
-            text-align: center;
-        }
-        table{
-            margin-left: auto;
-            margin-right: auto;
-        }
-        table, th, td {
-            border: 1px solid grey;
-        }
-    </style>
 
-</head>
-<body>
-<div id="logo">
-<a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
-</div>
-<h1>TILFØJ MEDARBEJDER</h1>
+    </head>
+    <body>
+    <div id="logo">
+        <a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
+    </div>
+    <h1>TILFØJ MEDARBEJDER</h1>
 
     <form action="/addEmployee" method="post">
 
@@ -33,7 +21,7 @@
                     <label>Fornavn:</label>
                 </td>
                 <td>
-                    <input type ="text" name="employeeFirstName"/>
+                    <input type="text" name="employeeFirstName"/>
                 </td>
             </tr>
 
@@ -42,7 +30,7 @@
                     <label>Efternavn:</label>
                 </td>
                 <td>
-                    <input type ="text" name="employeeLastName"/>
+                    <input type="text" name="employeeLastName"/>
                 </td>
             </tr>
 
@@ -51,7 +39,7 @@
                     <label>Email:</label>
                 </td>
                 <td>
-                    <input type ="text" name="employeeEmail"/>
+                    <input type="text" name="employeeEmail"/>
                 </td>
             </tr>
             <tr>
@@ -59,12 +47,12 @@
                     <label>Telefon nr:</label>
                 </td>
                 <td>
-                    <input type ="text" name="employeePhone"/>
+                    <input type="text" name="employeePhone"/>
                 </td>
             </tr>
 
         </table>
         <input type="submit" value="Opret"/>
     </form>
-</body>
-</html>
+    </body>
+    </html>

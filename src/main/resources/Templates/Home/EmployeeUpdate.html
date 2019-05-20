@@ -4,25 +4,12 @@
     <meta charset="UTF-8">
     <title>Opdater medarbejdere</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
-    <style>
 
-        body{
-            text-align: center;
-        }
-        table{
-            margin-left: auto;
-            margin-right: auto;
-        }
-        table, th, td {
-            border: 1px solid grey;
-        }
-
-    </style>
 </head>
 <body>
 
 <div id="logo">
-<a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
+    <a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
 </div>
 
 <h1>OPDATER MEDARBEDJERE</h1>
@@ -34,7 +21,7 @@
                 <p>Medarbejder-ID: </p>
             </td>
             <td>
-                <input type="text" name="employeeID" th:value="${employees.employeeID}" />
+                <input type="text" name="employeeID" th:value="${employees.employeeID}"/>
             </td>
         </tr>
 
@@ -43,7 +30,7 @@
                 <p>Fornavn: </p>
             </td>
             <td>
-                <input type="text" name="employeeFirstName" th:value="${employees.employeeFirstName}" />
+                <input type="text" name="employeeFirstName" th:value="${employees.employeeFirstName}"/>
             </td>
         </tr>
 
@@ -52,7 +39,7 @@
                 <p>Efternavn: </p>
             </td>
             <td>
-                <input type="text" name="employeeLastName" th:value="${employees.employeeLastName}" />
+                <input type="text" name="employeeLastName" th:value="${employees.employeeLastName}"/>
             </td>
         </tr>
 
@@ -61,7 +48,7 @@
                 <p>E-mail: </p>
             </td>
             <td>
-                <input type="text" name="employeeEmail" th:value="${employees.employeeEmail}" />
+                <input type="text" name="employeeEmail" th:value="${employees.employeeEmail}"/>
             </td>
         </tr>
 
@@ -70,7 +57,7 @@
                 <p>Telefon nummer: </p>
             </td>
             <td>
-                <input type="text" name="employeePhone" th:value="${employees.employeePhone}" />
+                <input type="text" name="employeePhone" th:value="${employees.employeePhone}"/>
             </td>
         </tr>
 

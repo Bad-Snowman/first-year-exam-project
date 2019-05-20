@@ -47,6 +47,12 @@ public class HomeController {
         return "Home/ProjectList";
     }
 
+    @GetMapping ("/projectDetails/{sessionTimeProID}")
+    public String projectDetails(@PathVariable("sessionTimeProID") int projectID, Model model){
+        model.addAttribute("project", projectService.findProjectById(projectID));
+        return "Home/ProjectUpdate";
+    }
+
     @GetMapping("/updateProject/{projectID}")
     public String updateProject(@PathVariable("projectID") int projectID, Model model) {
         model.addAttribute("project", projectService.findProjectById(projectID));
@@ -114,6 +120,11 @@ public class HomeController {
         }
     } */
 
+    @GetMapping ("/employeeDetails/{sessionTimeEmpID}")
+    public String employeeDetails(@PathVariable("sessionTimeEmpID") int employeeID, Model model){
+        model.addAttribute("employees", employeeService.findEmployeeByID(employeeID));
+        return "Home/EmployeeUpdate";
+    }
     @GetMapping ("/updateEmployee/{employeeID}")
     public String updateEmployee(@PathVariable("employeeID") int employeeID, Model model){
         model.addAttribute("employees", employeeService.findEmployeeByID(employeeID));
