@@ -158,6 +158,7 @@ public class HomeController {
     @GetMapping("/addSession")
     public String addSession(Model model) {
         model.addAttribute("localTime", sessionTimeService.getCurrentTimeUsingDate());
+        model.addAttribute("localDate", sessionTimeService.getCurrentDate());
 
         return "Home/SessionAdd";
     }
