@@ -41,6 +41,7 @@
         <th>Tid start</th>
         <th>Tid slut</th>
         <th>Medarbejder ID</th>
+        <th>Vis detaljer</th>
         <th>Medarbejder navn</th>
         <th>Projekt ID</th>
         <th>Projekt navn</th>
@@ -59,6 +60,13 @@
         <td th:text="${sessionTime.sessionTimeStart}"/>
         <td th:text="${sessionTime.sessionTimeEnd}"/>
         <td th:text="${sessionTime.sessionTimeEmpID}"/>
+
+            <td>
+                <a href="@{'/updateEmployee/'+${sessionTime.sessionTimeEmpID}}">
+                    <button class="blue" id="btn-EmployeeUpdate">Detaljer</button>
+                </a>
+            </td>
+
         <td th:text="${sessionTime.employeeLastName}"/>
         <td th:text="${sessionTime.sessionTimeProID}"/>
         <td th:text="${sessionTime.projectName}"/>
