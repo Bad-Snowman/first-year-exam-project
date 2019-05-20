@@ -18,7 +18,7 @@ public class SessionTimeRepo {
     @Autowired
     JdbcTemplate template;
 
-
+//
     //Handles sql statements
     public List<SessionTime> fetchAll(){
         String sql;
