@@ -6,19 +6,36 @@
     <link rel="stylesheet" type="text/css" href="/MyCss.css"/>
     <style>
         body {
-            background-color: whitesmoke;
-            text-align: center;
+            backgund-color: whitesmoke;
+
         }
         table{
             margin-left: auto;
             margin-right: auto;
         }
+        #main{
+            padding-left: 43%;
+            padding-right: 45%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: lightblue;
+        }
         h1{
+            font-size: 40px;
             text-align: center;
+            padding-bottom: 30px;
         }
         #logo{
+            padding-left: 30px;
+            padding-top: 30px;
             text-align: left;
         }
+        .blue
+        {
+            padding: 20px 50px;
+            font-size: 15px
+        }
+
     </style>
 </head>
 <body>
@@ -26,27 +43,19 @@
     <a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
 </div>
     <h1>
-     Hovedmenu
+     HOVEDMENU
     </h1>
-
-
-<table>
-    <td>
-        <a href="/employeeList">
-            <button class="blue" id="btn-employeeList">Vis medarbejderliste</button>
-        </a>
-    </td>
-    <td>
-        <a href="/sessionList">
-            <button class="blue" id="btn-sessionList">Se alle sessioner</button>
-        </a>
-    </td>
-    <td>
-        <a href="/projectList">
-            <button class="blue" id="btn-projectList">Se alle projekter</button>
-        </a>
-    </td>
-</table>
+<div id="main">
+    <a href="/employeeList">
+    <button class="blue" id="btn-employeeList">Vis medarbejderliste</button>
+    </a>
+    <a href="/sessionList">
+    <button class="blue" id="btn-sessionList">Se alle sessioner</button>
+    </a>
+    <a href="/projectList">
+    <button class="blue" id="btn-projectList">Se alle projekter</button>
+    </a>
+</div>
 
 
 
