@@ -91,7 +91,7 @@ public class HomeController {
         return "Home/EmployeeList";
     }
 
-    @GetMapping("/addEmployee")
+    @GetMapping("/addEmployee") 
     public String addEmployee() {
         return "Home/EmployeeAdd";
     }

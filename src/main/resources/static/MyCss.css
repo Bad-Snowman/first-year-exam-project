@@ -68,7 +68,6 @@ button.green:active {
     box-shadow: inset 0 2px 5px #85fe1e;
 }
 
-
 /* Red button */
 button.red {
     background: -webkit-linear-gradient(top, #DD4B39, #D14836);
@@ -127,8 +126,13 @@ tr:nth-child(even){
 
 /* ///////////// TEXT /////////////// */
 h1{
-    font-family:"Times New Roman";
+    font-family:"Century Gothic";
     margin-bottom: 0.5vw;
     margin-top: 0.5vw;
 }
 
+#logo{
+    padding-left: 30px;
+    padding-top: 30px;
+    text-align: left;
+}
