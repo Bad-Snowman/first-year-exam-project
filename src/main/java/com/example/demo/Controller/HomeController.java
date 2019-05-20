@@ -156,15 +156,19 @@ public class HomeController {
     }
 
     @GetMapping("/addSession")
-    public String addSession() {
+    public String addSession(Model model) {
+        model.addAttribute("localTime", sessionTimeService.getCurrentTimeUsingDate());
+
         return "Home/SessionAdd";
     }
 
-    @PostMapping("/SessionAdd")
+    @PostMapping("/addSession")
     public String addSession(@ModelAttribute SessionTime sessionTime){
         sessionTimeService.addSessionTime(sessionTime);
         return "redirect:/";
     }
+
+
 
 
 }

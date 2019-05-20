@@ -46,24 +46,18 @@ public class SessionTimeRepo {
         return null;
     }
 
-
     public boolean deleteSessionTime(String sessionTimeID) {
         String sql = "DELETE FROM sessionTime WHERE sessionTimeID=?";
         return template.update(sql, sessionTimeID) > 0;
     }
 
-    public static void getCurrentTimeUsingDate() {
-        Date date = new Date();
-        String strDateFormat = "hh:mm:ss a";
-        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
-        String formattedDate= dateFormat.format(date);
-
-        System.out.println(formattedDate);
-    }
 
     public SessionTime addSessionTime(SessionTime sessionTime) {
-        String sql = "INSERT INTO sessionTime (sessionTimeDate, sessionTimeStart, sessionTimeEnd, sessionTimeEmpID, sessionTimeProID) VALUES(?, ?, ?, ?, ?)";
-        template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(), sessionTime.getSessionTimeEnd(), sessionTime.getSessionTimeEmpID(), sessionTime.getSessionTimeProID());
+        String sql = "INSERT INTO sessionTime (sessionTimeDate, sessionTimeStart, sessionTimeEnd, " +
+                "sessionTimeEmpID, sessionTimeProID) VALUES(?, ?, ?, ?, ?)";
+        template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(),
+                sessionTime.getSessionTimeEnd(), sessionTime.getSessionTimeEmpID(),
+                sessionTime.getSessionTimeProID());
         return null;
     }
 
