@@ -14,9 +14,9 @@ public class SessionTimeRepo {
     @Autowired
     JdbcTemplate template;
 
-//
+    //
     //Handles sql statements
-    public List<SessionTime> fetchAll(){
+    public List<SessionTime> fetchAll() {
         String sql;
 
         sql = "SELECT sessiontime.sessionTimeID, sessiontime.sessionTimeDate, sessiontime.sessionTimeStart,\n" +
@@ -33,15 +33,16 @@ public class SessionTimeRepo {
 
         return template.query(sql, rowMapper);
     }
-//
-    public SessionTime findSessionByID(int sessionTimeID){
+
+    //
+    public SessionTime findSessionByID(int sessionTimeID) {
         String sql = "SELECT * FROM sessionTime WHERE sessionTimeID = ?";
         RowMapper<SessionTime> rowMapper = new BeanPropertyRowMapper<>(SessionTime.class);
         SessionTime sessionTime = template.queryForObject(sql, rowMapper, sessionTimeID);
         return sessionTime;
     }
 
-    public SessionTime updateSessionTime(int sessionTimeID, SessionTime sessionTime){
+    public SessionTime updateSessionTime(int sessionTimeID, SessionTime sessionTime) {
         String sql = "UPDATE sessionTime SET sessionTimeDate = ?, sessionTimeStart = ?, " +
                 "sessionTimeEnd = ?, sessionTimeEmpID = ?, sessionTimeProID = ? WHERE sessionTimeID = ?";
         template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(),

@@ -12,11 +12,11 @@ public class EmployeeService {
     @Autowired
     EmployeeRepo employeeRepo;
 
-    public List<Employee> fetchAll(){
+    public List<Employee> fetchAll() {
         return employeeRepo.fetchAll();
     }
 
-    public Employee addEmployee(Employee employee){
+    public Employee addEmployee(Employee employee) {
         return employeeRepo.addEmployee(employee);
     }
 
@@ -25,11 +25,11 @@ public class EmployeeService {
         return employeeRepo.deleteEmployee(employeeID);
     } */
 
-    public Employee findEmployeeByID(int employeeID){
+    public Employee findEmployeeByID(int employeeID) {
         return employeeRepo.findEmployeeByID(employeeID);
     }
 
-    public Employee updateEmployee(int employeeID, Employee employee){
+    public Employee updateEmployee(int employeeID, Employee employee) {
         return employeeRepo.updateEmployee(employeeID, employee);
     }
 

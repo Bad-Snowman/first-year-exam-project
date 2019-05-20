@@ -59,6 +59,7 @@ public class HomeController {
         return "redirect:/projectList";
     }
 
+
     /* // Ikke muligt grundet fk og pk celler i sessions
     @GetMapping("/deleteProject/{projectID}")
     public String deleteProject(@PathVariable("projectID") String projectID) {

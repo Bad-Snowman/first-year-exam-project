@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Time;
 import java.util.Date;
+
 //
 @Entity
 public class SessionTime {
@@ -23,7 +24,10 @@ public class SessionTime {
 
     private String projectName;
 
-    public SessionTime(){};
+    public SessionTime() {
+    }
+
+    ;
 
     public SessionTime(int sessionTimeID, String sessionTimeStart, String sessionTimeEnd,
                        String sessionTimeDate, int sessionTimeEmpID, int sessionTimeProID,
@@ -49,7 +53,9 @@ public class SessionTime {
         this.sessionTimeID = sessionTimeID;
     }
 
-    public String getSessionTimeStart() { return sessionTimeStart; }
+    public String getSessionTimeStart() {
+        return sessionTimeStart;
+    }
 
     public void setSessionTimeStart(String sessionTimeStart) {
         this.sessionTimeStart = sessionTimeStart;
@@ -59,7 +65,9 @@ public class SessionTime {
         return sessionTimeEnd;
     }
 
-    public void setSessionTimeEnd(String sessionTimeEnd) { this.sessionTimeEnd = sessionTimeEnd; }
+    public void setSessionTimeEnd(String sessionTimeEnd) {
+        this.sessionTimeEnd = sessionTimeEnd;
+    }
 
     public String getSessionTimeDate() {
         return SessionTimeDate;
