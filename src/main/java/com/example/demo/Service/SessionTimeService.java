@@ -14,23 +14,25 @@ import java.util.List;
 public class SessionTimeService {
     @Autowired
     SessionTimeRepo sessionTimeRepo;
-//
-    public List<SessionTime> fetchAll(){
-        return sessionTimeRepo.fetchAll();}
 
-    public boolean deleteSessionTime(String sessionTimeID){
+    //
+    public List<SessionTime> fetchAll() {
+        return sessionTimeRepo.fetchAll();
+    }
+
+    public boolean deleteSessionTime(String sessionTimeID) {
         return sessionTimeRepo.deleteSessionTime(sessionTimeID);
     }
 
-    public SessionTime findSessionByID(int sessionTimeID){
+    public SessionTime findSessionByID(int sessionTimeID) {
         return sessionTimeRepo.findSessionByID(sessionTimeID);
     }
 
-    public SessionTime updateSessionTime (int sessionTimeID, SessionTime sessionTime) {
+    public SessionTime updateSessionTime(int sessionTimeID, SessionTime sessionTime) {
         return sessionTimeRepo.updateSessionTime(sessionTimeID, sessionTime);
     }
 
-    public SessionTime addSessionTime(SessionTime sessionTime){
+    public SessionTime addSessionTime(SessionTime sessionTime) {
         return sessionTimeRepo.addSessionTime(sessionTime);
     }
 
@@ -41,6 +43,7 @@ public class SessionTimeService {
         String localTime = dateFormat.format(date);
         return localTime;
     }
+
     public String getCurrentDate() {
         Date date = new Date();
         String strDateFormat = "yyyy-MM-dd";

@@ -19,6 +19,7 @@ public class Project {
     //123
     public Project(){}
 
+
     public Project(int projectID, String projectName, String projectDesc,
                    String projectManagerName, double projectExpectedTime, double projectUsedTime){
         this.projectID = projectID;

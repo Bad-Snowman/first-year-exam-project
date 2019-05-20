@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class ProjectManager{
+public class ProjectManager {
     @Id
     private int projectManagerId;
     private boolean projectManagerAccess;

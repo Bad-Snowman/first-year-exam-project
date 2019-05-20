@@ -14,7 +14,7 @@ public class EmployeeRepo {
     @Autowired
     JdbcTemplate template;
 
-    public List<Employee> fetchAll(){
+    public List<Employee> fetchAll() {
         String sql = "SELECT * FROM employee";
         RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
         return template.query(sql, rowMapper);
@@ -26,19 +26,20 @@ public class EmployeeRepo {
         return null;
     }
 
+    /* Ikke muligt grundet fk og pk celler i sessions
     public boolean deleteEmployee(int employeeID) {
         String sql = "DELETE FROM employee WHERE employeeID=?";
         return template.update(sql, employeeID) > 0;
-    }
+    } */
 
-    public Employee findEmployeeByID(int employeeID){
+    public Employee findEmployeeByID(int employeeID) {
         String sql = "SELECT * FROM employee WHERE employeeID = ?";
         RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
         Employee employee = template.queryForObject(sql, rowMapper, employeeID);
         return employee;
     }
 
-    public Employee updateEmployee(int employeeID, Employee employee){
+    public Employee updateEmployee(int employeeID, Employee employee) {
         String sql = "UPDATE employee SET employeeFirstName = ?, employeeLastName = ?, " +
                 "employeeEmail = ?, employeePhone = ? WHERE employeeID = ?";
         template.update(sql, employee.getEmployeeFirstName(), employee.getEmployeeLastName(),

@@ -59,6 +59,8 @@ public class HomeController {
         return "redirect:/projectList";
     }
 
+
+    /* // Ikke muligt grundet fk og pk celler i sessions
     @GetMapping("/deleteProject/{projectID}")
     public String deleteProject(@PathVariable("projectID") String projectID) {
         boolean deleted = projectService.deleteProject(projectID);
@@ -67,7 +69,7 @@ public class HomeController {
         } else {
             return "redirect:/";
         }
-    }
+    } */
 
     @GetMapping("/addProject")
     public String addProject() {
@@ -101,6 +103,7 @@ public class HomeController {
         return "redirect:/employeeList";
     }
 
+    /* // Ikke muligt grundet fk og pk celler i sessions
     @GetMapping("/deleteEmployee/{employeeID}")
     public String deleteEmployee(@PathVariable("employeeID") int employeeID) {
         boolean deleted = employeeService.deleteEmployee(employeeID);
@@ -109,7 +112,7 @@ public class HomeController {
         } else {
             return "redirect:/";
         }
-    }
+    } */
 
     @GetMapping ("/updateEmployee/{employeeID}")
     public String updateEmployee(@PathVariable("employeeID") int employeeID, Model model){

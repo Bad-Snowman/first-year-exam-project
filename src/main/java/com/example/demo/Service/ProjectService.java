@@ -12,23 +12,24 @@ public class ProjectService {
     @Autowired
     ProjectRepo projectRepo;
 
-    public List<Project> fetchAll(){
+    public List<Project> fetchAll() {
         return projectRepo.fetchAll();
     }
 
+    /* //Ikke muligt grundet fk og pk celler i sessions
     public boolean deleteProject(String projectID){
         return projectRepo.deleteProject(projectID);
-    }
+    } */
 
-    public Project addProject(Project project){
+    public Project addProject(Project project) {
         return projectRepo.addProject(project);
     }
 
-    public Project findProjectById(int projectID){
+    public Project findProjectById(int projectID) {
         return projectRepo.findProjectById(projectID);
     }
 
-    public Project updateProject(int projectID, Project p){
+    public Project updateProject(int projectID, Project p) {
         return projectRepo.updateProject(projectID, p);
     }
 }
