@@ -20,9 +20,10 @@ public class EmployeeService {
         return employeeRepo.addEmployee(employee);
     }
 
+    /* // Ikke muligt grundet fk og pk celler i sessions
     public boolean deleteEmployee(int employeeID) {
         return employeeRepo.deleteEmployee(employeeID);
-    }
+    } */
 
     public Employee findEmployeeByID(int employeeID){
         return employeeRepo.findEmployeeByID(employeeID);

@@ -16,9 +16,10 @@ public class ProjectService {
         return projectRepo.fetchAll();
     }
 
+    /* //Ikke muligt grundet fk og pk celler i sessions
     public boolean deleteProject(String projectID){
         return projectRepo.deleteProject(projectID);
-    }
+    } */
 
     public Project addProject(Project project){
         return projectRepo.addProject(project);

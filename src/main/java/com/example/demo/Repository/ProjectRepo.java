@@ -34,10 +34,12 @@ public class ProjectRepo {
         Project project = template.queryForObject(sql,rowMapper, projectID);
         return project;
     }
+
+    /* Ikke muligt grundet fk og pk celler i sessions
     public Boolean deleteProject(String projectID){
         String sql = "DELETE FROM project WHERE projectID = ?";
         return template.update(sql, projectID) > 0;
-    }
+    } */
 
     public Project updateProject(int projectID, Project project){
         String sql = "UPDATE project SET projectName = ?, projectDesc = ?, projectManagerName = ?, " +

@@ -26,10 +26,11 @@ public class EmployeeRepo {
         return null;
     }
 
+    /* Ikke muligt grundet fk og pk celler i sessions
     public boolean deleteEmployee(int employeeID) {
         String sql = "DELETE FROM employee WHERE employeeID=?";
         return template.update(sql, employeeID) > 0;
-    }
+    } */
 
     public Employee findEmployeeByID(int employeeID){
         String sql = "SELECT * FROM employee WHERE employeeID = ?";

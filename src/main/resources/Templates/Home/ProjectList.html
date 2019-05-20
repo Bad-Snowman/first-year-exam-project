@@ -5,18 +5,21 @@
     <title>Project List</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
     <style>
-        body{
+        body {
             background-color: whitesmoke;
             text-align: center;
         }
-        table{
+
+        table {
             margin-left: auto;
             margin-right: auto;
         }
-        h1{
+
+        h1 {
             text-align: center;
         }
-        #logo{
+
+        #logo {
             text-align: left;
         }
     </style>
@@ -24,14 +27,11 @@
 <body>
 
 <div id="logo">
-<a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
+    <a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
 </div>
 
 <h1>Alle projekter</h1>
 
-<a href="/addProject">
-    <button class="green" id="btn-addProject">Opret projekt</button>
-</a>
 
 <table>
     <thead>
@@ -42,32 +42,35 @@
         <th>Manager navn</th>
         <th>Forventet tid</th>
         <th>Brugt tid</th>
-        <th></th>
+        <th>
+            <a href="/addProject">
+                <button class="green" id="btn-addProject">Opret projekt</button>
+            </a>
+        </th>
     </tr>
 
     </thead>
     <tbody>
-    <tr th:each="project:${projects}" >
-        <td th:text="${project.projectID}"  />
-        <td th:text="${project.projectName}"  />
-        <td th:text="${project.projectDesc}"  />
-        <td th:text="${project.projectManagerName}"  />
-        <td th:text="${project.projectExpectedTime}"  />
-        <td th:text="${project.projectUsedTime}"  />
+    <tr th:each="project:${projects}">
+        <td th:text="${project.projectID}"/>
+        <td th:text="${project.projectName}"/>
+        <td th:text="${project.projectDesc}"/>
+        <td th:text="${project.projectManagerName}"/>
+        <td th:text="${project.projectExpectedTime}"/>
+        <td th:text="${project.projectUsedTime}"/>
         <td>
 
             <a th:href="@{'/updateProject/'+${project.projectID}}">
                 <button class="blue" id="btn-updateProject">Opdater</button>
             </a>
 
-            <a th:href="@{'/deleteProject/'+${project.projectID}}">
-                <button class="red" id="btn-delete">Slet</button>
-            </a>
+            <!-- <a th:href="@{'/deleteProject/'+${project.projectID}}">
+                   <button class="red" id="btn-delete">Slet</button>
+               </a> -->
         </td>
     </tr>
     </tbody>
 </table>
-
 
 
 </body>
