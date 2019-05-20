@@ -23,7 +23,15 @@ public class SessionTimeRepo {
     public List<SessionTime> fetchAll(){
         String sql;
 
-        sql = "SELECT * FROM sessionTime";
+        sql = "SELECT sessiontime.sessionTimeID, sessiontime.sessionTimeDate, sessiontime.sessionTimeStart,\n" +
+                "sessiontime.sessionTimeEnd, sessiontime.sessionTimeEmpID, employee.employeeLastName, sessiontime.sessionTimeProID,\n" +
+                "project.projectName\n" +
+                "\n" +
+                "FROM ((sessiontime\n" +
+                "\n" +
+                "INNER JOIN employee ON employee.employeeID = sessiontime.sessionTimeEmpID)\n" +
+                "INNER JOIN project ON project.projectID = sessiontime.sessionTimeProID)\n" +
+                "ORDER BY sessionTimeID ASC;";
 
         RowMapper<SessionTime> rowMapper = new BeanPropertyRowMapper<>(SessionTime.class);
 

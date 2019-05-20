@@ -30,7 +30,9 @@
         <th>Dato for session</th>
         <th>Tid start</th>
         <th>Tid slut</th>
+        <th>Medarbejder ID</th>
         <th>Medarbejder navn</th>
+        <th>Projekt ID</th>
         <th>Projekt navn</th>
     </tr>
     </thead>
@@ -42,7 +44,9 @@
         <td th:text="${sessionTime.sessionTimeStart}"/>
         <td th:text="${sessionTime.sessionTimeEnd}"/>
         <td th:text="${sessionTime.sessionTimeEmpID}"/>
+        <td th:text="${sessionTime.employeeLastName}"/>
         <td th:text="${sessionTime.sessionTimeProID}"/>
+        <td th:text="${sessionTime.projectName}"/>
         <td>
             <a th:href="@{'/updateSession/'+${sessionTime.sessionTimeID}}">
                 <button class="blue" id="btn-update">Opdater</button>
