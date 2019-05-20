@@ -36,10 +36,17 @@ public class SessionTimeService {
 
     public String getCurrentTimeUsingDate() {
         Date date = new Date();
-        String strDateFormat = "hh:mm:ss a";
+        String strDateFormat = "hh:mm";
         DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
         String localTime = dateFormat.format(date);
         return localTime;
+    }
+    public String getCurrentDate() {
+        Date date = new Date();
+        String strDateFormat = "yyyy-MM-dd";
+        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+        String localDate = dateFormat.format(date);
+        return localDate;
     }
 }
 
