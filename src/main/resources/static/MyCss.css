@@ -3,6 +3,9 @@
 
 
 
+/*////////////////////////TABLE/////////////////////////*/
+
+
 /* /////////////////////////////////// Buttons ////////////////////// */
 /* Normal button */
 button {
@@ -46,6 +49,7 @@ button.blue:hover {
 button.blue:active {
     box-shadow: inset 0 2px 5px #2370FE;
 }
+
 /* Green button*/
 button.green {
     color: white;
@@ -98,7 +102,7 @@ table{
     font-family: arial, sans-serif;
     width: auto;
     height: auto;
-    text-align: left;
+    text-align: center;
     padding-left: 20px;
     padding-right: 20px;
 }
