@@ -57,6 +57,8 @@ public class SessionTimeRepo {
         String strDateFormat = "hh:mm:ss a";
         DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
         String formattedDate= dateFormat.format(date);
+
+        System.out.println(formattedDate);
     }
 
     public SessionTime addSessionTime(SessionTime sessionTime) {

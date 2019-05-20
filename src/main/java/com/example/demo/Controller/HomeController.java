@@ -71,7 +71,7 @@ public class HomeController {
 
     @GetMapping("/addProject")
     public String addProject() {
-        return "Home/addProject";
+        return "Home/ProjectAdd";
     }
 
     @PostMapping("/addProject")
@@ -92,7 +92,7 @@ public class HomeController {
 
     @GetMapping("/addEmployee")
     public String addEmployee() {
-        return "Home/addEmployee";
+        return "Home/EmployeeAdd";
     }
 
     @PostMapping("/addEmployee")
@@ -160,7 +160,7 @@ public class HomeController {
         return "Home/SessionAdd";
     }
 
-    @PostMapping("/addSession")
+    @PostMapping("/SessionAdd")
     public String addSession(@ModelAttribute SessionTime sessionTime){
         sessionTimeService.addSessionTime(sessionTime);
         return "redirect:/";
