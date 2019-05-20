@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Employee List</title>
-    <link rel="stylesheet" type="text/css" href="/MyCss.css">
+    <link rel="stylesheet" type="text/css" href="MyCss.css">
     <style>
         body{
             background-color: whitesmoke;
@@ -13,14 +13,25 @@
             margin-left: auto;
             margin-right: auto;
         }
+        h1{
+            text-align: center;
+        }
+
+        #logo{
+            text-align: left;
+        }
+
     </style>
 </head>
 <body>
 
-<h1><a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a> - Alle sessioner</h1>
+<div id="logo">
+<a href="/"><img id="WizkidsLogo.png" src="WizkidsLogo.png" alt="WizkidsLogo"></a>
+</div>
 
+<h1>Alle medarbejdere</h1>
 
-<a href="/addEmployee">
+<a href="/addEmployee" id="addEmpBtn">
     <button class="green" id="btn-addEmployee">Opret ny Medarbejder</button>
 </a>
 
