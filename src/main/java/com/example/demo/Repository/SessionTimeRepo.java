@@ -37,7 +37,7 @@ public class SessionTimeRepo {
 
         return template.query(sql, rowMapper);
     }
-
+//
     public SessionTime findSessionByID(int sessionTimeID){
         String sql = "SELECT * FROM sessionTime WHERE sessionTimeID = ?";
         RowMapper<SessionTime> rowMapper = new BeanPropertyRowMapper<>(SessionTime.class);

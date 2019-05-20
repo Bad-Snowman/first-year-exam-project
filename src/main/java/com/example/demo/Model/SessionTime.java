@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Time;
 import java.util.Date;
-
+//
 @Entity
 public class SessionTime {
 
