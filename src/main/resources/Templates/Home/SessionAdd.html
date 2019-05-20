@@ -36,7 +36,7 @@
                 <label>Dato (YYYY-MM-DD): </label>
             </td>
             <td>
-                <input type ="text" name="sessionTimeDate"/>
+                <input type ="text" name="sessionTimeDate" th:value="${localDate}" />
             </td>
         </tr>
 
@@ -59,7 +59,7 @@
         </tr>
         <tr>
             <td>
-                <label>Medarbejder: </label>
+                <label>Medarbejder-ID: </label>
             </td>
             <td>
                 <input type ="text" name="sessionTimeEmpID"/>
@@ -67,7 +67,7 @@
         </tr>
         <tr>
             <td>
-                <label>Projekt navn:</label>
+                <label>Projekt-ID: </label>
             </td>
             <td>
                 <input type ="text" name="sessionTimeProID"/>
