@@ -27,6 +27,9 @@ public class SessionTimeService {
         return sessionTimeRepo.updateSessionTime(sessionTimeID, sessionTime);
     }
 
+    public SessionTime addSessionTime(SessionTime sessionTime){
+        return sessionTimeRepo.addSessionTime(sessionTime);
+    }
 }
 
 

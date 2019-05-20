@@ -155,6 +155,16 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @GetMapping("/addSession")
+    public String addSession() {
+        return "Home/SessionAdd";
+    }
+
+    @PostMapping("/addSession")
+    public String addSession(@ModelAttribute SessionTime sessionTime){
+        sessionTimeService.addSessionTime(sessionTime);
+        return "redirect:/";
+    }
 
 
 }

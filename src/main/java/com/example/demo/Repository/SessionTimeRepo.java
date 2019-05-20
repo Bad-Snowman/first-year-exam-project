@@ -42,10 +42,14 @@ public class SessionTimeRepo {
         return null;
     }
 
-
     public boolean deleteSessionTime(String sessionTimeID) {
         String sql = "DELETE FROM sessionTime WHERE sessionTimeID=?";
         return template.update(sql, sessionTimeID) > 0;
     }
 
+    public SessionTime addSessionTime(SessionTime sessionTime) {
+        String sql = "INSERT INTO sessionTime (sessionTimeDate, sessionTimeStart, sessionTimeEnd, sessionTimeEmpID, sessionTimeProID) VALUES(?, ?, ?, ?, ?)";
+        template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(), sessionTime.getSessionTimeEnd(), sessionTime.getSessionTimeEmpID(), sessionTime.getSessionTimeProID());
+        return null;
+    }
 }
