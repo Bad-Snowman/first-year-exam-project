@@ -4,28 +4,7 @@
     <meta charset="UTF-8">
     <title>Alle sessioner</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
-    <style>
 
-        body{
-            text-align: center;
-        }
-
-        table {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        h1 {
-            text-align: center;
-        }
-        table, th, td {
-            border: 1px solid grey;
-        }
-        #logo{
-            text-align: left;
-        }
-
-    </style>
 </head>
 <body>
 <div id="logo">
@@ -38,15 +17,15 @@
 <table>
     <thead>
     <tr>
-
         <th>Session ID</th>
         <th>Dato for session</th>
         <th>Tid start</th>
         <th>Tid slut</th>
-        <th>Medarbejder ID</th>
+        <th>Pers. ID</th>
         <th>Vis detaljer</th>
         <th>Medarbejder navn</th>
         <th>Projekt ID</th>
+        <th>Vis detaljer</th>
         <th>Projekt navn</th>
         <th>
             <a href="/addSession">
@@ -63,15 +42,18 @@
         <td th:text="${sessionTime.sessionTimeStart}"/>
         <td th:text="${sessionTime.sessionTimeEnd}"/>
         <td th:text="${sessionTime.sessionTimeEmpID}"/>
-
-            <td>
-                <a href="@{'/updateEmployee/'+${sessionTime.sessionTimeEmpID}}">
-                    <button class="blue" id="btn-EmployeeUpdate">Detaljer</button>
-                </a>
-            </td>
-
+        <td>
+            <a th:href="@{'/employeeDetails/'+${sessionTime.sessionTimeEmpID}}">
+                <button class="blue" id="btn-employeeDetails">Detaljer</button>
+            </a>
+        </td>
         <td th:text="${sessionTime.employeeLastName}"/>
         <td th:text="${sessionTime.sessionTimeProID}"/>
+        <td>
+            <a th:href="@{'/projectDetails/'+${sessionTime.sessionTimeProID}}">
+                <button class="blue" id="btn-projectDetails">Detaljer</button>
+            </a>
+        </td>
         <td th:text="${sessionTime.projectName}"/>
         <td>
             <a th:href="@{'/updateSession/'+${sessionTime.sessionTimeID}}">

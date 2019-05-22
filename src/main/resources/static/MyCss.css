@@ -39,6 +39,9 @@ button.blue {
     background: #4C8FFB;
     border: 1px #3079ED solid;
     box-shadow: inset 0 1px 0 #80B0FB;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
 button.blue:hover {
@@ -93,6 +96,7 @@ button.red:active {
     background: -ms-linear-gradient(top, #D74736, #AD2719);
 }
 
+
 /* used from following site; https://codepen.io/timwagner/pen/pAecq */
 
 
@@ -100,29 +104,41 @@ button.red:active {
 table{
     border-collapse: collapse;
     font-family: arial, sans-serif;
-    width: 1200px;
-    height: 100px;
+    /*width: 1200px;
+    height: 300px;*/
     text-align: left;
-    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 th{
     background-color: #4472c4;
-    height: 40px;
+    /*height: 40px;*/
     font-size: 16px;
     color: white;
-    padding-right: 30px;
+    padding-left: 5px;
+    border: 1px solid white;
+
 }
 
 tr{
     background-color: white;
-    border-bottom: 10px;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 2px;
+    padding-left: 2px;
+    border: 1px solid white;
+
+}
+
+td{
+    border-right: 1px solid white;
 }
 
 tr:nth-child(even){
     background-color: #cdd4ea
+}
+
+tableScroll{
+    overflow-x: auto;
 }
 
 /* ///////////// TEXT /////////////// */
@@ -131,6 +147,7 @@ h1{
     margin-bottom: 0.5vw;
     margin-top: 0.5vw;
     padding-bottom: 10px;
+    text-align: center;
 }
 
 #logo{

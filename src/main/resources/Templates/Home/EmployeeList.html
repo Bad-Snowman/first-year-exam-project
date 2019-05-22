@@ -4,27 +4,7 @@
     <meta charset="UTF-8">
     <title>Alle medarbejdere</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
-    <style>
 
-         body{
-            text-align: center;
-        }
-        table {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        h1 {
-            text-align: center;
-        }
-        table, th, td {
-            border: 1px solid grey;
-        }
-
-        #logo{
-            text-align: left;
-        }
-    </style>
 </head>
 <body>
 
@@ -33,41 +13,42 @@
 </div>
 
 <h1>ALLE MEDARBEJDERE</h1>
+<div id="tableScroll">
+    <table>
+        <thead>
+        <tr>
+            <th>Employee-ID</th>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+            <th>E-mail</th>
+            <th>Telefon nummer</th>
+            <th>
+                <a href="/addEmployee" id="addEmpBtn">
+                    <button class="green" id="btn-addEmployee">Opret ny Medarbejder</button>
+                </a>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee:${employees}">
+            <td th:text="${employee.employeeID}"/>
+            <td th:text="${employee.employeeFirstName}"/>
+            <td th:text="${employee.employeeLastName}"/>
+            <td th:text="${employee.employeeEmail}"/>
+            <td th:text="${employee.employeePhone}"/>
+            <td>
+                <a th:href="@{'/updateEmployee/'+${employee.employeeID}}">
+                    <button class="blue" id="btn-update">Opdater</button>
+                </a>
 
-<table>
-    <thead>
-    <tr>
-        <th>Employee-ID</th>
-        <th>Fornavn</th>
-        <th>Efternavn</th>
-        <th>E-mail</th>
-        <th>Telefon nummer</th>
-        <th>
-            <a href="/addEmployee" id="addEmpBtn">
-                <button class="green" id="btn-addEmployee">Opret ny Medarbejder</button>
-            </a>
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="employee:${employees}">
-        <td th:text="${employee.employeeID}"/>
-        <td th:text="${employee.employeeFirstName}"/>
-        <td th:text="${employee.employeeLastName}"/>
-        <td th:text="${employee.employeeEmail}"/>
-        <td th:text="${employee.employeePhone}"/>
-        <td>
-            <a th:href="@{'/updateEmployee/'+${employee.employeeID}}">
-                <button class="blue" id="btn-update">Opdater</button>
-            </a>
-
-           <!-- <a td th:href="@{'/deleteEmployee/'+${employee.employeeID}}">
-                <button class="red" id="btn-delete">Slet</button>
-            </a> -->
-        </td>
-    </tr>
-    </tbody>
-</table>
+                <!-- <a td th:href="@{'/deleteEmployee/'+${employee.employeeID}}">
+                     <button class="red" id="btn-delete">Slet</button>
+                 </a> -->
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 
 </body>
