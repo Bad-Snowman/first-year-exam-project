@@ -16,7 +16,7 @@ public class EmployeeService {
         return employeeRepo.fetchAll();
     }
 
-    public Employee addEmployee(Employee employee) {
+    public Employee addEmployee(Employee employee){
         return employeeRepo.addEmployee(employee);
     }
 
