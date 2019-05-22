@@ -1,4 +1,8 @@
 
+/* ////////////////////////////BODY//////////////////////// */
+
+
+
 
 
 /* /////////////////////////////////// Buttons ////////////////////// */
@@ -126,7 +130,7 @@ tr{
     padding-right: 2px;
     padding-left: 2px;
     border: 1px solid grey;
-
+;
 }
 
 td{
@@ -140,9 +144,6 @@ tr:nth-child(even){
     background-color: #cdd4ea
 }
 
-tableScroll{
-    overflow-x: auto;
-}
 
 /* ///////////// TEXT /////////////// */
 h1{
@@ -153,8 +154,38 @@ h1{
     text-align: center;
 }
 
-#logo{
+.container{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: solid;
+    border-bottom-color: #2F5BB7;
+}
+
+.logo{
     padding-left: 30px;
     padding-top: 30px;
-    text-align: left;
+    width: 160px;
+    height: 60px;
 }
+
+.navbar-header{
+    width: auto;
+    height: 100px;
+}
+
+button.topButton{
+    color: black;
+    background-color: transparent;
+    table-layout: fixed;
+    border-collapse: collapse;
+    float: right;
+    margin-left: auto;
+    margin-right: 3%;
+    width: 12%;
+    height: 70px;
+}
+

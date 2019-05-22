@@ -7,11 +7,34 @@
 
 </head>
 <body>
-<div id="logo">
-    <a href="/"><img id="WizkidsLogo.png" src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
-</div>
+<div id="wrapper">
 
-<h1>OPRET SESSION</h1>
+    <header id="header">
+
+        <div class="container">
+            <div class="navbar-header">
+
+                <a class="logo" href="/"><img src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
+
+                <a id="menu-item-32" href="/employeeList">
+                    <button class="topButton" id="btn-employeeList">Vis medarbejderliste</button>
+                </a>
+                <a id="menu-item-33" href="/sessionList">
+                    <button class="topButton" id="btn-sessionList">Se alle sessioner</button>
+                </a>
+                <a id="menu-item-34" href="/projectList">
+                    <button class="topButton" id="btn-projectList">Se alle projekter</button>
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <div>
+
+    </div>
+
+<h1>Opret session</h1>
 
 <form action="/addSession" method="post">
     <table>
