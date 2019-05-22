@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Scanner;
 
 @Service
 public class EmployeeService {
@@ -16,8 +17,14 @@ public class EmployeeService {
         return employeeRepo.fetchAll();
     }
 
+
     public Employee addEmployee(Employee employee){
-        return employeeRepo.addEmployee(employee);
+        if(employee.getEmployeePhone() > 0 && employee.getEmployeePhone() < 100000000){
+
+            return employeeRepo.addEmployee(employee);
+        } else {
+            return null;
+        }
     }
 
     /* // Ikke muligt grundet fk og pk celler i sessions
