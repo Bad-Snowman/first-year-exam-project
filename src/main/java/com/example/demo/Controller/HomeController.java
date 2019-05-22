@@ -172,5 +172,17 @@ public class HomeController {
         return "redirect:/sessionList";
     }
 
+    ///////////// Project Manager \\\\\\\\\\\\\\\\\\
+
+    @GetMapping("/projectManagerList")
+    public String toProjectManagerList(){
+        return "Home/ProjectManagerList";
+    }
+
+    @GetMapping("/projectManagerReport")
+    public String makeReport(){
+        return "home/ProjectManagerReport";
+    }
+
 }
 

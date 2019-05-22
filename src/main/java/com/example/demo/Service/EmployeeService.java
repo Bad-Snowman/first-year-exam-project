@@ -16,9 +16,10 @@ public class EmployeeService {
         return employeeRepo.fetchAll();
     }
 
-    public Employee addEmployee(Employee employee) {
+    public Employee addEmployee(Employee employee){
         return employeeRepo.addEmployee(employee);
     }
+
 
     /* // Ikke muligt grundet fk og pk celler i sessions
     public boolean deleteEmployee(int employeeID) {
