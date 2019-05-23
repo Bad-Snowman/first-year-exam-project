@@ -8,17 +8,18 @@ import javax.validation.constraints.Size;
 @Entity
 public class Employee {
     @Id
+
+    // Fields
     private int employeeID;
     private String employeeFirstName;
     private String employeeLastName;
-    @NotNull
-    @Size(min=10000000, max=100000000)
     private int employeePhone;
     private String employeeEmail;
 
+    // Constructors
+
     public Employee(){
     };
-
 
     public Employee(int employeeID, String employeeFirstName, String employeeLastName, int employeePhone, String employeeEmail) {
         this.employeeID = employeeID;

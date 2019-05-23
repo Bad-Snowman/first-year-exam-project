@@ -9,6 +9,8 @@ import java.sql.Time;
 @Entity
 public class Project {
     @Id
+
+    // Fields
     private int projectID;
     private String projectName;
     private String projectDesc;
@@ -16,7 +18,7 @@ public class Project {
     private double projectExpectedTime;
     private double projectUsedTime;
 
-    //123
+    // Constructors
     public Project(){}
 
 
