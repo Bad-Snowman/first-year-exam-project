@@ -62,7 +62,8 @@
             <td th:text="${project.projectDone}"/>
             <td>
                 <a th:href="@{'/updateProject/'+${project.projectID}}">
-                    <button class="blue" id="btn-updateProject"><i class="material-icons" style="font-size:26px">settings</i></button>
+                    <button class="blue" id="btn-updateProject">
+                        <i class="material-icons" style="font-size:26px">settings</i></button>
                 </a>
                 <!-- <a th:href="@{'/deleteProject/'+${project.projectID}}">
                        <button class="red" id="btn-delete">Slet</button>
