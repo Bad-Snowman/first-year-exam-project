@@ -20,6 +20,8 @@ import java.util.List;
 @Controller
 public class HomeController {
 
+    ////////// Autowire //////////////
+    // We make sure to autowire our service-classes to our Homecontroller
     @Autowired
     EmployeeService employeeService;
     @Autowired

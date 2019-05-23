@@ -14,20 +14,19 @@ public class EmployeeRepo {
     @Autowired
     JdbcTemplate template;
 
+    // A method which sends a SELECT keyword to the database to retrieve all data from the 'employee' table
     public List<Employee> fetchAll() {
         String sql = "SELECT * FROM employee";
         RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
         return template.query(sql, rowMapper);
     }
 
-
-    public Employee addEmployee (Employee employee) {
-
+    // A method which sends an INSERT keyword to the database
+    public Employee addEmployee(Employee employee) {
         String sql = "INSERT INTO employee (employeeFirstName, employeeLastName, employeeEmail, employeePhone) VALUES(?, ?, ?, ?)";
         template.update(sql, employee.getEmployeeFirstName(), employee.getEmployeeLastName(), employee.getEmployeeEmail(), employee.getEmployeePhone());
         return null;
     }
-
 
     /* Ikke muligt grundet fk og pk celler i sessions
     public boolean deleteEmployee(int employeeID) {
@@ -35,6 +34,7 @@ public class EmployeeRepo {
         return template.update(sql, employeeID) > 0;
     } */
 
+    // A method which uses a SELECT keyword with a WHERE clause to filter records by employeeID
     public Employee findEmployeeByID(int employeeID) {
         String sql = "SELECT * FROM employee WHERE employeeID = ?";
         RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
@@ -42,6 +42,7 @@ public class EmployeeRepo {
         return employee;
     }
 
+    // A method which uses an UPDATE keyword to modify the 'employee' table
     public Employee updateEmployee(int employeeID, Employee employee) {
         String sql = "UPDATE employee SET employeeFirstName = ?, employeeLastName = ?, " +
                 "employeeEmail = ?, employeePhone = ? WHERE employeeID = ?";
@@ -49,6 +50,4 @@ public class EmployeeRepo {
                 employee.getEmployeeEmail(), employee.getEmployeePhone(), employee.getEmployeeID());
         return null;
     }
-
-
 }

@@ -6,12 +6,14 @@ import javax.persistence.Id;
 @Entity
 public class ProjectManager {
     @Id
+
+    // Fields
     private int projectManagerId;
     private boolean projectManagerAccess;
     private String projectManagerWorksOn;
     private int projectManagerEmpId;
 
-
+    // Constructors
     public ProjectManager() {
 
     }

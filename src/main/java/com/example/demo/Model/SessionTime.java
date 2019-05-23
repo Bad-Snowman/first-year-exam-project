@@ -13,6 +13,7 @@ import java.util.Date;
 public class SessionTime {
 
     @Id
+    // Fields
     private int sessionTimeID;
     private String sessionTimeStart;
     private String sessionTimeEnd;
@@ -20,14 +21,13 @@ public class SessionTime {
     private int SessionTimeEmpID;
     private int sessionTimeProID;
     private String employeeLastName;
-
-
     private String projectName;
 
+
+    // Constructors
     public SessionTime() {
     }
 
-    ;
 
     public SessionTime(int sessionTimeID, String sessionTimeStart, String sessionTimeEnd,
                        String sessionTimeDate, int sessionTimeEmpID, int sessionTimeProID,
