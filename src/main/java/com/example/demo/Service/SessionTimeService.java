@@ -29,6 +29,10 @@ public class SessionTimeService {
         return sessionTimeRepo.updateSessionTime(sessionTimeID, sessionTime);
     }
 
+    public SessionTime findSessionByEmpID(int sessionTimeEmpID){
+        return sessionTimeRepo.findSessionByEmpID(sessionTimeEmpID);
+    }
+
     public SessionTime addSessionTime(SessionTime sessionTime) {
         return sessionTimeRepo.addSessionTime(sessionTime);
     }

@@ -19,12 +19,8 @@ public class EmployeeService {
 
 
     public Employee addEmployee(Employee employee){
-        if(employee.getEmployeePhone() > 0 && employee.getEmployeePhone() < 100000000){
+        return employeeRepo.addEmployee(employee);
 
-            return employeeRepo.addEmployee(employee);
-        } else {
-            return null;
-        }
     }
 
     /* // Ikke muligt grundet fk og pk celler i sessions

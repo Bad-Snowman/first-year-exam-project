@@ -143,6 +143,7 @@ public class HomeController {
         return "Home/SessionList";
     }
 
+
     @GetMapping("/deleteSessionTime/{sessionTimeID}")
     public String deleteSessionTime(@PathVariable("sessionTimeID") String sessionTimeID) {
         boolean deleted = sessionTimeService.deleteSessionTime(sessionTimeID);

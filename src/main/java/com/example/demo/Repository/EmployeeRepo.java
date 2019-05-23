@@ -20,11 +20,14 @@ public class EmployeeRepo {
         return template.query(sql, rowMapper);
     }
 
-    public Employee addEmployee(Employee employee) {
+
+    public Employee addEmployee (Employee employee) {
+
         String sql = "INSERT INTO employee (employeeFirstName, employeeLastName, employeeEmail, employeePhone) VALUES(?, ?, ?, ?)";
         template.update(sql, employee.getEmployeeFirstName(), employee.getEmployeeLastName(), employee.getEmployeeEmail(), employee.getEmployeePhone());
         return null;
     }
+
 
     /* Ikke muligt grundet fk og pk celler i sessions
     public boolean deleteEmployee(int employeeID) {
@@ -46,4 +49,6 @@ public class EmployeeRepo {
                 employee.getEmployeeEmail(), employee.getEmployeePhone(), employee.getEmployeeID());
         return null;
     }
+
+
 }
