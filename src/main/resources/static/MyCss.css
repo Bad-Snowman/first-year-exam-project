@@ -12,7 +12,6 @@ button {
     background: #F3F3F3;
     border: 1px #DADADA solid;
     padding: 5px 10px;
-    border-radius: 2px;
     font-weight: bold;
     font-size: 9pt;
     outline: none;
@@ -20,6 +19,7 @@ button {
     margin-top: 5px;
     text-align: center;
     font-family: "Open Sans", Arial, sans-serif;
+    border-radius: 28px
 }
 
 button:hover {
@@ -102,6 +102,11 @@ button.red:active {
     background: -ms-linear-gradient(top, #D74736, #AD2719);
 }
 
+.save-btn {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
 
 /* used from following site; https://codepen.io/timwagner/pen/pAecq */
 
