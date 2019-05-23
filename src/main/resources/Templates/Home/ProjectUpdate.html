@@ -76,7 +76,6 @@
             </td>
         </tr>
 
-
         <tr>
             <td>
                 <p>Brugt tid: </p>
@@ -86,7 +85,28 @@
             </td>
         </tr>
 
-        <input class= save-btn type="submit" value="Save changes"/>
+        <tr>
+            <td>
+                <p>Deadline: </p>
+            </td>
+            <td>
+                <input type="text" name="projectDeadline" th:value="${project.projectDeadline}"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Status på projektet:
+            </td>
+            <td>
+                <select th:field="*{project.projectDone}">
+                    <option th:value="'Igang'">Igang</option>
+                    <option th:value="'Afsluttet'">Afsluttet</option>
+                </select>
+            </td>
+        </tr>
+
+        <input class=save-btn type="submit" value="Save changes"/>
 
     </table>
 

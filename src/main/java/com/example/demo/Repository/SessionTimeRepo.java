@@ -14,14 +14,13 @@ public class SessionTimeRepo {
     @Autowired
     JdbcTemplate template;
 
-
     //Handles sql statements
     public List<SessionTime> fetchAll() {
         String sql;
 
         sql = "SELECT sessiontime.sessionTimeID, sessiontime.sessionTimeDate, sessiontime.sessionTimeStart,\n" +
-                "sessiontime.sessionTimeEnd, sessiontime.sessionTimeEmpID, employee.employeeLastName, sessiontime.sessionTimeProID,\n" +
-                "project.projectName\n" +
+                "sessiontime.sessionTimeEnd, sessiontime.sessionTimeEmpID, employee.employeeFirstName,\n" +
+                "employee.employeeLastName, sessiontime.sessionTimeProID, project.projectName\n" +
                 "\n" +
                 "FROM ((sessiontime\n" +
                 "\n" +
@@ -34,12 +33,25 @@ public class SessionTimeRepo {
         return template.query(sql, rowMapper);
     }
 
-    //
     public SessionTime findSessionByID(int sessionTimeID) {
         String sql = "SELECT * FROM sessionTime WHERE sessionTimeID = ?";
         RowMapper<SessionTime> rowMapper = new BeanPropertyRowMapper<>(SessionTime.class);
         SessionTime sessionTime = template.queryForObject(sql, rowMapper, sessionTimeID);
         return sessionTime;
+    }
+
+    public boolean deleteSessionTime(String sessionTimeID) {
+        String sql = "DELETE FROM sessionTime WHERE sessionTimeID=?";
+        return template.update(sql, sessionTimeID) > 0;
+    }
+
+    public SessionTime addSessionTime(SessionTime sessionTime) {
+        String sql = "INSERT INTO sessionTime (sessionTimeDate, sessionTimeStart, sessionTimeEnd, " +
+                "sessionTimeEmpID, sessionTimeProID) VALUES(?, ?, ?, ?, ?)";
+        template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(),
+                sessionTime.getSessionTimeEnd(), sessionTime.getSessionTimeEmpID(),
+                sessionTime.getSessionTimeProID());
+        return null;
     }
 
     public SessionTime updateSessionTime(int sessionTimeID, SessionTime sessionTime) {
@@ -48,21 +60,6 @@ public class SessionTimeRepo {
         template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(),
                 sessionTime.getSessionTimeEnd(), sessionTime.getSessionTimeEmpID(),
                 sessionTime.getSessionTimeProID(), sessionTime.getSessionTimeID());
-        return null;
-    }
-
-    public boolean deleteSessionTime(String sessionTimeID) {
-        String sql = "DELETE FROM sessionTime WHERE sessionTimeID=?";
-        return template.update(sql, sessionTimeID) > 0;
-    }
-
-
-    public SessionTime addSessionTime(SessionTime sessionTime) {
-        String sql = "INSERT INTO sessionTime (sessionTimeDate, sessionTimeStart, sessionTimeEnd, " +
-                "sessionTimeEmpID, sessionTimeProID) VALUES(?, ?, ?, ?, ?)";
-        template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(),
-                sessionTime.getSessionTimeEnd(), sessionTime.getSessionTimeEmpID(),
-                sessionTime.getSessionTimeProID());
         return null;
     }
 }

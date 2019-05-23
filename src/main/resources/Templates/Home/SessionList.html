@@ -40,13 +40,9 @@
         <th>Dato for session</th>
         <th>Tid start</th>
         <th>Tid slut</th>
-        <th>Pers. ID</th>
-        <th>Vis detaljer</th>
         <th>Medarbejder navn</th>
-        <th>Projekt ID</th>
-        <th>Vis detaljer</th>
         <th>Projekt navn</th>
-        <th>
+        <th colspan="2">
             <a href="/addSession">
                 <button class="green" id="btn-addProject">Opret session</button>
             </a>
@@ -60,27 +56,22 @@
         <td th:text="${sessionTime.sessionTimeDate}"/>
         <td th:text="${sessionTime.sessionTimeStart}"/>
         <td th:text="${sessionTime.sessionTimeEnd}"/>
-        <td th:text="${sessionTime.sessionTimeEmpID}"/>
         <td>
-            <a th:href="@{'/employeeDetails/'+${sessionTime.sessionTimeEmpID}}">
-                <button class="blue" id="btn-employeeDetails">Detaljer</button>
-            </a>
+            <a th:href="@{'/employeeDetails/'+${sessionTime.sessionTimeEmpID}}"
+               th:text="${sessionTime.employeeLastName + ', ' + sessionTime.employeeFirstName}"/>
         </td>
-        <td th:text="${sessionTime.employeeLastName}"/>
-        <td th:text="${sessionTime.sessionTimeProID}"/>
         <td>
-            <a th:href="@{'/projectDetails/'+${sessionTime.sessionTimeProID}}">
-                <button class="blue" id="btn-projectDetails">Detaljer</button>
-            </a>
+            <a th:href="@{'/projectDetails/'+${sessionTime.sessionTimeProID}}" th:text="${sessionTime.projectName}"/>
         </td>
-        <td th:text="${sessionTime.projectName}"/>
+
         <td>
             <a th:href="@{'/updateSession/'+${sessionTime.sessionTimeID}}">
                 <button class="blue" id="btn-update">
                     <i class="material-icons" style="font-size:25px">settings</i>
                 </button>
             </a>
-
+        </td>
+        <td>
             <a th:href="@{'/deleteSessionTime/'+${sessionTime.sessionTimeID}}">
                 <button class="red" id="btn-delete">Slet</button>
             </a>
@@ -88,6 +79,5 @@
     </tr>
     </tbody>
 </table>
-</div>
 </body>
 </html>
