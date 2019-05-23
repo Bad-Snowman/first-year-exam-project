@@ -4,36 +4,30 @@
     <meta charset="UTF-8">
     <title>Alle medarbejdere</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
 
 <div id="wrapper">
-
     <header id="header">
-
         <div class="container">
             <div class="navbar-header">
-
                 <a class="logo" href="/"><img src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
 
                 <a id="menu-item-32" href="/employeeList">
-                    <button class="topButton" id="btn-employeeList">Vis medarbejderliste</button>
+                    <button class="topButton" id="btn-employeeList">Medarbejdere</button>
                 </a>
                 <a id="menu-item-33" href="/sessionList">
-                    <button class="topButton" id="btn-sessionList">Se alle sessioner</button>
+                    <button class="topButton" id="btn-sessionList">Sessioner</button>
                 </a>
                 <a id="menu-item-34" href="/projectList">
-                    <button class="topButton" id="btn-projectList">Se alle projekter</button>
+                    <button class="topButton" id="btn-projectList">Projekter</button>
                 </a>
             </div>
         </div>
-
     </header>
-
-    <div>
-
-    </div>
+</div>
 
 <h1>Alle medarbejdere</h1>
 <div id="tableScroll">
@@ -61,7 +55,7 @@
             <td th:text="${employee.employeePhone}"/>
             <td>
                 <a th:href="@{'/updateEmployee/'+${employee.employeeID}}">
-                    <button class="blue" id="btn-update">Opdater</button>
+                    <button class="blue" id="btn-update"><i class="material-icons" style="font-size:26px">settings</i></button>
                 </a>
 
                 <!-- <a td th:href="@{'/deleteEmployee/'+${employee.employeeID}}">

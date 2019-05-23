@@ -1,9 +1,19 @@
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%2C800%7CRoboto%3A100%2C300%2C400%2C500%2C700%2C900&ver=4.8');
 /* ////////////////////////////BODY//////////////////////// */
 
+body{
+    font-family: "Open Sans", Arial, sans-serif;
+}
 
-
-
+h1{
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 100;
+    font-family: "Open Sans", Arial, sans-serif;
+}
 
 /* /////////////////////////////////// Buttons ////////////////////// */
 /* Normal button */
@@ -15,11 +25,9 @@ button, input[type=submit] {
     height: 35px;
     font-weight: bold;
     font-size: 9pt;
-    outline: none;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    padding: auto;
     text-align: center;
-    font-family: "Open Sans", Arial, sans-serif;
     border-radius: 28px
 }
 
@@ -41,8 +49,8 @@ button.blue, input[type=submit] {
     background: #1f94e0;
     border: 1px #1f94e0 solid;
     box-shadow: inset 0 1px 0 #80B0FB;
-    table-layout: fixed;
-    border-collapse: collapse;
+    width: auto;
+    height: auto;
 }
 
 button.blue:hover, input[type=submit]:hover {
@@ -99,10 +107,26 @@ button.red:active {
     background: -ms-linear-gradient(top, #D74736, #AD2719);
 }
 
-.save-btn {
-    margin-right: auto;
+/* Header buttons */
+button.topButton{
+    color: black;
+    background-color: transparent;
+    table-layout: fixed;
+    border-collapse: collapse;
+    float: right;
     margin-left: auto;
-    text-align: center;
+    margin-right: 3%;
+    width: 13%;
+    height: 70px;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+button.topButton:hover {
+    color: #1f94e0;
+    border: 1px #1f94e0 solid;
+    background: white;
+    text-decoration: underline;
 }
 
 /* used from following site; https://codepen.io/timwagner/pen/pAecq */
@@ -111,7 +135,6 @@ button.red:active {
 /* ///////////////// TABLES ///////////// */
 table{
     border-collapse: collapse;
-    font-family: "Open Sans", Arial, sans-serif;
     text-align: left;
     margin-left: auto;
     margin-right: auto;
@@ -147,14 +170,7 @@ tr:nth-child(even){
 }
 
 
-/* ///////////// TEXT /////////////// */
-h1{
-    font-family: "Open Sans", Arial, sans-serif;
-    margin-bottom: 0.5vw;
-    margin-top: 0.5vw;
-    padding-bottom: 10px;
-    text-align: center;
-}
+/* Header */
 
 .container{
     margin-top: 20px;
@@ -179,15 +195,6 @@ h1{
     height: 100px;
 }
 
-button.topButton{
-    color: black;
-    background-color: transparent;
-    table-layout: fixed;
-    border-collapse: collapse;
-    float: right;
-    margin-left: auto;
-    margin-right: 3%;
-    width: 12%;
-    height: 70px;
-}
+
+
 

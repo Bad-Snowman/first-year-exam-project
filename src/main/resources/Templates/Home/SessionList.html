@@ -4,95 +4,90 @@
     <meta charset="UTF-8">
     <title>Alle sessioner</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
 <body>
 
 <div id="wrapper">
-
     <header id="header">
-
         <div class="container">
             <div class="navbar-header">
-
                 <a class="logo" href="/"><img src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
 
                 <a id="menu-item-32" href="/employeeList">
-                    <button class="topButton" id="btn-employeeList">Vis medarbejderliste</button>
+                    <button class="topButton" id="btn-employeeList">Medarbejdere</button>
                 </a>
                 <a id="menu-item-33" href="/sessionList">
-                    <button class="topButton" id="btn-sessionList">Se alle sessioner</button>
+                    <button class="topButton" id="btn-sessionList">Sessioner</button>
                 </a>
                 <a id="menu-item-34" href="/projectList">
-                    <button class="topButton" id="btn-projectList">Se alle projekter</button>
+                    <button class="topButton" id="btn-projectList">Projekter</button>
                 </a>
             </div>
         </div>
-
     </header>
+</div>
 
-    <div>
-
-    </div>
-
-    <h1>Alle sessioner</h1>
+<h1>Alle sessioner</h1>
 
 
-    <table>
-        <thead>
-        <tr>
-            <th>Session ID</th>
-            <th>Dato for session</th>
-            <th>Tid start</th>
-            <th>Tid slut</th>
-            <th>Pers. ID</th>
-            <th>Vis detaljer</th>
-            <th>Medarbejder navn</th>
-            <th>Projekt ID</th>
-            <th>Vis detaljer</th>
-            <th>Projekt navn</th>
-            <th>
-                <a href="/addSession">
-                    <button class="green" id="btn-addProject">Opret session</button>
-                </a>
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="sessionTime:${sessionsTime}">
+<table>
+    <thead>
+    <tr>
+        <th>Session ID</th>
+        <th>Dato for session</th>
+        <th>Tid start</th>
+        <th>Tid slut</th>
+        <th>Pers. ID</th>
+        <th>Vis detaljer</th>
+        <th>Medarbejder navn</th>
+        <th>Projekt ID</th>
+        <th>Vis detaljer</th>
+        <th>Projekt navn</th>
+        <th>
+            <a href="/addSession">
+                <button class="green" id="btn-addProject">Opret session</button>
+            </a>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sessionTime:${sessionsTime}">
 
-            <td th:text="${sessionTime.sessionTimeID}"/>
-            <td th:text="${sessionTime.sessionTimeDate}"/>
-            <td th:text="${sessionTime.sessionTimeStart}"/>
-            <td th:text="${sessionTime.sessionTimeEnd}"/>
-            <td th:text="${sessionTime.sessionTimeEmpID}"/>
-            <td>
-                <a th:href="@{'/employeeDetails/'+${sessionTime.sessionTimeEmpID}}">
-                    <button class="blue" id="btn-employeeDetails">Detaljer</button>
-                </a>
-            </td>
-            <td th:text="${sessionTime.employeeLastName}"/>
-            <td th:text="${sessionTime.sessionTimeProID}"/>
-            <td>
-                <a th:href="@{'/projectDetails/'+${sessionTime.sessionTimeProID}}">
-                    <button class="blue" id="btn-projectDetails">Detaljer</button>
-                </a>
-            </td>
-            <td th:text="${sessionTime.projectName}"/>
-            <td>
-                <a th:href="@{'/updateSession/'+${sessionTime.sessionTimeID}}">
-                    <button class="blue" id="btn-update">Opdater</button>
-                </a>
+        <td th:text="${sessionTime.sessionTimeID}"/>
+        <td th:text="${sessionTime.sessionTimeDate}"/>
+        <td th:text="${sessionTime.sessionTimeStart}"/>
+        <td th:text="${sessionTime.sessionTimeEnd}"/>
+        <td th:text="${sessionTime.sessionTimeEmpID}"/>
+        <td>
+            <a th:href="@{'/employeeDetails/'+${sessionTime.sessionTimeEmpID}}">
+                <button class="blue" id="btn-employeeDetails">Detaljer</button>
+            </a>
+        </td>
+        <td th:text="${sessionTime.employeeLastName}"/>
+        <td th:text="${sessionTime.sessionTimeProID}"/>
+        <td>
+            <a th:href="@{'/projectDetails/'+${sessionTime.sessionTimeProID}}">
+                <button class="blue" id="btn-projectDetails">Detaljer</button>
+            </a>
+        </td>
+        <td th:text="${sessionTime.projectName}"/>
+        <td>
+            <a th:href="@{'/updateSession/'+${sessionTime.sessionTimeID}}">
+                <button class="blue" id="btn-update">
+                    <i class="material-icons" style="font-size:25px">settings</i>
+                </button>
+            </a>
 
-                <a th:href="@{'/deleteSessionTime/'+${sessionTime.sessionTimeID}}">
-                    <button class="red" id="btn-delete">Slet</button>
-                </a>
-
-            </td>
-        </tr>
-        </tbody>
-    </table>
+            <a th:href="@{'/deleteSessionTime/'+${sessionTime.sessionTimeID}}">
+                <button class="red" id="btn-delete">Slet</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </div>
 </body>
 </html>
