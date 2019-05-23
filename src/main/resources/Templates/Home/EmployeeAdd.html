@@ -1,84 +1,77 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Opret medarbejder</title>
-        <link rel="stylesheet" type="text/css" href="/MyCss.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opret medarbejder</title>
+    <link rel="stylesheet" type="text/css" href="/MyCss.css">
 
 
 </head>
 <body>
 
 <div id="wrapper">
-
     <header id="header">
-
         <div class="container">
             <div class="navbar-header">
-
                 <a class="logo" href="/"><img src="/WizkidsLogo.png" alt="WizkidsLogo"></a>
 
                 <a id="menu-item-32" href="/employeeList">
-                    <button class="topButton" id="btn-employeeList">Vis medarbejderliste</button>
+                    <button class="topButton" id="btn-employeeList">Medarbejdere</button>
                 </a>
                 <a id="menu-item-33" href="/sessionList">
-                    <button class="topButton" id="btn-sessionList">Se alle sessioner</button>
+                    <button class="topButton" id="btn-sessionList">Sessioner</button>
                 </a>
                 <a id="menu-item-34" href="/projectList">
-                    <button class="topButton" id="btn-projectList">Se alle projekter</button>
+                    <button class="topButton" id="btn-projectList">Projekter</button>
                 </a>
             </div>
         </div>
-
     </header>
-
-    <div>
-
-    </div>
+</div>
 
 
 <h1>Tilføj medarbejdere</h1>
 
-    <form action="/addEmployee" method="post">
+<form action="/addEmployee" method="post">
 
-        <table>
-            <tr>
-                <td>
-                    <label>Fornavn:</label>
-                </td>
-                <td>
-                    <input type="text" name="employeeFirstName"/>
-                </td>
-            </tr>
+    <table>
+        <tr>
+            <td>
+                <label>Fornavn:</label>
+            </td>
+            <td>
+                <input type="text" name="employeeFirstName"/>
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    <label>Efternavn:</label>
-                </td>
-                <td>
-                    <input type="text" name="employeeLastName"/>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <label>Efternavn:</label>
+            </td>
+            <td>
+                <input type="text" name="employeeLastName"/>
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    <label>Email:</label>
-                </td>
-                <td>
-                    <input type="text" name="employeeEmail"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Telefon nr:</label>
-                </td>
-                <td>
-                    <input type="text" name="employeePhone"/>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <label>Email:</label>
+            </td>
+            <td>
+                <input type="text" name="employeeEmail"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Telefon nr:</label>
+            </td>
+            <td>
+                <input type="text" name="employeePhone"/>
+            </td>
+        </tr>
 
-        </table>
-        <input type="submit" value="Opret"/>
-    </form>
-    </body>
-    </html>
+    </table>
+    <input type="submit" value="Opret"/>
+</form>
+</body>
+</html>

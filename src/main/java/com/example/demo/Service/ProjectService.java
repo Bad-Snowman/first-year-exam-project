@@ -29,7 +29,7 @@ public class ProjectService {
         return projectRepo.findProjectById(projectID);
     }
 
-    public Project updateProject(int projectID, Project p) {
-        return projectRepo.updateProject(projectID, p);
+    public Project updateProject(int projectID, Project project) {
+        return projectRepo.updateProject(projectID, project);
     }
 }

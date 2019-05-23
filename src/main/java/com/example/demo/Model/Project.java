@@ -17,23 +17,26 @@ public class Project {
     private String projectManagerName;
     private double projectExpectedTime;
     private double projectUsedTime;
+    private String projectDeadline;
+    private String projectDone;
 
     // Constructors
     public Project(){}
 
-
-    public Project(int projectID, String projectName, String projectDesc,
-                   String projectManagerName, double projectExpectedTime, double projectUsedTime){
+    public Project(int projectID, String projectName, String projectDesc, String projectManagerName,
+                   double projectExpectedTime, double projectUsedTime, String projectDeadline, String projectDone) {
         this.projectID = projectID;
         this.projectName = projectName;
         this.projectDesc = projectDesc;
         this.projectManagerName = projectManagerName;
         this.projectExpectedTime = projectExpectedTime;
         this.projectUsedTime = projectUsedTime;
+        this.projectDeadline = projectDeadline;
+        this.projectDone = projectDone;
     }
 
 
-    //////////// Getters and setters ////////////
+//////////// Getters and setters ////////////
 
     public int getProjectID(){
         return projectID;
@@ -83,4 +86,19 @@ public class Project {
         this.projectUsedTime = projectUsedTime;
     }
 
+    public String getProjectDeadline() {
+        return projectDeadline;
+    }
+
+    public void setProjectDeadline(String projectDeadline) {
+        this.projectDeadline = projectDeadline;
+    }
+
+    public String getProjectDone() {
+        return projectDone;
+    }
+
+    public void setProjectDone(String projectDone) {
+        this.projectDone = projectDone;
+    }
 }

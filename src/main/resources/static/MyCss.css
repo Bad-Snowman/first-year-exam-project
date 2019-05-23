@@ -1,57 +1,66 @@
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%2C800%7CRoboto%3A100%2C300%2C400%2C500%2C700%2C900&ver=4.8');
 /* ////////////////////////////BODY//////////////////////// */
 
+body{
+    font-family: "Open Sans", Arial, sans-serif;
+}
 
-
-
+h1{
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 100;
+    font-family: "Open Sans", Arial, sans-serif;
+}
 
 /* /////////////////////////////////// Buttons ////////////////////// */
 /* Normal button */
-button {
+button, input[type=submit] {
     color: #444444;
     background: #F3F3F3;
     border: 1px #DADADA solid;
-    padding: 5px 10px;
+    width: 85px;
+    height: 35px;
     font-weight: bold;
     font-size: 9pt;
-    outline: none;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin: auto;
+    padding: auto;
     text-align: center;
-    font-family: "Open Sans", Arial, sans-serif;
     border-radius: 28px
 }
 
-button:hover {
+button:hover, input[type=submit] {
     border: 1px #C6C6C6 solid;
     box-shadow: 1px 1px 1px #EAEAEA;
     color: #333333;
     background: #F7F7F7;
 }
 
-button:active {
+button:active, input[type=submit] {
     box-shadow: inset 1px 1px 1px #DFDFDF;
 }
 
 
 /* Blue button*/
-button.blue {
+button.blue, input[type=submit] {
     color: white;
-    background: #4C8FFB;
-    border: 1px #3079ED solid;
+    background: #1f94e0;
+    border: 1px #1f94e0 solid;
     box-shadow: inset 0 1px 0 #80B0FB;
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
+    width: auto;
+    height: auto;
 }
 
-button.blue:hover {
-    border: 1px #2F5BB7 solid;
-    box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
-    background: #3F83F1;
+button.blue:hover, input[type=submit]:hover {
+    color: #1f94e0;
+    border: 1px #1f94e0 solid;
+    background: white;
+
 }
 
-button.blue:active {
+button.blue:active, input[type=submit]:active {
     box-shadow: inset 0 2px 5px #2370FE;
 }
 
@@ -61,14 +70,13 @@ button.green {
     background: #70ad47;
     border: 1px #7add3a solid;
     box-shadow: inset 0 1px 0 #8ad455;
-    width: 94%;
     border-collapse: collapse;
 }
 
 button.green:hover {
-    border: 1px #54b721 solid;
-    box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #96d24f;
-    background: #7aca26;
+    color: #70ad47;
+    border: 1px #70ad47 solid;
+    background: white;
 }
 
 button.green:active {
@@ -82,17 +90,14 @@ button.red {
     background: -ms-linear-gradient(top, #DD4B39, #D14836);
     border: 1px solid #DD4B39;
     color: white;
-    text-shadow: 0 1px 0 #C04131;
-    width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
 }
 
 button.red:hover {
-    background: -webkit-linear-gradient(top, #DD4B39, #C53727);
-    background: -moz-linear-gradient(top, #DD4B39, #C53727);
-    background: -ms-linear-gradient(top, #DD4B39, #C53727);
-    border: 1px solid #AF301F;
+    background: white;
+    border: 1px solid #DD4B39;
+    color: #DD4B39;
 }
 
 button.red:active {
@@ -102,10 +107,26 @@ button.red:active {
     background: -ms-linear-gradient(top, #D74736, #AD2719);
 }
 
-.save-btn {
-    margin-right: auto;
+/* Header buttons */
+button.topButton{
+    color: black;
+    background-color: transparent;
+    table-layout: fixed;
+    border-collapse: collapse;
+    float: right;
     margin-left: auto;
-    text-align: center;
+    margin-right: 3%;
+    width: 13%;
+    height: 70px;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+button.topButton:hover {
+    color: #1f94e0;
+    border: 1px #1f94e0 solid;
+    background: white;
+    text-decoration: underline;
 }
 
 /* used from following site; https://codepen.io/timwagner/pen/pAecq */
@@ -114,7 +135,6 @@ button.red:active {
 /* ///////////////// TABLES ///////////// */
 table{
     border-collapse: collapse;
-    font-family: "Open Sans", Arial, sans-serif;
     text-align: left;
     margin-left: auto;
     margin-right: auto;
@@ -150,14 +170,7 @@ tr:nth-child(even){
 }
 
 
-/* ///////////// TEXT /////////////// */
-h1{
-    font-family: "Open Sans", Arial, sans-serif;
-    margin-bottom: 0.5vw;
-    margin-top: 0.5vw;
-    padding-bottom: 10px;
-    text-align: center;
-}
+/* Header */
 
 .container{
     margin-top: 20px;
@@ -182,15 +195,6 @@ h1{
     height: 100px;
 }
 
-button.topButton{
-    color: black;
-    background-color: transparent;
-    table-layout: fixed;
-    border-collapse: collapse;
-    float: right;
-    margin-left: auto;
-    margin-right: 3%;
-    width: 12%;
-    height: 70px;
-}
+
+
 

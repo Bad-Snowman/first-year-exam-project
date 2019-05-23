@@ -23,8 +23,10 @@ public class EmployeeRepo {
 
     // A method which sends an INSERT keyword to the database
     public Employee addEmployee(Employee employee) {
-        String sql = "INSERT INTO employee (employeeFirstName, employeeLastName, employeeEmail, employeePhone) VALUES(?, ?, ?, ?)";
-        template.update(sql, employee.getEmployeeFirstName(), employee.getEmployeeLastName(), employee.getEmployeeEmail(), employee.getEmployeePhone());
+        String sql = "INSERT INTO employee (employeeFirstName, employeeLastName, employeeEmail, employeePhone) " +
+                "VALUES(?, ?, ?, ?)";
+        template.update(sql, employee.getEmployeeFirstName(), employee.getEmployeeLastName(),
+                employee.getEmployeeEmail(), employee.getEmployeePhone());
         return null;
     }
 

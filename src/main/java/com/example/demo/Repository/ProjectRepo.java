@@ -24,8 +24,11 @@ public class ProjectRepo {
 
     // A method which uses the INSERT keyword to inject data into the 'project' table
     public Project addProject(Project project) {
-        String sql = "INSERT INTO project (projectName, projectDesc, projectManagerName, projectExpectedTime, projectUsedTime) VALUES(?, ?, ?, ?, ?)";
-        template.update(sql, project.getProjectName(), project.getProjectDesc(), project.getProjectManagerName(), project.getProjectExpectedTime(), project.getProjectUsedTime());
+        String sql = "INSERT INTO project (projectName, projectDesc, projectManagerName, projectExpectedTime, " +
+                "projectUsedTime, projectDeadline, projectDone) VALUES(?, ?, ?, ?, ?, ?, ?)";
+        template.update(sql, project.getProjectName(), project.getProjectDesc(), project.getProjectManagerName(),
+                project.getProjectExpectedTime(), project.getProjectUsedTime(), project.getProjectDeadline(),
+                project.getProjectDone());
         return null;
     }
 
@@ -46,9 +49,13 @@ public class ProjectRepo {
     // A method which uses the UPDATE and WHERE keywords to modify a specific table sorted by ID
     public Project updateProject(int projectID, Project project) {
         String sql = "UPDATE project SET projectName = ?, projectDesc = ?, projectManagerName = ?, " +
-                "projectExpectedTime = ?, projectUsedTime = ? WHERE projectID=?";
+                "projectExpectedTime = ?, projectUsedTime = ?, projectDeadline = ?, projectDone = ? " +
+                "WHERE projectID = ?";
         template.update(sql, project.getProjectName(), project.getProjectDesc(), project.getProjectManagerName(),
-                project.getProjectExpectedTime(), project.getProjectUsedTime(), project.getProjectID());
+                project.getProjectExpectedTime(), project.getProjectUsedTime(), project.getProjectDeadline(),
+                project.getProjectDone(), project.getProjectID());
         return null;
     }
+
 }
+
