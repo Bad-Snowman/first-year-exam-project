@@ -7,51 +7,52 @@
 
 /* /////////////////////////////////// Buttons ////////////////////// */
 /* Normal button */
-button {
+button, input[type=submit] {
     color: #444444;
     background: #F3F3F3;
     border: 1px #DADADA solid;
-    padding: 5px 10px;
+    width: 85px;
+    height: 35px;
     font-weight: bold;
     font-size: 9pt;
     outline: none;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     font-family: "Open Sans", Arial, sans-serif;
     border-radius: 28px
 }
 
-button:hover {
+button:hover, input[type=submit] {
     border: 1px #C6C6C6 solid;
     box-shadow: 1px 1px 1px #EAEAEA;
     color: #333333;
     background: #F7F7F7;
 }
 
-button:active {
+button:active, input[type=submit] {
     box-shadow: inset 1px 1px 1px #DFDFDF;
 }
 
 
 /* Blue button*/
-button.blue {
+button.blue, input[type=submit] {
     color: white;
-    background: #4C8FFB;
-    border: 1px #3079ED solid;
+    background: #1f94e0;
+    border: 1px #1f94e0 solid;
     box-shadow: inset 0 1px 0 #80B0FB;
-    width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
 }
 
-button.blue:hover {
-    border: 1px #2F5BB7 solid;
-    box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
-    background: #3F83F1;
+button.blue:hover, input[type=submit]:hover {
+    color: #1f94e0;
+    border: 1px #1f94e0 solid;
+    background: white;
+
 }
 
-button.blue:active {
+button.blue:active, input[type=submit]:active {
     box-shadow: inset 0 2px 5px #2370FE;
 }
 
@@ -66,9 +67,9 @@ button.green {
 }
 
 button.green:hover {
-    border: 1px #54b721 solid;
-    box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #96d24f;
-    background: #7aca26;
+    color: #70ad47;
+    border: 1px #70ad47 solid;
+    background: white;
 }
 
 button.green:active {
@@ -82,17 +83,14 @@ button.red {
     background: -ms-linear-gradient(top, #DD4B39, #D14836);
     border: 1px solid #DD4B39;
     color: white;
-    text-shadow: 0 1px 0 #C04131;
-    width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
 }
 
 button.red:hover {
-    background: -webkit-linear-gradient(top, #DD4B39, #C53727);
-    background: -moz-linear-gradient(top, #DD4B39, #C53727);
-    background: -ms-linear-gradient(top, #DD4B39, #C53727);
-    border: 1px solid #AF301F;
+    background: white;
+    border: 1px solid #DD4B39;
+    color: #DD4B39;
 }
 
 button.red:active {
