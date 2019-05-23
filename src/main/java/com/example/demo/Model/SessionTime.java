@@ -21,6 +21,7 @@ public class SessionTime {
     private int SessionTimeEmpID;
     private int sessionTimeProID;
     private String employeeLastName;
+    private String employeeFirstName;
     private String projectName;
 
 
@@ -28,11 +29,8 @@ public class SessionTime {
     public SessionTime() {
     }
 
-
-    public SessionTime(int sessionTimeID, String sessionTimeStart, String sessionTimeEnd,
-                       String sessionTimeDate, int sessionTimeEmpID, int sessionTimeProID,
-                       String employeeLastName, String projectName) {
-
+    public SessionTime(int sessionTimeID, String sessionTimeStart, String sessionTimeEnd, String sessionTimeDate,
+                       int sessionTimeEmpID, int sessionTimeProID, String employeeLastName, String employeeFirstName, String projectName) {
         this.sessionTimeID = sessionTimeID;
         this.sessionTimeStart = sessionTimeStart;
         this.sessionTimeEnd = sessionTimeEnd;
@@ -40,10 +38,13 @@ public class SessionTime {
         SessionTimeEmpID = sessionTimeEmpID;
         this.sessionTimeProID = sessionTimeProID;
         this.employeeLastName = employeeLastName;
+        this.employeeFirstName = employeeFirstName;
         this.projectName = projectName;
     }
 
-    ////////////// Getters and Setters //////////////
+
+////////////// Getters and Setters //////////////
+
 
     public int getSessionTimeID() {
         return sessionTimeID;
@@ -99,6 +100,14 @@ public class SessionTime {
 
     public void setEmployeeLastName(String employeeLastName) {
         this.employeeLastName = employeeLastName;
+    }
+
+    public String getEmployeeFirstName() {
+        return employeeFirstName;
+    }
+
+    public void setEmployeeFirstName(String employeeFirstName) {
+        this.employeeFirstName = employeeFirstName;
     }
 
     public String getProjectName() {
