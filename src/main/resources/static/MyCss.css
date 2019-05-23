@@ -92,6 +92,8 @@ button.red {
     color: white;
     table-layout: fixed;
     border-collapse: collapse;
+    width: auto;
+    height: auto;
 }
 
 button.red:hover {
