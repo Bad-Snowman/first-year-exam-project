@@ -4,7 +4,6 @@ import com.example.demo.Model.Employee;
 import com.example.demo.Model.Project;
 import com.example.demo.Model.SessionTime;
 import com.example.demo.Service.EmployeeService;
-import com.example.demo.Service.ProjectManagerService;
 import com.example.demo.Service.ProjectService;
 import com.example.demo.Service.SessionTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +24,6 @@ public class HomeController {
     // We make sure to autowire our service-classes to our Homecontroller
     @Autowired
     EmployeeService employeeService;
-    @Autowired
-    ProjectManagerService projectManagerService;
     @Autowired
     ProjectService projectService;
     @Autowired
