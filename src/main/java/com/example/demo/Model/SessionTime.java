@@ -6,6 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Time;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 //
@@ -15,8 +16,8 @@ public class SessionTime {
     @Id
     // Fields
     private int sessionTimeID;
-    private String sessionTimeStart;
-    private String sessionTimeEnd;
+    private Time sessionTimeStart;
+    private Time sessionTimeEnd;
     private String SessionTimeDate;
     private int SessionTimeEmpID;
     private int sessionTimeProID;
@@ -29,7 +30,7 @@ public class SessionTime {
     public SessionTime() {
     }
 
-    public SessionTime(int sessionTimeID, String sessionTimeStart, String sessionTimeEnd, String sessionTimeDate,
+    public SessionTime(int sessionTimeID, Time sessionTimeStart, Time sessionTimeEnd, String sessionTimeDate,
                        int sessionTimeEmpID, int sessionTimeProID, String employeeLastName, String employeeFirstName, String projectName) {
         this.sessionTimeID = sessionTimeID;
         this.sessionTimeStart = sessionTimeStart;
@@ -54,19 +55,19 @@ public class SessionTime {
         this.sessionTimeID = sessionTimeID;
     }
 
-    public String getSessionTimeStart() {
+    public Time getSessionTimeStart() {
         return sessionTimeStart;
     }
 
-    public void setSessionTimeStart(String sessionTimeStart) {
+    public void setSessionTimeStart(Time sessionTimeStart) {
         this.sessionTimeStart = sessionTimeStart;
     }
 
-    public String getSessionTimeEnd() {
+    public Time getSessionTimeEnd() {
         return sessionTimeEnd;
     }
 
-    public void setSessionTimeEnd(String sessionTimeEnd) {
+    public void setSessionTimeEnd(Time sessionTimeEnd) {
         this.sessionTimeEnd = sessionTimeEnd;
     }
 
