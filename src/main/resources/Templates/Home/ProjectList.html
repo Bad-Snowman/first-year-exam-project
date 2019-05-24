@@ -6,6 +6,33 @@
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+
+    <style>
+        .overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        #text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50px;
+            color: white;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+        }
+    </style>
+
 </head>
 <body>
 
@@ -30,7 +57,7 @@
 </div>
 
 <h1>Alle projekter</h1>
-<div id="tableScroll">
+<div>
     <table>
         <thead>
         <tr>
@@ -56,7 +83,20 @@
         <tr th:each="project:${projects}">
             <td th:text="${project.projectID}"/>
             <td th:text="${project.projectName}"/>
-            <td th:text="${project.projectDesc}"/>
+
+
+            <td>
+                <div class="overlay" style="display: none" th:id="@{''+${project.projectID}}"
+                     th:onclick="@{'off( \''+${project.projectID}+'\' )'}">
+                    <div  id="text" > <a th:text="${project.projectDesc}"/></div>
+                </div>
+
+                <div style="padding:20px">
+                    <button th:onclick="@{'on( \''+${project.projectID}+'\' )'}"> Description </button>
+                </div>
+
+            </td>
+
             <td th:text="${project.projectManagerName}"/>
             <td th:text="${project.projectExpectedTime}"/>
             <td th:text="${project.projectUsedTime}"/>
@@ -71,10 +111,22 @@
                        <button class="red" id="btn-delete">Slet</button>
                    </a> -->
             </td>
+
         </tr>
         </tbody>
     </table>
 </div>
+
+<script>
+    function on( buttonclicked ) {
+        document.getElementById(buttonclicked).style.display = "block";
+    }
+
+    function off(buttonclicked) {
+        document.getElementById(buttonclicked).style.display = "none";
+    }
+</script>
+
 
 
 </body>
