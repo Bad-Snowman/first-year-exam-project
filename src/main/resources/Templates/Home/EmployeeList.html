@@ -41,7 +41,9 @@
             <th>Telefonnummer</th>
             <th>
                 <a href="/addEmployee" id="addEmpBtn">
-                    <button class="green" id="btn-addEmployee">Opret ny Medarbejder</button>
+                    <button class="green" id="button-create">
+                        <i class="material-icons" style="font-size:25px">create</i>
+                    </button>
                 </a>
             </th>
         </tr>
@@ -55,7 +57,8 @@
             <td th:text="${employee.employeePhone}"/>
             <td>
                 <a th:href="@{'/updateEmployee/'+${employee.employeeID}}">
-                    <button class="blue" id="btn-update"><i class="material-icons" style="font-size:26px">settings</i></button>
+                    <button class="blue" id="btn-update"><i class="material-icons" style="font-size:26px">settings</i>
+                    </button>
                 </a>
 
                 <!-- <a td th:href="@{'/deleteEmployee/'+${employee.employeeID}}">
