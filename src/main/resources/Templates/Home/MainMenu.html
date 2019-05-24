@@ -1,19 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:width="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:width="http://www.w3.org/1999/xhtml" xmlns:text-align="http://www.w3.org/1999/xhtml">
 <head>
+
     <meta charset="UTF-8">
     <title>Hovedmenu</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css"/>
-    <style>
-
-        body {
-            text-align: center;
-        }
-        table{
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
 
 </head>
 <body>
@@ -40,7 +31,6 @@
 <h1>Hovedmenu</h1>
 
 </div>
-
 <!-- Slideshow container -->
 <div class="slideshow-container">
 
@@ -72,36 +62,47 @@
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
 </div>
+
 <script>
     var slideIndex = 1;
+    var t;
+
     showSlides(slideIndex);
 
-    // Next/previous controls
     function plusSlides(n) {
-        showSlides(slideIndex += n);
+        slideIndex = slideIndex + n;
+        clearTimeout(t);
+        showSlides(slideIndex);
+        console.log(slideIndex);
     }
 
-    // Thumbnail image controls
     function currentSlide(n) {
         showSlides(slideIndex = n);
     }
 
     function showSlides(n) {
+
         var i;
         var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
+
+        if (n == undefined) {
+            n = ++slideIndex;
+        }
+
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
+
+        slides[slideIndex - 1].style.display = "block";
+        t = setTimeout(showSlides, 5000);
     }
 </script>
-
 </body>
 </html>
