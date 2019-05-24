@@ -48,7 +48,7 @@ public class ProjectRepo implements ProjectUsedTime {
     }
 
     // A method which uses the INSERT keyword to inject data into the 'project' table
-    public Project addProject(Project project) {
+    public Project createProject(Project project) {
         String sql = "INSERT INTO project (projectName, projectDesc, projectManagerName, projectExpectedTime, " +
                 "projectUsedTime, projectDeadline, projectDone) VALUES(?, ?, ?, ?, ?, ?, ?)";
         template.update(sql, project.getProjectName(), project.getProjectDesc(), project.getProjectManagerName(),
@@ -72,7 +72,7 @@ public class ProjectRepo implements ProjectUsedTime {
     } */
 
     // A method which uses the UPDATE and WHERE keywords to modify a specific table sorted by ID
-    public Project updateProject(int projectID, Project project) {
+    public Project editProject(int projectID, Project project) {
         String sql = "UPDATE project SET projectName = ?, projectDesc = ?, projectManagerName = ?, " +
                 "projectExpectedTime = ?, projectUsedTime = ?, projectDeadline = ?, projectDone = ? " +
                 "WHERE projectID = ?";

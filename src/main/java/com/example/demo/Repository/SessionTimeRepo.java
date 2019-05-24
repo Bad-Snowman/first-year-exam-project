@@ -45,7 +45,7 @@ public class SessionTimeRepo {
         return template.update(sql, sessionTimeID) > 0;
     }
 
-    public SessionTime addSessionTime(SessionTime sessionTime) {
+    public SessionTime createSessionTime(SessionTime sessionTime) {
         String sql = "INSERT INTO sessionTime (sessionTimeDate, sessionTimeStart, sessionTimeEnd, " +
                 "sessionTimeEmpID, sessionTimeProID) VALUES(?, ?, ?, ?, ?)";
         template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(),
@@ -54,7 +54,7 @@ public class SessionTimeRepo {
         return null;
     }
 
-    public SessionTime updateSessionTime(int sessionTimeID, SessionTime sessionTime) {
+    public SessionTime editSessionTime(int sessionTimeID, SessionTime sessionTime) {
         String sql = "UPDATE sessionTime SET sessionTimeDate = ?, sessionTimeStart = ?, " +
                 "sessionTimeEnd = ?, sessionTimeEmpID = ?, sessionTimeProID = ? WHERE sessionTimeID = ?";
         template.update(sql, sessionTime.getSessionTimeDate(), sessionTime.getSessionTimeStart(),

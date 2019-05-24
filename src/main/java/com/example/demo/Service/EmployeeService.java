@@ -36,8 +36,8 @@ public class EmployeeService {
         return employeeRepo.findEmployeeByID(employeeID);
     }
 
-    public Employee updateEmployee(int employeeID, Employee employee) {
-        return employeeRepo.updateEmployee(employeeID, employee);
+    public Employee editEmployee(int employeeID, Employee employee) {
+        return employeeRepo.editEmployee(employeeID, employee);
     }
 
 

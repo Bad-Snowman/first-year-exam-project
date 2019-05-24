@@ -25,12 +25,12 @@ public class SessionTimeService {
         return sessionTimeRepo.findSessionByID(sessionTimeID);
     }
 
-    public SessionTime updateSessionTime(int sessionTimeID, SessionTime sessionTime) {
-        return sessionTimeRepo.updateSessionTime(sessionTimeID, sessionTime);
+    public SessionTime editSessionTime(int sessionTimeID, SessionTime sessionTime) {
+        return sessionTimeRepo.editSessionTime(sessionTimeID, sessionTime);
     }
 
-    public SessionTime addSessionTime(SessionTime sessionTime) {
-        return sessionTimeRepo.addSessionTime(sessionTime);
+    public SessionTime createSessionTime(SessionTime sessionTime) {
+        return sessionTimeRepo.createSessionTime(sessionTime);
     }
 
     public String getCurrentTimeUsingDate() {

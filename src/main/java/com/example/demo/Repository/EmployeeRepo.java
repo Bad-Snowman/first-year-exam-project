@@ -22,7 +22,7 @@ public class EmployeeRepo {
     }
 
     // A method which sends an INSERT keyword to the database
-    public Employee addEmployee(Employee employee) {
+    public Employee createEmployee(Employee employee) {
         String sql = "INSERT INTO employee (employeeFirstName, employeeLastName, employeeEmail, employeePhone) " +
                 "VALUES(?, ?, ?, ?)";
         template.update(sql, employee.getEmployeeFirstName(), employee.getEmployeeLastName(),
@@ -45,7 +45,7 @@ public class EmployeeRepo {
     }
 
     // A method which uses an UPDATE keyword to modify the 'employee' table
-    public Employee updateEmployee(int employeeID, Employee employee) {
+    public Employee editEmployee(int employeeID, Employee employee) {
         String sql = "UPDATE employee SET employeeFirstName = ?, employeeLastName = ?, " +
                 "employeeEmail = ?, employeePhone = ? WHERE employeeID = ?";
         template.update(sql, employee.getEmployeeFirstName(), employee.getEmployeeLastName(),

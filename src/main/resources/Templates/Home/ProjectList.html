@@ -45,7 +45,7 @@
             <th>Status</th>
             <th>
                 <!-- Button which forwards the user to the add project website -->
-                <a href="/addProject">
+                <a href="/createProject">
                     <button class="green" id="button-create">
                         <i class="material-icons" style="font-size:25px">create</i>
                     </button>
@@ -87,7 +87,7 @@
                  details about regarding the project, thymeleaf will forward the project id so the correct
                  info will appear -->
             <td>
-                <a th:href="@{'/updateProject/'+${project.projectID}}">
+                <a th:href="@{'/editProject/'+${project.projectID}}">
                     <button class="blue" id="btn-updateProject">
                         <i class="material-icons" style="font-size:26px">settings</i></button>
                 </a>
