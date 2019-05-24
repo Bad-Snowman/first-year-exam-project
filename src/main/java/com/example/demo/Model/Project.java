@@ -1,5 +1,6 @@
 package com.example.demo.Model;
 
+import com.example.demo.Interfaces.ProjectUsedTime;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
@@ -8,8 +9,9 @@ import java.sql.Time;
 
 @Entity
 public class Project {
-    @Id
 
+
+    @Id
     // Fields
     private int projectID;
     private String projectName;
@@ -19,6 +21,7 @@ public class Project {
     private double projectUsedTime;
     private String projectDeadline;
     private String projectDone;
+
 
     // Constructors
     public Project(){}

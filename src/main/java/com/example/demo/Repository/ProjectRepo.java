@@ -1,19 +1,44 @@
 package com.example.demo.Repository;
 
+import com.example.demo.Interfaces.ProjectUsedTime;
 import com.example.demo.Model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class ProjectRepo {
+public class ProjectRepo implements ProjectUsedTime {
     @Autowired
     JdbcTemplate template;
 
+    ////////////////////// VIRKER IKKE /////////////////////////
+    public double convertToHours (String time){
+        String[] hourMinSec = time.split(":");
+        int hour = Integer.parseInt(hourMinSec[0]);
+        int min = Integer.parseInt(hourMinSec[1]);
+        double total = hour + (min * 1.6666666666666666666666666666667 / 100);
+        return total;
+    }
+
+    ///////////////////// VIRKER IKKE ////////////////////////////
+    @Override
+    public double calculateUsedTime() {
+        List<Project> list;
+        String sql = "SELECT TIMEDIFF(sessionTimeEnd, sessionTimeStart) FROM sessionTime WHERE sessionTimeEmpID = 1;";
+        RowMapper<Project> rowMapper = new BeanPropertyRowMapper<>();
+        list = template.query(sql, rowMapper);
+        double calc;
+        return 0;
+    }
 
     // A method which uses the SELECT keyword to retrive all data from the 'project' table
     public List<Project> fetchAll() {

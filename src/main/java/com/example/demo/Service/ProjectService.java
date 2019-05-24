@@ -1,5 +1,6 @@
 package com.example.demo.Service;
 
+import com.example.demo.Interfaces.ProjectUsedTime;
 import com.example.demo.Model.Project;
 import com.example.demo.Repository.ProjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,11 @@ import java.util.List;
 public class ProjectService {
     @Autowired
     ProjectRepo projectRepo;
+
+    /////////////// VIRKER IKkE ////////////////
+    public double calculateUsedTime(){
+        return projectRepo.calculateUsedTime();
+    }
 
     public List<Project> fetchAll() {
         return projectRepo.fetchAll();
