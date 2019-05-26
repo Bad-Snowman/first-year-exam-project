@@ -4,7 +4,6 @@ import com.example.demo.Model.Employee;
 import com.example.demo.Model.Project;
 import com.example.demo.Model.SessionTime;
 import com.example.demo.Service.EmployeeService;
-import com.example.demo.Service.ProjectManagerService;
 import com.example.demo.Service.ProjectService;
 import com.example.demo.Service.SessionTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
+
 @Controller
 public class HomeController {
 
@@ -24,8 +24,6 @@ public class HomeController {
     // We make sure to autowire our service-classes to our Homecontroller
     @Autowired
     EmployeeService employeeService;
-    @Autowired
-    ProjectManagerService projectManagerService;
     @Autowired
     ProjectService projectService;
     @Autowired
@@ -51,18 +49,18 @@ public class HomeController {
     @GetMapping("/projectDetails/{sessionTimeProID}")
     public String projectDetails(@PathVariable("sessionTimeProID") int projectID, Model model) {
         model.addAttribute("project", projectService.findProjectById(projectID));
-        return "Home/ProjectUpdate";
+        return "Home/EditProject";
     }
 
-    @GetMapping("/updateProject/{projectID}")
-    public String updateProject(@PathVariable("projectID") int projectID, Model model) {
+    @GetMapping("/editProject/{projectID}")
+    public String editProject(@PathVariable("projectID") int projectID, Model model) {
         model.addAttribute("project", projectService.findProjectById(projectID));
-        return "Home/ProjectUpdate";
+        return "Home/EditProject";
     }
 
-    @PostMapping("/updateProject")
-    public String updateProject(@ModelAttribute Project project) {
-        projectService.updateProject(project.getProjectID(), project);
+    @PostMapping("/editProject")
+    public String editProject(@ModelAttribute Project project) {
+        projectService.editProject(project.getProjectID(), project);
         return "redirect:/projectList";
     }
 
@@ -78,14 +76,14 @@ public class HomeController {
         }
     } */
 
-    @GetMapping("/addProject")
-    public String addProject() {
-        return "Home/ProjectAdd";
+    @GetMapping("/createProject")
+    public String createProject() {
+        return "Home/CreateProject";
     }
 
-    @PostMapping("/addProject")
-    public String addProject(@ModelAttribute Project project) {
-        projectService.addProject(project);
+    @PostMapping("/createProject")
+    public String createProject(@ModelAttribute Project project) {
+        projectService.createProject(project);
         return "redirect:/projectList";
     }
 
@@ -97,14 +95,14 @@ public class HomeController {
         return "Home/EmployeeList";
     }
 
-    @GetMapping("/addEmployee")
-    public String addEmployee() {
-        return "Home/EmployeeAdd";
+    @GetMapping("/createEmployee")
+    public String createEmployee() {
+        return "Home/CreateEmployee";
     }
 
-    @PostMapping("/addEmployee")
-    public String addEmployee(@ModelAttribute Employee employee) {
-        employeeService.addEmployee(employee);
+    @PostMapping("/createEmployee")
+    public String createEmployee(@ModelAttribute Employee employee) {
+        employeeService.createEmployee(employee);
         return "redirect:/employeeList";
     }
 
@@ -122,18 +120,18 @@ public class HomeController {
     @GetMapping("/employeeDetails/{sessionTimeEmpID}")
     public String employeeDetails(@PathVariable("sessionTimeEmpID") int employeeID, Model model) {
         model.addAttribute("employees", employeeService.findEmployeeByID(employeeID));
-        return "Home/EmployeeUpdate";
+        return "Home/EditEmployee";
     }
 
-    @GetMapping("/updateEmployee/{employeeID}")
-    public String updateEmployee(@PathVariable("employeeID") int employeeID, Model model) {
+    @GetMapping("/editEmployee/{employeeID}")
+    public String editEmployee(@PathVariable("employeeID") int employeeID, Model model) {
         model.addAttribute("employees", employeeService.findEmployeeByID(employeeID));
-        return "Home/EmployeeUpdate";
+        return "Home/EditEmployee";
     }
 
-    @PostMapping("/updateEmployee")
-    public String updateEmployee(@ModelAttribute Employee employee) {
-        employeeService.updateEmployee(employee.getEmployeeID(), employee);
+    @PostMapping("/editEmployee")
+    public String editEmployee(@ModelAttribute Employee employee) {
+        employeeService.editEmployee(employee.getEmployeeID(), employee);
         return "redirect:/employeeList";
     }
 
@@ -145,8 +143,7 @@ public class HomeController {
         return "Home/SessionList";
     }
 
-
-    @GetMapping("/deleteSessionTime/{sessionTimeID}")
+    @GetMapping("/deleteSession/{sessionTimeID}")
     public String deleteSessionTime(@PathVariable("sessionTimeID") String sessionTimeID) {
         boolean deleted = sessionTimeService.deleteSessionTime(sessionTimeID);
         if (deleted) {
@@ -156,29 +153,30 @@ public class HomeController {
         }
     }
 
-    @GetMapping("/updateSession/{sessionTimeID}")
-    public String updateSession(@PathVariable("sessionTimeID") int sessionTimeID, Model model) {
+    @GetMapping("/editSession/{sessionTimeID}")
+    public String editSession(@PathVariable("sessionTimeID") int sessionTimeID, Model model) {
         model.addAttribute("sessions", sessionTimeService.findSessionByID(sessionTimeID));
-        return "Home/SessionUpdate";
+        return "Home/EditSession";
     }
 
-    @PostMapping("/updateSession")
-    public String updateSession(@ModelAttribute SessionTime sessionTime) {
-        sessionTimeService.updateSessionTime(sessionTime.getSessionTimeID(), sessionTime);
+    @PostMapping("/editSession")
+    public String editSession(@ModelAttribute SessionTime sessionTime) {
+        sessionTimeService.editSessionTime(sessionTime.getSessionTimeID(), sessionTime);
         return "redirect:/sessionList";
     }
 
-    @GetMapping("/addSession")
-    public String addSession(Model model) {
+
+    @GetMapping("/createSession")
+    public String createSession(Model model) {
         model.addAttribute("localTime", sessionTimeService.getCurrentTimeUsingDate());
         model.addAttribute("localDate", sessionTimeService.getCurrentDate());
 
-        return "Home/SessionAdd";
+        return "Home/CreateSession";
     }
 
-    @PostMapping("/addSession")
-    public String addSession(@ModelAttribute SessionTime sessionTime) {
-        sessionTimeService.addSessionTime(sessionTime);
+    @PostMapping("/createSession")
+    public String createSession(@ModelAttribute SessionTime sessionTime) {
+        sessionTimeService.createSessionTime(sessionTime);
         return "redirect:/sessionList";
     }
 

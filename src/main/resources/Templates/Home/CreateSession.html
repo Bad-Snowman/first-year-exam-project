@@ -2,10 +2,9 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Tilføj projekt</title>
+    <title>Tilføj session</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 
 </head>
 <body>
@@ -29,84 +28,62 @@
     </header>
 </div>
 
-<h1>Tilføj projekt</h1>
+<h1>Opret session</h1>
 
-<form action="/addProject" method="post">
-
+<form action="/createSession" method="post">
     <table>
         <tr>
             <td>
-                <label>Projekt navn:</label>
+                <label>Dato (YYYY-MM-DD): </label>
             </td>
             <td>
-                <input type="text" name="projectName"/>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label>Projekt Beskrivelse:</label>
-            </td>
-            <td>
-                <input type="text" name="projectDesc"/>
+                <input type="text" name="sessionTimeDate" th:value="${localDate}"/>
             </td>
         </tr>
 
         <tr>
             <td>
-                <label>Projekt manager:</label>
+                <label>Tid start: </label>
             </td>
             <td>
-                <input type="text" name="projectManagerName"/>
+                <input type="text" name="sessionTimeStart" th:value="${localTime}"/>
             </td>
         </tr>
-        <tr>
-            <td>
-                <label>Forventet tid(timer)</label>
-            </td>
-            <td>
-                <input type="text" name="projectExpectedTime"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Brugt tid(timer)</label>
-            </td>
-            <td>
-                <input type="text" name="projectUsedTime"/>
-            </td>
-        </tr>
-        <tr>
 
+        <tr>
             <td>
-                <label>Deadline</label>
+                <label>Tid slut: </label>
             </td>
             <td>
-                <input type="text" name="projectDeadline"/>
+                <input type="text" name="sessionTimeEnd"/>
             </td>
         </tr>
         <tr>
             <td>
-                <label>Status på projektet</label>
+                <label>Medarbejder-ID: </label>
             </td>
             <td>
-                <select name="projectDone">
-                    <option value="Igang">Igang</option>
-                    <option value="Afsluttet">Afsluttet</option>
-                </select>
+                <input type="text" name="sessionTimeEmpID"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Projekt-ID: </label>
+            </td>
+            <td>
+                <input type="text" name="sessionTimeProID"/>
             </td>
         </tr>
 
         <tr>
             <td colspan="2">
                 <button class="green" type="submit">
-                    <i class="material-icons" style="font-size:25px">create</i>
+                    <i class="material-icons" style="font-size:25px">save</i>
                 </button>
             </td>
         </tr>
 
     </table>
-
 </form>
 
 </body>

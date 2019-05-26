@@ -27,15 +27,15 @@ public class ProjectService {
         return projectRepo.deleteProject(projectID);
     } */
 
-    public Project addProject(Project project) {
-        return projectRepo.addProject(project);
+    public Project createProject(Project project) {
+        return projectRepo.createProject(project);
     }
 
     public Project findProjectById(int projectID) {
         return projectRepo.findProjectById(projectID);
     }
 
-    public Project updateProject(int projectID, Project project) {
-        return projectRepo.updateProject(projectID, project);
+    public Project editProject(int projectID, Project project) {
+        return projectRepo.editProject(projectID, project);
     }
 }

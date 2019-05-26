@@ -40,7 +40,7 @@
             <th>E-mail</th>
             <th>Telefonnummer</th>
             <th>
-                <a href="/addEmployee" id="addEmpBtn">
+                <a href="/createEmployee" id="addEmpBtn">
                     <button class="green" id="button-create">
                         <i class="material-icons" style="font-size:25px">create</i>
                     </button>
@@ -56,7 +56,7 @@
             <td th:text="${employee.employeeEmail}"/>
             <td th:text="${employee.employeePhone}"/>
             <td>
-                <a th:href="@{'/updateEmployee/'+${employee.employeeID}}">
+                <a th:href="@{'/editEmployee/'+${employee.employeeID}}">
                     <button class="blue" id="btn-update"><i class="material-icons" style="font-size:26px">settings</i>
                     </button>
                 </a>

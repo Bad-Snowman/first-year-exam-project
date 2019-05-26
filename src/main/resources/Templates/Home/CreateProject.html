@@ -2,9 +2,10 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Opdater projekt</title>
+    <title>Tilføj projekt</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 </head>
 <body>
@@ -28,81 +29,70 @@
     </header>
 </div>
 
-<h1>Opdater project</h1>
+<h1>Tilføj projekt</h1>
 
-<form action="/updateProject" method="post">
+<form action="/createProject" method="post">
+
     <table>
         <tr>
             <td>
-                <p>Project-ID: </p>
+                <label>Projekt navn:</label>
             </td>
             <td>
-                <input type="text" name="projectID" th:value="${project.projectID}" readonly/>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>Projekt navn: </p>
-            </td>
-            <td>
-                <input type="text" name="projectName" th:value="${project.projectName}"/>
+                <input type="text" name="projectName"/>
             </td>
         </tr>
 
         <tr>
             <td>
-                <p>Beskrivelse: </p>
+                <label>Projekt Beskrivelse:</label>
             </td>
             <td>
-                <input type="text" name="projectDesc" th:value="${project.projectDesc}"/>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>Manager navn: </p>
-            </td>
-            <td>
-                <input type="text" name="projectManagerName" th:value="${project.projectManagerName}"/>
+                <input type="text" name="projectDesc"/>
             </td>
         </tr>
 
         <tr>
             <td>
-                <p>Forventet tid: </p>
+                <label>Projekt manager:</label>
             </td>
             <td>
-                <input type="text" name="projectExpectedTime" th:value="${project.projectExpectedTime}"/>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>Brugt tid: </p>
-            </td>
-            <td>
-                <input type="text" name="projectUsedTime" th:value="${project.projectUsedTime}"/>
+                <input type="text" name="projectManagerName"/>
             </td>
         </tr>
-
         <tr>
             <td>
-                <p>Deadline: </p>
+                <label>Forventet tid(timer)</label>
             </td>
             <td>
-                <input type="text" name="projectDeadline" th:value="${project.projectDeadline}"/>
+                <input type="text" name="projectExpectedTime"/>
             </td>
         </tr>
-
         <tr>
             <td>
-                Status på projektet:
+                <label>Brugt tid(timer)</label>
             </td>
             <td>
-                <select th:field="*{project.projectDone}">
-                    <option th:value="'Igang'">Igang</option>
-                    <option th:value="'Afsluttet'">Afsluttet</option>
+                <input type="text" name="projectUsedTime"/>
+            </td>
+        </tr>
+        <tr>
+
+            <td>
+                <label>Deadline</label>
+            </td>
+            <td>
+                <input type="text" name="projectDeadline"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Status på projektet</label>
+            </td>
+            <td>
+                <select name="projectDone">
+                    <option value="Igang">Igang</option>
+                    <option value="Afsluttet">Afsluttet</option>
                 </select>
             </td>
         </tr>
@@ -118,5 +108,6 @@
     </table>
 
 </form>
+
 </body>
 </html>

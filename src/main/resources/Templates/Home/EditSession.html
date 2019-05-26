@@ -2,12 +2,13 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Tilføj session</title>
+    <title>Opdater session</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
+
 <div id="wrapper">
     <header id="header">
         <div class="container">
@@ -28,62 +29,71 @@
     </header>
 </div>
 
-<h1>Opret session</h1>
+<h1>Opdater session</h1>
 
-<form action="/addSession" method="post">
+<form action="/editSession" method="post">
+
     <table>
         <tr>
             <td>
-                <label>Dato (YYYY-MM-DD): </label>
+                <p>Session-ID: </p>
             </td>
             <td>
-                <input type="text" name="sessionTimeDate" th:value="${localDate}"/>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label>Tid start: </label>
-            </td>
-            <td>
-                <input type="text" name="sessionTimeStart" th:value="${localTime}"/>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label>Tid slut: </label>
-            </td>
-            <td>
-                <input type="text" name="sessionTimeEnd"/>
+                <input type="text" name="sessionTimeID" th:value="${sessions.sessionTimeID}" readonly/>
             </td>
         </tr>
         <tr>
             <td>
-                <label>Medarbejder-ID: </label>
+                <p>Dato for start: </p>
             </td>
             <td>
-                <input type="text" name="sessionTimeEmpID"/>
+                <input type="text" name="sessionTimeDate" th:value="${sessions.sessionTimeDate}"/>
             </td>
         </tr>
         <tr>
             <td>
-                <label>Projekt-ID: </label>
+                <p>Tid start: </p>
             </td>
             <td>
-                <input type="text" name="sessionTimeProID"/>
+                <input type="text" name="sessionTimeStart" th:value="${sessions.sessionTimeStart}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Tid slut: </p>
+            </td>
+            <td>
+                <input type="text" name="sessionTimeEnd" th:value="${sessions.sessionTimeEnd}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Employee ID: </p>
+            </td>
+            <td>
+                <input type="text" name="sessionTimeEmpID" th:value="${sessions.sessionTimeEmpID}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Project ID: </p>
+            </td>
+            <td>
+                <input type="text" name="sessionTimeProID" th:value="${sessions.sessionTimeProID}"/>
             </td>
         </tr>
 
         <tr>
             <td colspan="2">
                 <button class="green" type="submit">
-                    <i class="material-icons" style="font-size:25px">create</i>
+                    <i class="material-icons" style="font-size:25px">save</i>
                 </button>
             </td>
         </tr>
 
     </table>
+
+
 </form>
 
 </body>

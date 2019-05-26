@@ -7,32 +7,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-    <style>
-        .overlay {
-            position: fixed;
-            display: none;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 2;
-            cursor: pointer;
-        }
-
-        #text{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            font-size: 50px;
-            color: white;
-            transform: translate(-50%,-50%);
-            -ms-transform: translate(-50%,-50%);
-        }
-    </style>
-
 </head>
 <body>
 
@@ -70,7 +44,8 @@
             <th>Deadline</th>
             <th>Status</th>
             <th>
-                <a href="/addProject">
+                <!-- Button which forwards the user to the add project website -->
+                <a href="/createProject">
                     <button class="green" id="button-create">
                         <i class="material-icons" style="font-size:25px">create</i>
                     </button>
@@ -80,11 +55,15 @@
 
         </thead>
         <tbody>
+
+        <!-- Table which loops through the projects model and prints the information stored in the database -->
         <tr th:each="project:${projects}">
             <td th:text="${project.projectID}"/>
             <td th:text="${project.projectName}"/>
 
-
+            <!-- Table which contains a button which is connected to the two functions on() and off().
+             When the button is pressed, a overlay will appear on the screen with at project description
+             regarding the project -->
             <td>
                 <div class="overlay" style="display: none" th:id="@{''+${project.projectID}}"
                      th:onclick="@{'off( \''+${project.projectID}+'\' )'}">
@@ -92,9 +71,10 @@
                 </div>
 
                 <div style="padding:20px">
-                    <button th:onclick="@{'on( \''+${project.projectID}+'\' )'}"> Description </button>
+                    <button class="blue" th:onclick="@{'on( \''+${project.projectID}+'\' )'}">
+                        <i class="material-icons" style="font-size:26px">info_outline</i>
+                    </button>
                 </div>
-
             </td>
 
             <td th:text="${project.projectManagerName}"/>
@@ -102,8 +82,12 @@
             <td th:text="${project.projectUsedTime}"/>
             <td th:text="${project.projectDeadline}"/>
             <td th:text="${project.projectDone}"/>
+
+            <!-- Button which redirects the user to a new website where the user will be able to update the
+                 details about regarding the project, thymeleaf will forward the project id so the correct
+                 info will appear -->
             <td>
-                <a th:href="@{'/updateProject/'+${project.projectID}}">
+                <a th:href="@{'/editProject/'+${project.projectID}}">
                     <button class="blue" id="btn-updateProject">
                         <i class="material-icons" style="font-size:26px">settings</i></button>
                 </a>
@@ -111,11 +95,13 @@
                        <button class="red" id="btn-delete">Slet</button>
                    </a> -->
             </td>
-
         </tr>
         </tbody>
     </table>
 </div>
+
+<!-- Two functions for the overlay button in the table.
+     The Code was found on following site at then adapted to our program https://www.w3schools.com/HOWTO/howto_css_overlay.asp -->
 
 <script>
     function on( buttonclicked ) {
@@ -126,8 +112,6 @@
         document.getElementById(buttonclicked).style.display = "none";
     }
 </script>
-
-
 
 </body>
 </html>

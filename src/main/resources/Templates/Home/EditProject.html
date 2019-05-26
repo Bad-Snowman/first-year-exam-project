@@ -2,13 +2,12 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Opdater session</title>
+    <title>Opdater projekt</title>
     <link rel="stylesheet" type="text/css" href="/MyCss.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
-
 <div id="wrapper">
     <header id="header">
         <div class="container">
@@ -29,57 +28,82 @@
     </header>
 </div>
 
-<h1>Opdater session</h1>
+<h1>Opdater project</h1>
 
-<form action="/updateSession" method="post">
-
+<form action="/editProject" method="post">
     <table>
         <tr>
             <td>
-                <p>Session-ID: </p>
+                <p>Project-ID: </p>
             </td>
             <td>
-                <input type="text" name="sessionTimeID" th:value="${sessions.sessionTimeID}" readonly/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p>Dato for start: </p>
-            </td>
-            <td>
-                <input type="text" name="sessionTimeDate" th:value="${sessions.sessionTimeDate}"/>
+                <input type="text" name="projectID" th:value="${project.projectID}" readonly/>
             </td>
         </tr>
+
         <tr>
             <td>
-                <p>Tid start: </p>
+                <p>Projekt navn: </p>
             </td>
             <td>
-                <input type="text" name="sessionTimeStart" th:value="${sessions.sessionTimeStart}"/>
+                <input type="text" name="projectName" th:value="${project.projectName}"/>
             </td>
         </tr>
+
         <tr>
             <td>
-                <p>Tid slut: </p>
+                <p>Beskrivelse: </p>
             </td>
             <td>
-                <input type="text" name="sessionTimeEnd" th:value="${sessions.sessionTimeEnd}"/>
+                <input type="text" name="projectDesc" th:value="${project.projectDesc}"/>
             </td>
         </tr>
+
         <tr>
             <td>
-                <p>Employee ID: </p>
+                <p>Manager navn: </p>
             </td>
             <td>
-                <input type="text" name="sessionTimeEmpID" th:value="${sessions.sessionTimeEmpID}"/>
+                <input type="text" name="projectManagerName" th:value="${project.projectManagerName}"/>
             </td>
         </tr>
+
         <tr>
             <td>
-                <p>Project ID: </p>
+                <p>Forventet tid: </p>
             </td>
             <td>
-                <input type="text" name="sessionTimeProID" th:value="${sessions.sessionTimeProID}"/>
+                <input type="text" name="projectExpectedTime" th:value="${project.projectExpectedTime}"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Brugt tid: </p>
+            </td>
+            <td>
+                <input type="text" name="projectUsedTime" th:value="${project.projectUsedTime}"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Deadline: </p>
+            </td>
+            <td>
+                <input type="text" name="projectDeadline" th:value="${project.projectDeadline}"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Status på projektet:
+            </td>
+            <td>
+                <select th:field="*{project.projectDone}">
+                    <option th:value="'Igang'">Igang</option>
+                    <option th:value="'Afsluttet'">Afsluttet</option>
+                </select>
             </td>
         </tr>
 
@@ -93,8 +117,6 @@
 
     </table>
 
-
 </form>
-
 </body>
 </html>

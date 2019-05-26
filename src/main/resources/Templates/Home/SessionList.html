@@ -43,7 +43,7 @@
         <th>Medarbejder navn</th>
         <th>Projekt navn</th>
         <th colspan="2">
-            <a href="/addSession">
+            <a href="/createSession">
                 <button class="green" id="button-create">
                     <i class="material-icons" style="font-size:25px">create</i>
                 </button>
@@ -63,11 +63,12 @@
                th:text="${sessionTime.employeeLastName + ', ' + sessionTime.employeeFirstName}"/>
         </td>
         <td>
-            <a th:href="@{'/projectDetails/'+${sessionTime.sessionTimeProID}}" th:text="${sessionTime.projectName}"/>
+            <a th:href="@{'/projectDetails/'+${sessionTime.sessionTimeProID}}"
+               th:text="${sessionTime.projectName}"/>
         </td>
 
         <td>
-            <a th:href="@{'/updateSession/'+${sessionTime.sessionTimeID}}">
+            <a th:href="@{'/editSession/'+${sessionTime.sessionTimeID}}">
                 <button class="blue" id="btn-updateSession">
                     <i class="material-icons" style="font-size:25px">settings</i>
                 </button>
@@ -75,8 +76,8 @@
         </td>
         <td>
 
-            <a th:href="@{'/deleteSessionTime/'+${sessionTime.sessionTimeID}}">
-                <button class="red" id="btn-delete">
+            <a>
+                <button class="red" id="btn-delete" >
                     <i class="material-icons" style="font-size:25px">delete_forever</i>
                 </button>
             </a>
@@ -84,5 +85,7 @@
     </tr>
     </tbody>
 </table>
+
+
 </body>
 </html>
