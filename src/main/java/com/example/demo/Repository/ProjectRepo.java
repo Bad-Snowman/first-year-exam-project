@@ -40,8 +40,8 @@ public class ProjectRepo implements ProjectUsedTime {
         return 0;
     }
 
-    // A method which uses the SELECT keyword to retrive all data from the 'project' table
-    public List<Project> fetchAll() {
+    // A method which uses the SELECT keyword to retrieve all data from the 'project' table
+    public List<Project> fetchAllProjects() {
         String sql = "SELECT * FROM project";
         RowMapper<Project> rowMapper = new BeanPropertyRowMapper<>(Project.class);
         return template.query(sql, rowMapper);
@@ -65,7 +65,9 @@ public class ProjectRepo implements ProjectUsedTime {
         return project;
     }
 
-    /* Ikke muligt grundet fk og pk celler i sessions
+    /* Currently not possible because of conflicts with primary keys and foreign keys,
+    look at deleteSession for a working delete function
+
     public Boolean deleteProject(String projectID){
         String sql = "DELETE FROM project WHERE projectID = ?";
         return template.update(sql, projectID) > 0;

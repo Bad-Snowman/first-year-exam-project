@@ -17,7 +17,6 @@ public class Employee {
     private String employeeEmail;
 
     // Constructors
-
     public Employee(){
     };
 
