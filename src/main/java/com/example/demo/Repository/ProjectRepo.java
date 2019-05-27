@@ -65,14 +65,6 @@ public class ProjectRepo implements ProjectUsedTime {
         return project;
     }
 
-    /* Currently not possible because of conflicts with primary keys and foreign keys,
-    look at deleteSession for a working delete function
-
-    public Boolean deleteProject(String projectID){
-        String sql = "DELETE FROM project WHERE projectID = ?";
-        return template.update(sql, projectID) > 0;
-    } */
-
     // A method which uses the UPDATE and WHERE keywords to modify a specific table sorted by ID
     public Project editProject(int projectID, Project project) {
         String sql = "UPDATE project SET projectName = ?, projectDesc = ?, projectManagerName = ?, " +
@@ -84,5 +76,12 @@ public class ProjectRepo implements ProjectUsedTime {
         return null;
     }
 
+ /* Currently not possible because of conflicts with primary keys and foreign keys,
+    look at deleteSession for a working delete function
+
+    public Boolean deleteProject(String projectID){
+        String sql = "DELETE FROM project WHERE projectID = ?";
+        return template.update(sql, projectID) > 0;
+    } */
 }
 
