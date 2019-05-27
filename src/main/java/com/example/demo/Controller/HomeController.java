@@ -38,10 +38,11 @@ public class HomeController {
     }
 
     ///////////// Project ////////////
-    //All GetMapping and PostMapping related to project
+    //All GetMapping and PostMapping related to the project object
+
     @GetMapping("/projectList")
     public String projectList(Model model) {
-        List<Project> projectList = projectService.fetchAll();
+        List<Project> projectList = projectService.fetchAllProjects();
         model.addAttribute("projects", projectList);
         return "Home/ProjectList";
     }
@@ -64,18 +65,6 @@ public class HomeController {
         return "redirect:/projectList";
     }
 
-    /*// Ikke muligt grundet fk og pk celler i sessions
-
-    @GetMapping("/deleteProject/{projectID}")
-    public String deleteProject(@PathVariable("projectID") String projectID) {
-        boolean deleted = projectService.deleteProject(projectID);
-        if (deleted) {
-            return "redirect:/projectList";
-        } else {
-            return "redirect:/";
-        }
-    } */
-
     @GetMapping("/createProject")
     public String createProject() {
         return "Home/CreateProject";
@@ -87,10 +76,25 @@ public class HomeController {
         return "redirect:/projectList";
     }
 
+
+    /* Currently not possible because of conflicts with primary keys and foreign keys,
+       look at deleteSession for a working delete function
+
+       @GetMapping("/deleteProject/{projectID}")
+       public String deleteProject(@PathVariable("projectID") String projectID) {
+           boolean deleted = projectService.deleteProject(projectID);
+           if (deleted) {
+               return "redirect:/projectList";
+           } else {
+               return "redirect:/";
+           }
+       } */
+
+
     ////////// Employee //////////////
     @GetMapping("employeeList")
     public String toEmployeeList(Model model) {
-        List<Employee> employeeList = employeeService.fetchAll();
+        List<Employee> employeeList = employeeService.fetchAllEmployees();
         model.addAttribute("employees", employeeList);
         return "Home/EmployeeList";
     }
@@ -105,17 +109,6 @@ public class HomeController {
         employeeService.createEmployee(employee);
         return "redirect:/employeeList";
     }
-
-    /*// Ikke muligt grundet fk og pk celler i sessions
-    @GetMapping("/deleteEmployee/{employeeID}")
-    public String deleteEmployee(@PathVariable("employeeID") int employeeID) {
-        boolean deleted = employeeService.deleteEmployee(employeeID);
-        if (deleted) {
-            return "redirect:/employeeList";
-        } else {
-            return "redirect:/";
-        }
-    } */
 
     @GetMapping("/employeeDetails/{sessionTimeEmpID}")
     public String employeeDetails(@PathVariable("sessionTimeEmpID") int employeeID, Model model) {
@@ -138,7 +131,7 @@ public class HomeController {
     /////////// SessionTime ////////////
     @GetMapping("/sessionList")
     public String sessionList(Model model) {
-        List<SessionTime> sessionList = sessionTimeService.fetchAll();
+        List<SessionTime> sessionList = sessionTimeService.fetchAllSessionTimes();
         model.addAttribute("sessionsTime", sessionList);
         return "Home/SessionList";
     }
@@ -164,7 +157,6 @@ public class HomeController {
         sessionTimeService.editSessionTime(sessionTime.getSessionTimeID(), sessionTime);
         return "redirect:/sessionList";
     }
-
 
     @GetMapping("/createSession")
     public String createSession(Model model) {
