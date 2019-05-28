@@ -13,10 +13,6 @@ public class ProjectService {
     @Autowired
     ProjectRepo projectRepo;
 
-    /////////////// VIRKER IKkE ////////////////
-    public double calculateUsedTime(){
-        return projectRepo.calculateUsedTime();
-    }
 
     public List<Project> fetchAllProjects() {
         return projectRepo.fetchAllProjects();

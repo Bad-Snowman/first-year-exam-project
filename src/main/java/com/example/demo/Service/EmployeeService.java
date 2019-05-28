@@ -17,10 +17,13 @@ public class EmployeeService {
         return employeeRepo.fetchAllEmployees();
     }
 
+    public Employee createEmployee(Employee employee){
+        if(employee.getEmployeePhone() > 0 && employee.getEmployeePhone() < 100000000){
 
-    public Employee addEmployee(Employee employee){
-        return employeeRepo.addEmployee(employee);
-
+            return employeeRepo.createEmployee(employee);
+        } else {
+            return null;
+        }
     }
 
     /* // Ikke muligt grundet fk og pk celler i sessions
