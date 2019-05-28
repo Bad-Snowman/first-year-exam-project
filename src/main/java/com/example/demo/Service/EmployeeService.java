@@ -18,10 +18,10 @@ public class EmployeeService {
     }
 
 
-    public Employee addEmployee(Employee employee){
+    public Employee createEmployee(Employee employee){
         if(employee.getEmployeePhone() > 0 && employee.getEmployeePhone() < 100000000){
 
-            return employeeRepo.addEmployee(employee);
+            return employeeRepo.createEmployee(employee);
         } else {
             return null;
         }

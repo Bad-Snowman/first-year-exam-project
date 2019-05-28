@@ -1,6 +1,7 @@
 package com.example.demo.Model;
 
 import com.example.demo.Interfaces.ProjectUsedTime;
+import com.example.demo.Repository.ProjectRepo;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
@@ -17,17 +18,16 @@ public class Project {
     private String projectName;
     private String projectDesc;
     private String projectManagerName;
-    private double projectExpectedTime;
-    private double projectUsedTime;
+    private String projectExpectedTime;
+    private String projectUsedTime;
     private String projectDeadline;
     private String projectDone;
-
 
     // Constructors
     public Project(){}
 
     public Project(int projectID, String projectName, String projectDesc, String projectManagerName,
-                   double projectExpectedTime, double projectUsedTime, String projectDeadline, String projectDone) {
+                   String projectExpectedTime, String projectUsedTime, String projectDeadline, String projectDone) {
         this.projectID = projectID;
         this.projectName = projectName;
         this.projectDesc = projectDesc;
@@ -73,19 +73,19 @@ public class Project {
         this.projectManagerName = projectManagerName;
     }
 
-    public double getProjectExpectedTime(){
+    public String getProjectExpectedTime(){
         return projectExpectedTime;
     }
 
-    public void setProjectExpectedTime(double projectExpectedTime){
+    public void setProjectExpectedTime(String projectExpectedTime){
         this.projectExpectedTime = projectExpectedTime;
     }
 
-    public double getProjectUsedTime(){
+    public String getProjectUsedTime(){
         return projectUsedTime;
     }
 
-    public void setProjectUsedTime(double projectUsedTime){
+    public void setProjectUsedTime(String projectUsedTime){
         this.projectUsedTime = projectUsedTime;
     }
 
