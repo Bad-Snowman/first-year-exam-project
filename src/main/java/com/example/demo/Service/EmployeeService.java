@@ -26,7 +26,9 @@ public class EmployeeService {
         }
     }
 
-    /* // Ikke muligt grundet fk og pk celler i sessions
+    /* Currently not possible because of conflicts with primary keys and foreign keys,
+    look at deleteSession for a working delete function
+
     public boolean deleteEmployee(int employeeID) {
         return employeeRepo.deleteEmployee(employeeID);
     } */
