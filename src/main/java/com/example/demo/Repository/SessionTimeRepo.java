@@ -14,8 +14,9 @@ public class SessionTimeRepo {
     @Autowired
     JdbcTemplate template;
 
-    //Handles sql statements
-    public List<SessionTime> fetchAll() {
+    // A method which sends a SELECT keyword to the database to retrieve all data from the 'sessionTime' table
+    // it joins the employee and project table using inner joins
+    public List<SessionTime> fetchAllSessionTimes() {
         String sql;
 
         sql = "SELECT sessiontime.sessionTimeID, sessiontime.sessionTimeDate, sessiontime.sessionTimeStart,\n" +
@@ -33,18 +34,20 @@ public class SessionTimeRepo {
         return template.query(sql, rowMapper);
     }
 
+    // A method which uses the SELECT and WHERE keywords to show data from a specific sessionTime sorted by ID
     public SessionTime findSessionByID(int sessionTimeID) {
         String sql = "SELECT * FROM sessionTime WHERE sessionTimeID = ?";
         RowMapper<SessionTime> rowMapper = new BeanPropertyRowMapper<>(SessionTime.class);
         SessionTime sessionTime = template.queryForObject(sql, rowMapper, sessionTimeID);
         return sessionTime;
     }
-
+    // A method which uses the DELETE and WHERE keywords to delete a specific row in the "sessionTime" table
     public boolean deleteSessionTime(String sessionTimeID) {
         String sql = "DELETE FROM sessionTime WHERE sessionTimeID=?";
         return template.update(sql, sessionTimeID) > 0;
     }
 
+    // A method which uses the INSERT keyword to inject data into the 'sessionTime' table
     public SessionTime createSessionTime(SessionTime sessionTime) {
         String sql = "INSERT INTO sessionTime (sessionTimeDate, sessionTimeStart, sessionTimeEnd, " +
                 "sessionTimeEmpID, sessionTimeProID) VALUES(?, ?, ?, ?, ?)";
@@ -54,6 +57,7 @@ public class SessionTimeRepo {
         return null;
     }
 
+    // A method which uses the UPDATE and WHERE keywords to modify a specific table sorted by ID
     public SessionTime editSessionTime(int sessionTimeID, SessionTime sessionTime) {
         String sql = "UPDATE sessionTime SET sessionTimeDate = ?, sessionTimeStart = ?, " +
                 "sessionTimeEnd = ?, sessionTimeEmpID = ?, sessionTimeProID = ? WHERE sessionTimeID = ?";

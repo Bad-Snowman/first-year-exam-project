@@ -15,7 +15,7 @@ public class EmployeeRepo {
     JdbcTemplate template;
 
     // A method which sends a SELECT keyword to the database to retrieve all data from the 'employee' table
-    public List<Employee> fetchAll() {
+    public List<Employee> fetchAllEmployees() {
         String sql = "SELECT * FROM employee";
         RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
         return template.query(sql, rowMapper);
@@ -30,7 +30,9 @@ public class EmployeeRepo {
         return null;
     }
 
-    /* Ikke muligt grundet fk og pk celler i sessions
+    /* Currently not possible because of conflicts with primary keys and foreign keys,
+    look at deleteSession in SessionTimeRepo for a working delete function
+
     public boolean deleteEmployee(int employeeID) {
         String sql = "DELETE FROM employee WHERE employeeID=?";
         return template.update(sql, employeeID) > 0;

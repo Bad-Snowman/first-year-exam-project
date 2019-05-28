@@ -14,8 +14,8 @@ public class ProjectService {
     ProjectRepo projectRepo;
 
 
-    public List<Project> fetchAll() {
-        return projectRepo.fetchAll();
+    public List<Project> fetchAllProjects() {
+        return projectRepo.fetchAllProjects();
     }
 
     /* //Ikke muligt grundet fk og pk celler i sessions

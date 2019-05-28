@@ -13,8 +13,8 @@ public class EmployeeService {
     @Autowired
     EmployeeRepo employeeRepo;
 
-    public List<Employee> fetchAll() {
-        return employeeRepo.fetchAll();
+    public List<Employee> fetchAllEmployees() {
+        return employeeRepo.fetchAllEmployees();
     }
 
 
