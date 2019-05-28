@@ -17,7 +17,6 @@ public class EmployeeService {
         return employeeRepo.fetchAllEmployees();
     }
 
-
     public Employee createEmployee(Employee employee){
         if(employee.getEmployeePhone() > 0 && employee.getEmployeePhone() < 100000000){
 
