@@ -1,5 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%2C800%7CRoboto%3A100%2C300%2C400%2C500%2C700%2C900&ver=4.8');
 /* ////////////////////////////BODY//////////////////////// */
+/* Header */
+
+.container{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: solid;
+    border-bottom-color: #2F5BB7;
+}
+
+.navbar-header{
+    width: auto;
+    height: 100px;
+}
+
+.logo{
+     padding-left: 30px;
+     padding-top: 30px;
+     width: 160px;
+     height: 60px;
+ }
+
+.mainPicture{
+    width: 100%;
+
+}
+#picture{
+    max-width: 100%;
+}
 
 body{
     font-family: "Open Sans", Arial, sans-serif;
@@ -172,130 +204,9 @@ tr:nth-child(even){
 }
 
 
-/* Header */
 
-.container{
-    margin-top: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-bottom: solid;
-    border-bottom-color: #2F5BB7;
-}
 
-.logo{
-    padding-left: 30px;
-    padding-top: 30px;
-    width: 160px;
-    height: 60px;
-}
 
-.navbar-header{
-    width: auto;
-    height: 100px;
-}
-
-/*//////////////////SLIDESHOW/////////////////*/
-* {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-    max-width: 500px;
-    position: relative;
-    margin: auto;
-}
-
-/* Hide the images by default */
-.mySlides {
-    display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-.prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-    background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-}
-
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-}
 
 /* ///////// Overlay /////////// */
 .overlay {

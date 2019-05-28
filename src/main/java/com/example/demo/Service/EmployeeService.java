@@ -19,19 +19,11 @@ public class EmployeeService {
 
     public Employee createEmployee(Employee employee){
         if(employee.getEmployeePhone() > 0 && employee.getEmployeePhone() < 100000000){
-
             return employeeRepo.createEmployee(employee);
         } else {
             return null;
         }
     }
-
-    /* Currently not possible because of conflicts with primary keys and foreign keys,
-    look at deleteSession for a working delete function
-
-    public boolean deleteEmployee(int employeeID) {
-        return employeeRepo.deleteEmployee(employeeID);
-    } */
 
     public Employee findEmployeeByID(int employeeID) {
         return employeeRepo.findEmployeeByID(employeeID);
@@ -41,5 +33,10 @@ public class EmployeeService {
         return employeeRepo.editEmployee(employeeID, employee);
     }
 
+/* Currently not possible because of conflicts with primary keys and foreign keys,
+    look at deleteSession for a working delete function
 
+    public boolean deleteEmployee(int employeeID) {
+        return employeeRepo.deleteEmployee(employeeID);
+    } */
 }

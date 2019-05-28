@@ -18,13 +18,6 @@ public class ProjectService {
         return projectRepo.fetchAllProjects();
     }
 
-    /* Currently not possible because of conflicts with primary keys and foreign keys,
-    look at deleteSession for a working delete function
-
-    public boolean deleteProject(String projectID){
-        return projectRepo.deleteProject(projectID);
-    } */
-
     public Project createProject(Project project) {
         return projectRepo.createProject(project);
     }
@@ -36,4 +29,11 @@ public class ProjectService {
     public Project editProject(int projectID, Project project) {
         return projectRepo.editProject(projectID, project);
     }
+
+    /* Currently not possible because of conflicts with primary keys and foreign keys,
+    look at deleteSession for a working delete function
+
+    public boolean deleteProject(String projectID){
+        return projectRepo.deleteProject(projectID);
+    } */
 }
