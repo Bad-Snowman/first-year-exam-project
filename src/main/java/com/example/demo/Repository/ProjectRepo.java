@@ -54,10 +54,10 @@ public class ProjectRepo {
     // A method which uses the UPDATE and WHERE keywords to modify a specific table sorted by ID
     public Project editProject(int projectID, Project project) {
         String sql = "UPDATE project SET projectName = ?, projectDesc = ?, projectManagerName = ?, " +
-                "projectExpectedTime = ?, projectUsedTime = ?, projectDeadline = ?, projectDone = ? " +
+                "projectExpectedTime = ?, projectDeadline = ?, projectDone = ? " +
                 "WHERE projectID = ?";
         template.update(sql, project.getProjectName(), project.getProjectDesc(), project.getProjectManagerName(),
-                project.getProjectExpectedTime(), project.getProjectUsedTime(), project.getProjectDeadline(),
+                project.getProjectExpectedTime(), project.getProjectDeadline(),
                 project.getProjectDone(), project.getProjectID());
         return null;
     }

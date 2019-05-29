@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Time;
 import java.util.List;
 
 @Repository
@@ -66,4 +67,5 @@ public class SessionTimeRepo {
                 sessionTime.getSessionTimeProID(), sessionTime.getSessionTimeID());
         return null;
     }
+
 }

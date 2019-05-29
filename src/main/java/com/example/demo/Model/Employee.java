@@ -28,7 +28,7 @@ public class Employee {
         this.employeeEmail = employeeEmail;
     }
 
-    ///////////////////////////////Getters and Setter///////////////////////
+    ///////////////////////////////Getters and Setter///////////////////////////////
     public int getEmployeeID() {
         return employeeID;
     }
