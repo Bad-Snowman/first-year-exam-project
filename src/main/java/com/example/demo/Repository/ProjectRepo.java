@@ -24,7 +24,7 @@ public class ProjectRepo {
     JdbcTemplate template;
 
     // A method which uses the SELECT keyword to retrive all data from the 'project' table
-    public List<Project> fetchAll() {
+    public List<Project> fetchAllProjects() {
         String sql = "SELECT * FROM project \n" +
                 "JOIN  (SELECT  sec_to_time(  sum(time_to_sec(  TIMEDIFF(sessionTimeEnd, sessionTimeStart)))) \n" +
                 "as projectUsedTime, sessionTimeProID FROM sessiontime GROUP BY sessionTimeProId)\n" +
