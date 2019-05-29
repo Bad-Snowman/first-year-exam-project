@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.LocalDateAndTime;
 import com.example.demo.Model.Employee;
 import com.example.demo.Model.Project;
 import com.example.demo.Model.SessionTime;
@@ -160,8 +161,8 @@ public class HomeController {
 
     @GetMapping("/createSession")
     public String createSession(Model model) {
-        model.addAttribute("localTime", sessionTimeService.getSessionTimeTime());
-        model.addAttribute("localDate", sessionTimeService.getSessionDate());
+        model.addAttribute("localTime", LocalDateAndTime.getCurrentTime());
+        model.addAttribute("localDate", LocalDateAndTime.getCurrentDate());
 
         return "Home/CreateSession";
     }

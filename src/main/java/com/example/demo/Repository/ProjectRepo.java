@@ -15,11 +15,11 @@ public class ProjectRepo {
     @Autowired
     JdbcTemplate template;
 
-    // A method which uses the SELECT keyword to retrive all data from the 'project' table
+    // A method which uses the SELECT keyword to retrieve all data from the 'project' table
     public List<Project> fetchAllProjects() {
         String sql = "SELECT * FROM project \n" +
-                "JOIN  (SELECT  sec_to_time(  sum(time_to_sec(  TIMEDIFF(sessionTimeEnd, sessionTimeStart)))) \n" +
-                "as projectUsedTime, sessionTimeProID FROM sessiontime GROUP BY sessionTimeProId)\n" +
+                "JOIN  (SELECT  sec_to_time(  sum(time_to_sec(  TIMEDIFF(sessionTimeEnd, sessionTimeStart))))" +
+                "as projectUsedTime, sessionTimeProID FROM sessiontime GROUP BY sessionTimeProId)" +
                 "AS tabel ON project.projectID = tabel.sessionTimeProID;";
         RowMapper<Project> rowMapper = new BeanPropertyRowMapper<>(Project.class);
         return template.query(sql, rowMapper);
@@ -28,7 +28,7 @@ public class ProjectRepo {
     // A method which uses the INSERT keyword to inject data into the 'project' table
     public Project createProject(Project project) {
         String sql = "INSERT INTO project (projectName, projectDesc, projectManagerName, projectExpectedTime, " +
-                "projectUsedTime, projectDeadline, projectDone) VALUES(?, ?, ?, ?, ?, ?, ?)";
+                "projectDeadline, projectDone) VALUES(?, ?, ?, ?, ?, ?)";
         template.update(sql, project.getProjectName(), project.getProjectDesc(), project.getProjectManagerName(),
                 project.getProjectExpectedTime(), project.getProjectUsedTime(), project.getProjectDeadline(),
                 project.getProjectDone());
@@ -48,9 +48,9 @@ public class ProjectRepo {
         String sql = "UPDATE project SET projectName = ?, projectDesc = ?, projectManagerName = ?, " +
                 "projectExpectedTime = ?, projectDeadline = ?, projectDone = ? " +
                 "WHERE projectID = ?";
-        template.update(sql, project.getProjectName(), project.getProjectDesc(), project.getProjectManagerName(),
-                project.getProjectExpectedTime(), project.getProjectDeadline(),
-                project.getProjectDone(), project.getProjectID());
+        template.update(sql, project.getProjectName(), project.getProjectDesc(),
+                project.getProjectManagerName(), project.getProjectExpectedTime(),
+                project.getProjectDeadline(), project.getProjectDone(), project.getProjectID());
         return null;
     }
 

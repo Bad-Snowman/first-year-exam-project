@@ -30,13 +30,6 @@ public class SessionTimeService {
         return sessionTimeRepo.createSessionTime(sessionTime);
     }
 
-    public String getSessionDate() {
-        return sessionTimeRepo.getCurrentDate();
-    }
-
-    public String getSessionTimeTime() {
-        return sessionTimeRepo.getCurrentTimeUsingDate();
-    }
 }
 
 

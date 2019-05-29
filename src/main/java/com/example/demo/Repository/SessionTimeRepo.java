@@ -70,21 +70,4 @@ public class SessionTimeRepo {
                 sessionTime.getSessionTimeProID(), sessionTime.getSessionTimeID());
         return null;
     }
-
-    public String getCurrentTimeUsingDate() {
-        Date date = new Date();
-        String strDateFormat = "HH:mm:ss";
-        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
-        String localTime = dateFormat.format(date);
-        return localTime;
-    }
-
-    public String getCurrentDate() {
-        Date date = new Date();
-        String strDateFormat = "dd-MM-yyyy";
-        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
-        String localDate = dateFormat.format(date);
-        return localDate;
-    }
-
 }
