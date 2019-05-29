@@ -1,21 +1,13 @@
 package com.example.demo.Repository;
 
-import com.example.demo.Interfaces.ProjectUsedTime;
+
 import com.example.demo.Model.Project;
-import com.example.demo.Model.SessionTime;
-import javassist.expr.Cast;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.Time;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository

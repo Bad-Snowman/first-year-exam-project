@@ -5,9 +5,6 @@ import com.example.demo.Repository.SessionTimeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -33,24 +30,13 @@ public class SessionTimeService {
         return sessionTimeRepo.createSessionTime(sessionTime);
     }
 
-    public String getCurrentTimeUsingDate() {
-        Date date = new Date();
-        String strDateFormat = "HH:mm:ss";
-        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
-        String localTime = dateFormat.format(date);
-        return localTime;
+    public String getSessionDate() {
+        return sessionTimeRepo.getCurrentDate();
     }
 
-    public String getCurrentDate() {
-        Date date = new Date();
-        String strDateFormat = "dd-MM-yyyy";
-        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
-        String localDate = dateFormat.format(date);
-        return localDate;
+    public String getSessionTimeTime() {
+        return sessionTimeRepo.getCurrentTimeUsingDate();
     }
-
-
-
 }
 
 

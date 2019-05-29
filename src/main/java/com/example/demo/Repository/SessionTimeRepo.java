@@ -8,6 +8,9 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -66,6 +69,22 @@ public class SessionTimeRepo {
                 sessionTime.getSessionTimeEnd(), sessionTime.getSessionTimeEmpID(),
                 sessionTime.getSessionTimeProID(), sessionTime.getSessionTimeID());
         return null;
+    }
+
+    public String getCurrentTimeUsingDate() {
+        Date date = new Date();
+        String strDateFormat = "HH:mm:ss";
+        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+        String localTime = dateFormat.format(date);
+        return localTime;
+    }
+
+    public String getCurrentDate() {
+        Date date = new Date();
+        String strDateFormat = "dd-MM-yyyy";
+        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+        String localDate = dateFormat.format(date);
+        return localDate;
     }
 
 }
