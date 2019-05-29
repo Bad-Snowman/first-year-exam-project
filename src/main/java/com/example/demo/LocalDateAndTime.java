@@ -1,11 +1,13 @@
 package com.example.demo;
 
+import com.example.demo.Interfaces.LocalDateAndTimeInterface;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 // Pure fabrication class to contain two methods which collects and returns the current date and time
-public class LocalDateAndTime {
+public class LocalDateAndTime implements LocalDateAndTimeInterface {
 
 
     // A method which uses an object of the Date class to collect the current date.
