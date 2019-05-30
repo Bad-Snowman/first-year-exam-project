@@ -1,6 +1,5 @@
 package com.example.demo.Service;
 
-import com.example.demo.Interfaces.ProjectUsedTime;
 import com.example.demo.Model.Project;
 import com.example.demo.Repository.ProjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;

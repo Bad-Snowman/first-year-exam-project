@@ -12,7 +12,9 @@ public class SessionTimeService {
     @Autowired
     SessionTimeRepo sessionTimeRepo;
 
-    public List<SessionTime> fetchAllSessionTimes() { return sessionTimeRepo.fetchAllSessionTimes(); }
+    public List<SessionTime> fetchAllSessionTimes() {
+        return sessionTimeRepo.fetchAllSessionTimes();
+    }
 
     public boolean deleteSessionTime(String sessionTimeID) {
         return sessionTimeRepo.deleteSessionTime(sessionTimeID);

@@ -1,8 +1,5 @@
 package com.example.demo.Model;
 
-import com.example.demo.Interfaces.ProjectUsedTime;
-import com.example.demo.Repository.ProjectRepo;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

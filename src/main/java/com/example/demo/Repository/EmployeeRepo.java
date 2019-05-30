@@ -30,14 +30,6 @@ public class EmployeeRepo {
         return null;
     }
 
-    /* Currently not possible because of conflicts with primary keys and foreign keys,
-    look at deleteSession in SessionTimeRepo for a working delete function
-
-    public boolean deleteEmployee(int employeeID) {
-        String sql = "DELETE FROM employee WHERE employeeID=?";
-        return template.update(sql, employeeID) > 0;
-    } */
-
     // A method which uses a SELECT keyword with a WHERE clause to filter records by employeeID
     public Employee findEmployeeByID(int employeeID) {
         String sql = "SELECT * FROM employee WHERE employeeID = ?";
@@ -54,4 +46,12 @@ public class EmployeeRepo {
                 employee.getEmployeeEmail(), employee.getEmployeePhone(), employee.getEmployeeID());
         return null;
     }
+
+    /* Currently not possible because of conflicts with primary keys and foreign keys,
+    look at deleteSessionTime in SessionTimeRepo for a working delete function
+
+    public boolean deleteEmployee(int employeeID) {
+        String sql = "DELETE FROM employee WHERE employeeID=?";
+        return template.update(sql, employeeID) > 0;
+    } */
 }
