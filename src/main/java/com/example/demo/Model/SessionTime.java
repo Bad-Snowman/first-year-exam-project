@@ -1,21 +1,17 @@
 package com.example.demo.Model;
 
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Time;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 //
 @Entity
 public class SessionTime {
 
-    @Id
     // Fields
+    @Id
     private int sessionTimeID;
+
     private Time sessionTimeStart;
     private Time sessionTimeEnd;
     private String SessionTimeDate;

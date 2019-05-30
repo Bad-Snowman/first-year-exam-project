@@ -2,15 +2,14 @@ package com.example.demo.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 public class Employee {
-    @Id
 
     // Fields
+    @Id
     private int employeeID;
+
     private String employeeFirstName;
     private String employeeLastName;
     private int employeePhone;
