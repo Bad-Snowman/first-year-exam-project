@@ -18,9 +18,9 @@ public class ProjectRepo {
     // A method which uses the SELECT keyword to retrieve all data from the 'project' table
     public List<Project> fetchAllProjects() {
         String sql = "SELECT * FROM project \n" +
-                "JOIN  (SELECT  sec_to_time(  sum(time_to_sec(  TIMEDIFF(sessionTimeEnd, sessionTimeStart))))" +
-                "as projectUsedTime, sessionTimeProID FROM sessiontime GROUP BY sessionTimeProId)" +
-                "AS tabel ON project.projectID = tabel.sessionTimeProID;";
+                "JOIN  (SELECT  sec_to_time(  sum(time_to_sec(  TIMEDIFF(sessionTimeEnd, sessionTimeStart)))) " +
+                "AS projectUsedTime, sessionTimeProID FROM sessiontime " +
+                "GROUP BY sessionTimeProId) tabel ON project.projectID = tabel.sessionTimeProID";
         RowMapper<Project> rowMapper = new BeanPropertyRowMapper<>(Project.class);
         return template.query(sql, rowMapper);
     }
@@ -55,7 +55,7 @@ public class ProjectRepo {
     }
 
  /* Currently not possible because of conflicts with primary keys and foreign keys,
-    look at deleteSession for a working delete function
+    look at deleteSessionTime for a working delete function
 
     public Boolean deleteProject(String projectID){
         String sql = "DELETE FROM project WHERE projectID = ?";
