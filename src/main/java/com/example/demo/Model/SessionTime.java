@@ -4,9 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Time;
 
-//
 @Entity
 public class SessionTime {
+
+    // Rasmus
+    // Mathias
 
     // Fields
     @Id

@@ -15,6 +15,10 @@ import java.util.List;
 
 @Repository
 public class SessionTimeRepo {
+
+    // Rasmus
+    // Mathias
+
     @Autowired
     JdbcTemplate template;
 
@@ -45,6 +49,7 @@ public class SessionTimeRepo {
         SessionTime sessionTime = template.queryForObject(sql, rowMapper, sessionTimeID);
         return sessionTime;
     }
+
     // A method which uses the DELETE and WHERE keywords to delete a specific row in the "sessionTime" table
     public boolean deleteSessionTime(String sessionTimeID) {
         String sql = "DELETE FROM sessionTime WHERE sessionTimeID=?";

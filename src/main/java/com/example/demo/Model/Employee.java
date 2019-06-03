@@ -6,6 +6,8 @@ import javax.persistence.Id;
 @Entity
 public class Employee {
 
+    // Lasse
+
     // Fields
     @Id
     private int employeeID;
@@ -16,8 +18,8 @@ public class Employee {
     private String employeeEmail;
 
     // Constructors
-    public Employee(){
-    };
+    public Employee() {
+    }
 
     public Employee(int employeeID, String employeeFirstName, String employeeLastName, int employeePhone, String employeeEmail) {
         this.employeeID = employeeID;

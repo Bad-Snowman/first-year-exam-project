@@ -1,10 +1,15 @@
 package com.example.demo.Interfaces;
 
 public interface LocalDateAndTimeInterface {
-    static String getCurrentTime(){
+
+    // Lasse
+
+    static String getCurrentTime() {
         return null;
-    };
-    static String getCurrentDate(){
+    }
+
+    static String getCurrentDate() {
         return null;
-    };
+    }
+
 }

@@ -6,6 +6,7 @@ import javax.persistence.Id;
 @Entity
 public class Project {
 
+    // Oliver
 
     // Fields
     @Id
@@ -20,7 +21,8 @@ public class Project {
     private String projectDone;
 
     // Constructors
-    public Project(){}
+    public Project() {
+    }
 
     public Project(int projectID, String projectName, String projectDesc, String projectManagerName,
                    String projectExpectedTime, String projectUsedTime, String projectDeadline, String projectDone) {
@@ -37,19 +39,19 @@ public class Project {
 
 //////////// Getters and setters ////////////
 
-    public int getProjectID(){
+    public int getProjectID() {
         return projectID;
     }
 
-    public void setProjectID(int projectID){
+    public void setProjectID(int projectID) {
         this.projectID = projectID;
     }
 
-    public String getProjectName(){
+    public String getProjectName() {
         return projectName;
     }
 
-    public void setProjectName(String projectName){
+    public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
 
@@ -61,27 +63,27 @@ public class Project {
         this.projectDesc = projectDesc;
     }
 
-    public String getProjectManagerName(){
+    public String getProjectManagerName() {
         return projectManagerName;
     }
 
-    public void setProjectManagerName(String projectManagerName){
+    public void setProjectManagerName(String projectManagerName) {
         this.projectManagerName = projectManagerName;
     }
 
-    public String getProjectExpectedTime(){
+    public String getProjectExpectedTime() {
         return projectExpectedTime;
     }
 
-    public void setProjectExpectedTime(String projectExpectedTime){
+    public void setProjectExpectedTime(String projectExpectedTime) {
         this.projectExpectedTime = projectExpectedTime;
     }
 
-    public String getProjectUsedTime(){
+    public String getProjectUsedTime() {
         return projectUsedTime;
     }
 
-    public void setProjectUsedTime(String projectUsedTime){
+    public void setProjectUsedTime(String projectUsedTime) {
         this.projectUsedTime = projectUsedTime;
     }
 

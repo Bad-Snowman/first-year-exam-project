@@ -6,6 +6,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+    // Rasmus
+
 // Pure fabrication class to contain two methods which collects and returns the current date and time
 public class LocalDateAndTime implements LocalDateAndTimeInterface {
 

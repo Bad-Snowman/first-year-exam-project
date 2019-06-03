@@ -66,9 +66,9 @@
              When the button is pressed, a overlay will appear on the screen with at project description
              regarding the project -->
             <td>
-<div class="overlay" style="display: none" th:id="@{''+${project.projectID}}"
+                <div class="overlay" style="display: none" th:id="@{''+${project.projectID}}"
                      th:onclick="@{'off( \''+${project.projectID}+'\' )'}">
-                    <div  id="text" > <a th:text="${project.projectDesc}"/></div>
+                    <div id="text"><a th:text="${project.projectDesc}"/></div>
                 </div>
 
                 <div style="padding:20px">
@@ -105,7 +105,7 @@
      The Code was found on following site at then adapted to our program https://www.w3schools.com/HOWTO/howto_css_overlay.asp -->
 
 <script>
-    function on( buttonclicked ) {
+    function on(buttonclicked) {
         document.getElementById(buttonclicked).style.display = "block";
     }
 

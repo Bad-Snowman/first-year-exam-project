@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+    // Rasmus
+    // Mathias
+
 @Service
 public class SessionTimeService {
     @Autowired

@@ -39,6 +39,7 @@ public class HomeController {
     }
 
     ///////////// Project ////////////
+    // Oliver
     //All GetMapping and PostMapping related to the project object
 
     @GetMapping("/projectList")
@@ -77,7 +78,6 @@ public class HomeController {
         return "redirect:/projectList";
     }
 
-
     /* Currently not possible because of conflicts with primary keys and foreign keys,
        look at deleteSession for a working delete function
 
@@ -93,6 +93,7 @@ public class HomeController {
 
 
     ////////// Employee //////////////
+    // Lasse
     @GetMapping("employeeList")
     public String toEmployeeList(Model model) {
         List<Employee> employeeList = employeeService.fetchAllEmployees();
@@ -130,6 +131,9 @@ public class HomeController {
     }
 
     /////////// SessionTime ////////////
+    // Rasmus
+    // Mathias
+
     @GetMapping("/sessionList")
     public String sessionList(Model model) {
         List<SessionTime> sessionList = sessionTimeService.fetchAllSessionTimes();
