@@ -1,12 +1,12 @@
-package com.example.demo.Controller;
+package com.example.firstYearExamProject.Controller;
 
-import com.example.demo.LocalDateAndTime;
-import com.example.demo.Model.Employee;
-import com.example.demo.Model.Project;
-import com.example.demo.Model.SessionTime;
-import com.example.demo.Service.EmployeeService;
-import com.example.demo.Service.ProjectService;
-import com.example.demo.Service.SessionTimeService;
+import com.example.firstYearExamProject.LocalDateAndTime;
+import com.example.firstYearExamProject.Model.Employee;
+import com.example.firstYearExamProject.Model.Project;
+import com.example.firstYearExamProject.Model.SessionTime;
+import com.example.firstYearExamProject.Service.EmployeeService;
+import com.example.firstYearExamProject.Service.ProjectService;
+import com.example.firstYearExamProject.Service.SessionTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -94,6 +94,8 @@ public class HomeController {
 
     ////////// Employee //////////////
     // Lasse
+    //All GetMapping and PostMapping related to the project object
+
     @GetMapping("employeeList")
     public String toEmployeeList(Model model) {
         List<Employee> employeeList = employeeService.fetchAllEmployees();
@@ -133,6 +135,7 @@ public class HomeController {
     /////////// SessionTime ////////////
     // Rasmus
     // Mathias
+    //All GetMapping and PostMapping related to the project object
 
     @GetMapping("/sessionList")
     public String sessionList(Model model) {
@@ -177,17 +180,18 @@ public class HomeController {
         return "redirect:/sessionList";
     }
 
-    ///////////// Project Manager \\\\\\\\\\\\\\\\\\
+    /* Currently not possible because of conflicts with primary keys and foreign keys,
+    look at deleteSession for a working delete function
 
-    @GetMapping("/projectManagerList")
-    public String toProjectManagerList(){
-        return "Home/ProjectManagerList";
-    }
-
-    @GetMapping("/projectManagerReport")
-    public String makeReport(){
-        return "home/ProjectManagerReport";
-    }
+    @GetMapping("/deleteEmployee/{employeeID}")
+    public String deleteEmployee(@PathVariable("employeeID") int employeeID) {
+        boolean deleted = employeeService.deleteEmployee(employeeID);
+        if (deleted) {
+            return "redirect:/employeeList";
+        } else {
+            return "redirect:/";
+        }
+    } */
 
 }
 

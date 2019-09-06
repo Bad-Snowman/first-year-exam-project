@@ -1,7 +1,7 @@
-package com.example.demo.Service;
+package com.example.firstYearExamProject.Service;
 
-import com.example.demo.Model.Project;
-import com.example.demo.Repository.ProjectRepo;
+import com.example.firstYearExamProject.Model.Project;
+import com.example.firstYearExamProject.Repository.ProjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

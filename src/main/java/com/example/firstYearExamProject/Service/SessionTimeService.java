@@ -1,7 +1,7 @@
-package com.example.demo.Service;
+package com.example.firstYearExamProject.Service;
 
-import com.example.demo.Model.SessionTime;
-import com.example.demo.Repository.SessionTimeRepo;
+import com.example.firstYearExamProject.Model.SessionTime;
+import com.example.firstYearExamProject.Repository.SessionTimeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

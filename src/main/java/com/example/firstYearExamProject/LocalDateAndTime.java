@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.firstYearExamProject;
 
-import com.example.demo.Interfaces.LocalDateAndTimeInterface;
+import com.example.firstYearExamProject.Interfaces.LocalDateAndTimeInterface;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

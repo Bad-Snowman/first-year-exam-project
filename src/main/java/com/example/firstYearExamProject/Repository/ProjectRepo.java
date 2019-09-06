@@ -1,7 +1,7 @@
-package com.example.demo.Repository;
+package com.example.firstYearExamProject.Repository;
 
 
-import com.example.demo.Model.Project;
+import com.example.firstYearExamProject.Model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,7 +22,7 @@ public class ProjectRepo {
     // Lasse
     // Rasmus
     public List<Project> fetchAllProjects() {
-        String sql = "SELECT * FROM project \n" +
+        String sql = "SELECT * FROM project " +
                 "JOIN  (SELECT  sec_to_time(  sum(time_to_sec(  TIMEDIFF(sessionTimeEnd, sessionTimeStart)))) " +
                 "AS projectUsedTime, sessionTimeProID FROM sessiontime " +
                 "GROUP BY sessionTimeProId) tabel ON project.projectID = tabel.sessionTimeProID";
@@ -35,8 +35,7 @@ public class ProjectRepo {
         String sql = "INSERT INTO project (projectName, projectDesc, projectManagerName, projectExpectedTime, " +
                 "projectDeadline, projectDone) VALUES(?, ?, ?, ?, ?, ?)";
         template.update(sql, project.getProjectName(), project.getProjectDesc(), project.getProjectManagerName(),
-                project.getProjectExpectedTime(), project.getProjectUsedTime(), project.getProjectDeadline(),
-                project.getProjectDone());
+                project.getProjectExpectedTime(), project.getProjectDeadline(), project.getProjectDone());
         return null;
     }
 

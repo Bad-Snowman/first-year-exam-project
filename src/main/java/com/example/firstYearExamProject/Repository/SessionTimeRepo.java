@@ -1,16 +1,12 @@
-package com.example.demo.Repository;
+package com.example.firstYearExamProject.Repository;
 
-import com.example.demo.Model.SessionTime;
+import com.example.firstYearExamProject.Model.SessionTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Time;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Repository

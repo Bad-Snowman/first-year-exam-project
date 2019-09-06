@@ -1,6 +1,6 @@
-package com.example.demo.Repository;
+package com.example.firstYearExamProject.Repository;
 
-import com.example.demo.Model.Employee;
+import com.example.firstYearExamProject.Model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

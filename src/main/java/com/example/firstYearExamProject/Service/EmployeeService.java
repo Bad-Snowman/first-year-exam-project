@@ -1,13 +1,13 @@
-package com.example.demo.Service;
+package com.example.firstYearExamProject.Service;
 
-import com.example.demo.Model.Employee;
-import com.example.demo.Repository.EmployeeRepo;
+import com.example.firstYearExamProject.Model.Employee;
+import com.example.firstYearExamProject.Repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Scanner;
 
+    // Lasse
 @Service
 public class EmployeeService {
     @Autowired
