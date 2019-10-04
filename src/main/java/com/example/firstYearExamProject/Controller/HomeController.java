@@ -154,11 +154,6 @@ public class HomeController {
         }
     }
 
-    @GetMapping("/editSession/{sessionTimeID}")
-    public String editSession(@PathVariable("sessionTimeID") int sessionTimeID, Model model) {
-        model.addAttribute("sessions", sessionTimeService.findSessionByID(sessionTimeID));
-        return "Home/EditSession";
-    }
 
     @PostMapping("/editSession")
     public String editSession(@ModelAttribute SessionTime sessionTime) {
